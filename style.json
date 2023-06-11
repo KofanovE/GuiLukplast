@@ -1,0 +1,22 @@
+{
+    "ShowLogs": true,
+    "QMainWindow": [
+        {
+            "tittle": "Lukplast App"
+        }
+    ],
+    "QSettings": [
+        {
+            "ThemeSettings": [
+                {
+                    "CustomTheme": []
+                }
+            ],
+            "AppSettings": {
+                "OrginizationName": "Lukplast App",
+                "ApplicationName": "Lukplast App Company",
+                "OrginizationDormain": "Lukplast App.org"
+            }
+        }
+    ]
+}
