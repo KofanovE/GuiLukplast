@@ -18,5 +18,50 @@
                 "OrginizationDormain": "Lukplast App.org"
             }
         }
-    ]
+    ],
+    "QPushButtonGroup": [
+        {
+		"Buttons": [
+			"homeBtn",
+			"accountBtn",
+			"ReportsBtn",
+			"settingsBtn",
+                        "helpBtn",
+                        "aboutBtn"
+		],
+		"Style":[{
+			"Active": "background-color: #1b1b27; border-left: 3px solid #00bfff; font-weight: bold;",
+			"NotActive": "background-color: transparent; border: none;"
+		}]
+	}
+    ],
+    "QCustomSlideMenu": [{
+		"name": "leftMenu",
+		"defaultSize": [{
+			"width": 200,
+			"height": "auto"
+		}],
+		"collapsedSize": [{
+			"width": 0,
+			"height": "auto"
+		}],
+		"expandedSize": [{
+			"width": 200,
+			"height": "auto"
+		}],
+		"toggleButton": [{
+			"buttonName": "menuBtn",
+			"icons": [{
+				"whenMenuIsCollapsed": ":/icons/Icons/align-justify.png",
+				"whenMenuIsExpanded": ":/icons/Icons/chevron-left.png"
+			}]
+		}],
+		"menuTransitionAnimation": [{
+			"animationDuration": 1000,
+			"animationEasingCurve": "Linear"
+		
+		}]
+		
+		
+	}]
 }
