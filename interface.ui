@@ -26,7 +26,7 @@
 	background-color: #1b1b27;
 }
 
-#header, #mainBody{
+#header, #mainBody, #topTable1, #botTable1{
 	background-color: #27263c;
 }
 
@@ -37,7 +37,7 @@
 
 }
 
-#addUserBtn{
+#addUserBtn, #addPos1Btn{
 	background-color: #00bfff;
 	border-radius: 10px;
 }
@@ -57,6 +57,10 @@ QPushButton{
 
 QLineEdit{
 	padding: 5px 10px;
+}
+
+#topTable1, #botTable1{
+	border-radius: 16px;	
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -189,7 +193,7 @@ QLineEdit{
             </property>
             <property name="font">
              <font>
-              <pointsize>12</pointsize>
+              <pointsize>1</pointsize>
               <weight>75</weight>
               <bold>true</bold>
              </font>
@@ -468,7 +472,7 @@ QLineEdit{
                   <widget class="QWidget" name="widget_5" native="true">
                    <layout class="QVBoxLayout" name="verticalLayout_11">
                     <item>
-                     <widget class="QFrame" name="frame_6">
+                     <widget class="QFrame" name="topTable1">
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
                       </property>
@@ -492,10 +496,31 @@ QLineEdit{
                      </widget>
                     </item>
                     <item>
-                     <widget class="QTableWidget" name="tableWidget"/>
+                     <widget class="QTableWidget" name="tableWidget">
+                      <column>
+                       <property name="text">
+                        <string>id</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>time</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>weight</string>
+                       </property>
+                      </column>
+                      <column>
+                       <property name="text">
+                        <string>worker</string>
+                       </property>
+                      </column>
+                     </widget>
                     </item>
                     <item>
-                     <widget class="QFrame" name="frame_7">
+                     <widget class="QFrame" name="botTable1">
                       <property name="frameShape">
                        <enum>QFrame::StyledPanel</enum>
                       </property>
@@ -503,17 +528,78 @@ QLineEdit{
                        <enum>QFrame::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_8">
+                       <property name="spacing">
+                        <number>10</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>10</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>5</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>10</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>5</number>
+                       </property>
                        <item>
-                        <widget class="QLabel" name="label_9">
+                        <widget class="QPushButton" name="addPos1Btn">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
                          <property name="font">
                           <font>
-                           <pointsize>12</pointsize>
+                           <pointsize>14</pointsize>
                           </font>
                          </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
                          <property name="text">
-                          <string>BottomTable1</string>
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="QSS/QSS_Resources.qrc">
+                           <normaloff>:/icons/Icons/plus-square.png</normaloff>:/icons/Icons/plus-square.png</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>24</width>
+                           <height>24</height>
+                          </size>
                          </property>
                         </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="lineEdit_4">
+                         <property name="placeholderText">
+                          <string>weight</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="lineEdit_5">
+                         <property name="placeholderText">
+                          <string>worker</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <spacer name="horizontalSpacer">
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
                        </item>
                       </layout>
                      </widget>
