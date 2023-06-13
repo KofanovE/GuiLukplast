@@ -24,7 +24,7 @@
 		"Buttons": [
 			"homeBtn",
 			"accountBtn",
-			"ReportsBtn",
+			"reportsBtn",
 			"settingsBtn",
                         "helpBtn",
                         "aboutBtn"
@@ -63,5 +63,45 @@
 		}]
 		
 		
-	}]
+	}
+    ],
+    "QStackedWidget":[
+		{
+			"name":"mainPages",
+			"transitionAnimation":[
+				{
+					"fade":[
+						{
+							"active": true,
+							"duration":1000,
+							"easingCurve": "OutBack"
+						}
+					],
+					"slide":[
+						{
+							"active":true,
+							"duration": 1000,
+							"direction": "horizontal",
+							"easingCurve": "OutBack"
+						}
+					]
+				}
+			],
+			"navigation":[
+				{
+					"navigationButtons":[
+						{
+							"homeBtn": "homePage",
+							"reportsBtn": "reportsPage",
+                                                        "accountBtn": "accountsPage",
+                                                        "settingsBtn": "settingsPage",
+                                                        "helpBtn": "helpPage",
+                                                        "aboutBtn": "aboutPage"
+						}
+					]
+				}
+			]
+	
+		}
+	]
 }
