@@ -38,16 +38,16 @@
     "QCustomSlideMenu": [{
 		"name": "leftMenu",
 		"defaultSize": [{
-			"width": 200,
-			"height": "auto"
+			"width": 0,
+			"height": "parent"
 		}],
 		"collapsedSize": [{
 			"width": 0,
-			"height": "auto"
+			"height": "parent"
 		}],
 		"expandedSize": [{
 			"width": 200,
-			"height": "auto"
+			"height": "parent"
 		}],
 		"toggleButton": [{
 			"buttonName": "menuBtn",
@@ -57,7 +57,7 @@
 			}]
 		}],
 		"menuTransitionAnimation": [{
-			"animationDuration": 1000,
+			"animationDuration": 500,
 			"animationEasingCurve": "Linear"
 		
 		}]

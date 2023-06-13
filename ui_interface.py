@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacejGHMaa.ui'
+## Form generated from reading UI file 'interfaceAhgHNo.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(893, 625)
+        MainWindow.resize(893, 662)
         MainWindow.setStyleSheet(u"*{\n"
 "	border: none;\n"
 "	background-color: transparent;\n"
@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
 "	margin: 0;\n"
 "	color: #fff;\n"
 "}\n"
-"#centralwidget, #homeBtn, #mainBodyContent{\n"
+"#centralwidget, #homeBtn, #mainBodyContent, QLineEdit{\n"
 "	background-color: #1b1b27;\n"
 "}\n"
 "\n"
@@ -42,6 +42,11 @@ class Ui_MainWindow(object):
 "	border-radius: 19px;\n"
 "	text-align: center;\n"
 "\n"
+"}\n"
+"\n"
+"#addUserBtn{\n"
+"	background-color: #00bfff;\n"
+"	border-radius: 10px;\n"
 "}\n"
 "\n"
 "\n"
@@ -57,7 +62,9 @@ class Ui_MainWindow(object):
 "	font-weight: bold;\n"
 "}\n"
 "\n"
-"")
+"QLineEdit{\n"
+"	padding: 5px 10px;\n"
+"}")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -152,19 +159,22 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.mainBody.sizePolicy().hasHeightForWidth())
         self.mainBody.setSizePolicy(sizePolicy)
+        self.mainBody.setMinimumSize(QSize(893, 559))
         self.horizontalLayout_2 = QHBoxLayout(self.mainBody)
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(0, 10, 0, 0)
         self.leftMenu = QCustomSlideMenu(self.mainBody)
         self.leftMenu.setObjectName(u"leftMenu")
-        self.leftMenu.setMinimumSize(QSize(200, 0))
+        self.leftMenu.setMinimumSize(QSize(0, 0))
+        self.leftMenu.setMaximumSize(QSize(0, 0))
         self.verticalLayout_3 = QVBoxLayout(self.leftMenu)
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 20)
         self.widget = QWidget(self.leftMenu)
         self.widget.setObjectName(u"widget")
+        self.widget.setMinimumSize(QSize(200, 529))
         self.verticalLayout_4 = QVBoxLayout(self.widget)
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
@@ -262,6 +272,63 @@ class Ui_MainWindow(object):
 
         self.rigthMenu = QWidget(self.mainBody)
         self.rigthMenu.setObjectName(u"rigthMenu")
+        self.rigthMenu.setMinimumSize(QSize(200, 0))
+        self.verticalLayout_7 = QVBoxLayout(self.rigthMenu)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.widget_2 = QWidget(self.rigthMenu)
+        self.widget_2.setObjectName(u"widget_2")
+        self.verticalLayout_8 = QVBoxLayout(self.widget_2)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.label_2 = QLabel(self.widget_2)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(70, 70))
+        self.label_2.setMaximumSize(QSize(70, 70))
+        self.label_2.setPixmap(QPixmap(u":/icons/Icons/edit.png"))
+        self.label_2.setScaledContents(True)
+
+        self.verticalLayout_8.addWidget(self.label_2, 0, Qt.AlignHCenter)
+
+        self.frame_5 = QFrame(self.widget_2)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_9 = QVBoxLayout(self.frame_5)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.lineEdit = QLineEdit(self.frame_5)
+        self.lineEdit.setObjectName(u"lineEdit")
+
+        self.verticalLayout_9.addWidget(self.lineEdit)
+
+        self.lineEdit_2 = QLineEdit(self.frame_5)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+
+        self.verticalLayout_9.addWidget(self.lineEdit_2)
+
+        self.lineEdit_3 = QLineEdit(self.frame_5)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+
+        self.verticalLayout_9.addWidget(self.lineEdit_3)
+
+
+        self.verticalLayout_8.addWidget(self.frame_5)
+
+        self.addUserBtn = QPushButton(self.widget_2)
+        self.addUserBtn.setObjectName(u"addUserBtn")
+        font2 = QFont()
+        font2.setBold(True)
+        font2.setWeight(75)
+        self.addUserBtn.setFont(font2)
+        self.addUserBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/Icons/file-plus.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.addUserBtn.setIcon(icon3)
+        self.addUserBtn.setIconSize(QSize(24, 24))
+
+        self.verticalLayout_8.addWidget(self.addUserBtn, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_7.addWidget(self.widget_2, 0, Qt.AlignHCenter|Qt.AlignTop)
+
 
         self.horizontalLayout_2.addWidget(self.rigthMenu)
 
@@ -269,6 +336,10 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.mainBody)
 
         MainWindow.setCentralWidget(self.centralwidget)
+        self.menuBar = QMenuBar(MainWindow)
+        self.menuBar.setObjectName(u"menuBar")
+        self.menuBar.setGeometry(QRect(0, 0, 893, 22))
+        MainWindow.setMenuBar(self.menuBar)
 
         self.retranslateUi(MainWindow)
 
@@ -289,5 +360,10 @@ class Ui_MainWindow(object):
         self.settingsBtn.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.helpBtn.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.aboutBtn.setText(QCoreApplication.translate("MainWindow", u"About ", None))
+        self.label_2.setText("")
+        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Username", None))
+        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Email", None))
+        self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Phone Number", None))
+        self.addUserBtn.setText(QCoreApplication.translate("MainWindow", u"Add User", None))
     # retranslateUi
 
