@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacecLQVhB.ui'
+## Form generated from reading UI file 'interfacejGHMaa.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -159,8 +159,6 @@ class Ui_MainWindow(object):
         self.leftMenu = QCustomSlideMenu(self.mainBody)
         self.leftMenu.setObjectName(u"leftMenu")
         self.leftMenu.setMinimumSize(QSize(200, 0))
-        #self.leftMenu.setFrameShape(QFrame.StyledPanel)
-        #self.leftMenu.setFrameShadow(QFrame.Raised)
         self.verticalLayout_3 = QVBoxLayout(self.leftMenu)
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
@@ -242,12 +240,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.leftMenu)
 
-        self.mainBodyContent = QFrame(self.mainBody)
+        self.mainBodyContent = QWidget(self.mainBody)
         self.mainBodyContent.setObjectName(u"mainBodyContent")
-        self.mainBodyContent.setFrameShape(QFrame.StyledPanel)
-        self.mainBodyContent.setFrameShadow(QFrame.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.mainBodyContent)
+        self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget = QStackedWidget(self.mainBodyContent)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.page = QWidget()
@@ -262,12 +260,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.mainBodyContent)
 
-        self.rithtMenu = QFrame(self.mainBody)
-        self.rithtMenu.setObjectName(u"rithtMenu")
-        self.rithtMenu.setFrameShape(QFrame.StyledPanel)
-        self.rithtMenu.setFrameShadow(QFrame.Raised)
+        self.rigthMenu = QWidget(self.mainBody)
+        self.rigthMenu.setObjectName(u"rigthMenu")
 
-        self.horizontalLayout_2.addWidget(self.rithtMenu)
+        self.horizontalLayout_2.addWidget(self.rigthMenu)
 
 
         self.verticalLayout.addWidget(self.mainBody)
