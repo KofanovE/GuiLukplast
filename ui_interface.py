@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceSlIIOi.ui'
+## Form generated from reading UI file 'interfacexfcZTq.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(893, 662)
+        MainWindow.resize(1330, 662)
         MainWindow.setStyleSheet(u"*{\n"
 "	border: none;\n"
 "	background-color: transparent;\n"
@@ -50,6 +50,15 @@ class Ui_MainWindow(object):
 "	border-radius: 10px;\n"
 "}\n"
 "\n"
+"#addTable1Btn{\n"
+"	background-color: #708238;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"\n"
+"#closeTable1Btn{\n"
+"	background-color: #FADA5E;\n"
+"	border-radius: 10px;\n"
+"}\n"
 "\n"
 "QPushButton{\n"
 "	text-align: left;\n"
@@ -67,7 +76,13 @@ class Ui_MainWindow(object):
 "	padding: 5px 10px;\n"
 "}\n"
 "\n"
-"#topTable1, #botTable1{\n"
+"#topTab"
+                        "le1, #botTable1{\n"
+"	border-radius: 16px;	\n"
+"}\n"
+"\n"
+"#frameTable1{\n"
+"	background-color: #5A5A5A;\n"
 "	border-radius: 16px;	\n"
 "}")
         self.centralwidget = QWidget(MainWindow)
@@ -289,6 +304,100 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addWidget(self.label_8)
 
+        self.lineEdit_6 = QLineEdit(self.topTable1)
+        self.lineEdit_6.setObjectName(u"lineEdit_6")
+        self.lineEdit_6.setMinimumSize(QSize(75, 30))
+        self.lineEdit_6.setMaximumSize(QSize(75, 30))
+
+        self.horizontalLayout_7.addWidget(self.lineEdit_6)
+
+        self.frameTable1 = QFrame(self.topTable1)
+        self.frameTable1.setObjectName(u"frameTable1")
+        self.frameTable1.setFrameShape(QFrame.StyledPanel)
+        self.frameTable1.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_15 = QHBoxLayout(self.frameTable1)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.label_9 = QLabel(self.frameTable1)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setFont(font2)
+
+        self.horizontalLayout_15.addWidget(self.label_9)
+
+        self.lineEdit_7 = QLineEdit(self.frameTable1)
+        self.lineEdit_7.setObjectName(u"lineEdit_7")
+        self.lineEdit_7.setMinimumSize(QSize(75, 30))
+        self.lineEdit_7.setMaximumSize(QSize(75, 30))
+
+        self.horizontalLayout_15.addWidget(self.lineEdit_7)
+
+        self.label_16 = QLabel(self.frameTable1)
+        self.label_16.setObjectName(u"label_16")
+        self.label_16.setFont(font2)
+
+        self.horizontalLayout_15.addWidget(self.label_16)
+
+        self.lineEdit_8 = QLineEdit(self.frameTable1)
+        self.lineEdit_8.setObjectName(u"lineEdit_8")
+        self.lineEdit_8.setMinimumSize(QSize(75, 30))
+        self.lineEdit_8.setMaximumSize(QSize(75, 30))
+
+        self.horizontalLayout_15.addWidget(self.lineEdit_8)
+
+        self.label_17 = QLabel(self.frameTable1)
+        self.label_17.setObjectName(u"label_17")
+        self.label_17.setFont(font2)
+
+        self.horizontalLayout_15.addWidget(self.label_17)
+
+        self.lineEdit_9 = QLineEdit(self.frameTable1)
+        self.lineEdit_9.setObjectName(u"lineEdit_9")
+        self.lineEdit_9.setMinimumSize(QSize(75, 30))
+        self.lineEdit_9.setMaximumSize(QSize(75, 30))
+
+        self.horizontalLayout_15.addWidget(self.lineEdit_9)
+
+        self.label_18 = QLabel(self.frameTable1)
+        self.label_18.setObjectName(u"label_18")
+        self.label_18.setFont(font2)
+
+        self.horizontalLayout_15.addWidget(self.label_18)
+
+        self.lineEdit_10 = QLineEdit(self.frameTable1)
+        self.lineEdit_10.setObjectName(u"lineEdit_10")
+        self.lineEdit_10.setMinimumSize(QSize(75, 30))
+        self.lineEdit_10.setMaximumSize(QSize(75, 30))
+
+        self.horizontalLayout_15.addWidget(self.lineEdit_10)
+
+
+        self.horizontalLayout_7.addWidget(self.frameTable1)
+
+        self.addTable1Btn = QPushButton(self.topTable1)
+        self.addTable1Btn.setObjectName(u"addTable1Btn")
+        self.addTable1Btn.setMinimumSize(QSize(0, 0))
+        font3 = QFont()
+        font3.setPointSize(14)
+        self.addTable1Btn.setFont(font3)
+        self.addTable1Btn.setCursor(QCursor(Qt.PointingHandCursor))
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/Icons/file-plus.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.addTable1Btn.setIcon(icon3)
+        self.addTable1Btn.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_7.addWidget(self.addTable1Btn)
+
+        self.closeTable1Btn = QPushButton(self.topTable1)
+        self.closeTable1Btn.setObjectName(u"closeTable1Btn")
+        self.closeTable1Btn.setMinimumSize(QSize(0, 0))
+        self.closeTable1Btn.setFont(font3)
+        self.closeTable1Btn.setCursor(QCursor(Qt.PointingHandCursor))
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/Icons/download.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.closeTable1Btn.setIcon(icon4)
+        self.closeTable1Btn.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_7.addWidget(self.closeTable1Btn)
+
 
         self.verticalLayout_11.addWidget(self.topTable1)
 
@@ -318,13 +427,11 @@ class Ui_MainWindow(object):
         self.addPos1Btn = QPushButton(self.botTable1)
         self.addPos1Btn.setObjectName(u"addPos1Btn")
         self.addPos1Btn.setMinimumSize(QSize(0, 0))
-        font3 = QFont()
-        font3.setPointSize(14)
         self.addPos1Btn.setFont(font3)
         self.addPos1Btn.setCursor(QCursor(Qt.PointingHandCursor))
-        icon3 = QIcon()
-        icon3.addFile(u":/icons/Icons/plus-square.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.addPos1Btn.setIcon(icon3)
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/Icons/plus-square.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.addPos1Btn.setIcon(icon5)
         self.addPos1Btn.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_8.addWidget(self.addPos1Btn)
@@ -583,9 +690,7 @@ class Ui_MainWindow(object):
         font5.setWeight(75)
         self.addUserBtn.setFont(font5)
         self.addUserBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/Icons/file-plus.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.addUserBtn.setIcon(icon4)
+        self.addUserBtn.setIcon(icon3)
         self.addUserBtn.setIconSize(QSize(24, 24))
 
         self.verticalLayout_8.addWidget(self.addUserBtn, 0, Qt.AlignHCenter)
@@ -602,7 +707,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menuBar = QMenuBar(MainWindow)
         self.menuBar.setObjectName(u"menuBar")
-        self.menuBar.setGeometry(QRect(0, 0, 893, 22))
+        self.menuBar.setGeometry(QRect(0, 0, 1330, 22))
         MainWindow.setMenuBar(self.menuBar)
 
         self.retranslateUi(MainWindow)
@@ -624,7 +729,18 @@ class Ui_MainWindow(object):
         self.settingsBtn.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.helpBtn.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.aboutBtn.setText(QCoreApplication.translate("MainWindow", u"About ", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"TopTable1", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Task", None))
+        self.lineEdit_6.setPlaceholderText(QCoreApplication.translate("MainWindow", u"123456", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Machine", None))
+        self.lineEdit_7.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
+        self.label_16.setText(QCoreApplication.translate("MainWindow", u"L", None))
+        self.lineEdit_8.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
+        self.label_17.setText(QCoreApplication.translate("MainWindow", u"D", None))
+        self.lineEdit_9.setPlaceholderText(QCoreApplication.translate("MainWindow", u"100", None))
+        self.label_18.setText(QCoreApplication.translate("MainWindow", u"Type", None))
+        self.lineEdit_10.setPlaceholderText(QCoreApplication.translate("MainWindow", u"PE", None))
+        self.addTable1Btn.setText("")
+        self.closeTable1Btn.setText("")
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"id", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
