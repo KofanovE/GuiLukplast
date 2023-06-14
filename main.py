@@ -48,7 +48,30 @@ class MainWindow(QMainWindow):
         #######################################################################
         # SHOW WINDOW
         #######################################################################
-        self.show() 
+        self.show()
+
+
+        ########################################################################
+        # UPDATE APP SETTINGS LOADED FROM JSON STYLESHEET 
+        # ITS IMPORTANT TO RUN THIS AFTER SHOWING THE WINDOW
+        # THIS PROCESS WILL RUN ON A SEPARATE THREAD WHEN GENERATING NEW ICONS
+        # TO PREVENT THE WINDOW FROM BEING UNRESPONSIVE
+        ########################################################################
+        # self = QMainWindow class
+        
+        QAppSettings.updateAppSettings(self)
+
+        # CHANGE THE THEME NAME IN SETTINGS
+        # Use one of the app themes from your JSON file
+        
+        settings = QSettings() 
+        settings.setValue("THEME", "Default-Dark-Theme")
+        
+        # RE APPLY THE NEW SETINGS
+        # CompileStyleSheet might also work
+        # CompileStyleSheet.applyCompiledSass(self)
+        
+        QAppSettings.updateAppSettings(self)
 
 
 

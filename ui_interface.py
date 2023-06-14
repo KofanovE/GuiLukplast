@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceoLgROf.ui'
+## Form generated from reading UI file 'interfacewCosGB.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -34,7 +34,7 @@ class Ui_MainWindow(object):
 "	background-color: #1b1b27;\n"
 "}\n"
 "\n"
-"#header, #mainBody, #topTable1, #botTable1{\n"
+"#header, #mainBody, #topTable1, #botTable1, #footer{\n"
 "	background-color: #27263c;\n"
 "}\n"
 "\n"
@@ -74,8 +74,8 @@ class Ui_MainWindow(object):
 "\n"
 "#homeBtn{\n"
 "	border-left: 3px solid #00bfff;\n"
-"	font-"
-                        "weight: bold;\n"
+""
+                        "	font-weight: bold;\n"
 "}\n"
 "\n"
 "QLineEdit{\n"
@@ -709,11 +709,24 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.mainBody)
 
+        self.footer = QWidget(self.centralwidget)
+        self.footer.setObjectName(u"footer")
+        self.horizontalLayout_16 = QHBoxLayout(self.footer)
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.label_19 = QLabel(self.footer)
+        self.label_19.setObjectName(u"label_19")
+        font6 = QFont()
+        font6.setBold(True)
+        font6.setItalic(False)
+        font6.setWeight(75)
+        self.label_19.setFont(font6)
+
+        self.horizontalLayout_16.addWidget(self.label_19, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout.addWidget(self.footer)
+
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menuBar = QMenuBar(MainWindow)
-        self.menuBar.setObjectName(u"menuBar")
-        self.menuBar.setGeometry(QRect(0, 0, 1330, 22))
-        MainWindow.setMenuBar(self.menuBar)
 
         self.retranslateUi(MainWindow)
 
@@ -757,7 +770,7 @@ class Ui_MainWindow(object):
         self.addPos1Btn.setText("")
         self.lineEdit_4.setPlaceholderText(QCoreApplication.translate("MainWindow", u"weight", None))
         self.lineEdit_5.setPlaceholderText(QCoreApplication.translate("MainWindow", u"worker", None))
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"TopTable2", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"TopTable22", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"BottomTable2", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"TopTable3", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"BottomTable3", None))
@@ -773,5 +786,6 @@ class Ui_MainWindow(object):
         self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Email", None))
         self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Phone Number", None))
         self.addUserBtn.setText(QCoreApplication.translate("MainWindow", u"Add User", None))
+        self.label_19.setText(QCoreApplication.translate("MainWindow", u"Lukplast. Copyright 2023", None))
     # retranslateUi
 

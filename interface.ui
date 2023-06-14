@@ -26,7 +26,7 @@
 	background-color: #1b1b27;
 }
 
-#header, #mainBody, #topTable1, #botTable1{
+#header, #mainBody, #topTable1, #botTable1, #footer{
 	background-color: #27263c;
 }
 
@@ -863,7 +863,7 @@ QLineEdit{
                           </font>
                          </property>
                          <property name="text">
-                          <string>TopTable2</string>
+                          <string>TopTable22</string>
                          </property>
                         </widget>
                        </item>
@@ -1260,17 +1260,27 @@ QLineEdit{
       </layout>
      </widget>
     </item>
+    <item>
+     <widget class="QWidget" name="footer" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout_16">
+       <item alignment="Qt::AlignHCenter">
+        <widget class="QLabel" name="label_19">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Lukplast. Copyright 2023</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
    </layout>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1330</width>
-     <height>22</height>
-    </rect>
-   </property>
   </widget>
  </widget>
  <customwidgets>
