@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacexfcZTq.ui'
+## Form generated from reading UI file 'interfaceoLgROf.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -51,12 +51,17 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "#addTable1Btn{\n"
-"	background-color: #708238;\n"
+"	background-color: #00bfff;\n"
 "	border-radius: 10px;\n"
 "}\n"
 "\n"
 "#closeTable1Btn{\n"
-"	background-color: #FADA5E;\n"
+"	background-color: #00bfff;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"\n"
+"#addPos1Btn{\n"
+"	background-color: #708238;\n"
 "	border-radius: 10px;\n"
 "}\n"
 "\n"
@@ -69,15 +74,15 @@ class Ui_MainWindow(object):
 "\n"
 "#homeBtn{\n"
 "	border-left: 3px solid #00bfff;\n"
-"	font-weight: bold;\n"
+"	font-"
+                        "weight: bold;\n"
 "}\n"
 "\n"
 "QLineEdit{\n"
 "	padding: 5px 10px;\n"
 "}\n"
 "\n"
-"#topTab"
-                        "le1, #botTable1{\n"
+"#topTable1, #botTable1{\n"
 "	border-radius: 16px;	\n"
 "}\n"
 "\n"

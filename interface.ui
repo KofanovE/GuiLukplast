@@ -43,12 +43,17 @@
 }
 
 #addTable1Btn{
-	background-color: #708238;
+	background-color: #00bfff;
 	border-radius: 10px;
 }
 
 #closeTable1Btn{
-	background-color: #FADA5E;
+	background-color: #00bfff;
+	border-radius: 10px;
+}
+
+#addPos1Btn{
+	background-color: #708238;
 	border-radius: 10px;
 }
 
