@@ -1651,7 +1651,10 @@ PlotWidget {
 #centralwidget, #homeBtn, #mainBodyContent, QLineEdit {
   background-color: #1b1b27; }
 
-#header, #mainBody, #topTable1, #botTable1, #footer {
+#header, #mainBody, #topTable1, #footer {
+  background-color: #27263c; }
+
+#botTable1 {
   background-color: #27263c; }
 
 #pushButton {
@@ -1695,5 +1698,5 @@ QLineEdit {
   border-radius: 16px; }
 
 #frameTable1 {
-  background-color: #5A5A5A;
+  background-color: #808080;
   border-radius: 16px; }

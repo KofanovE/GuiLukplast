@@ -15,8 +15,12 @@
 	background-color: #1b1b27;
 }
 
-#header, #mainBody, #topTable1, #botTable1, #footer{
+#header, #mainBody, #topTable1, #footer{
 	background-color: #27263c;
+}
+
+#botTable1{
+    background-color: #27263c;
 }
 
 #pushButton{
@@ -26,10 +30,11 @@
 
 }
 
-#addUserBtn, #addPos1Btn{
+#addUserBtn{
 	background-color: #00bfff;
 	border-radius: 10px;
 }
+
 
 #addTable1Btn{
 	background-color: #00bfff;
@@ -42,7 +47,7 @@
 }
 
 #addPos1Btn{
-	background-color: #708238;
+	background-color: #808080;
 	border-radius: 10px;
 }
 
@@ -59,6 +64,7 @@
 #homeBtn{
 	border-left: 3px solid #00bfff;
 	font-weight: bold;
+	background-color: #1b1b27;
 }
 
 QLineEdit{
@@ -70,9 +76,11 @@ QLineEdit{
 }
 
 #frameTable1{
-	background-color: #5A5A5A;
+	background-color: #808080;
 	border-radius: 16px;	
-}        
+}
+
+
 //===================================================//
 // END //
 //====================================================//

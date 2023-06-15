@@ -14,9 +14,10 @@
                             "Background-color": "#1b1b27",
                             "Text-color": "#fff",
                             "Accent-color": "#00bfff",
-                            "Theme-name": "Default-Dark-Theme",
+                            "Theme-name": "Default-Theme",
                             "Icons-color": "#fff",
                             "Default-Theme": true
+
                         }
 
                         ]

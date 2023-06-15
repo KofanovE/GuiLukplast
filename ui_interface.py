@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacewCosGB.ui'
+## Form generated from reading UI file 'interfacenBdvZX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1330, 662)
+        MainWindow.resize(1330, 670)
         MainWindow.setStyleSheet(u"*{\n"
 "	border: none;\n"
 "	background-color: transparent;\n"
@@ -287,15 +287,15 @@ class Ui_MainWindow(object):
         self.homePage.setObjectName(u"homePage")
         self.verticalLayout_10 = QVBoxLayout(self.homePage)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.widget_3 = QWidget(self.homePage)
-        self.widget_3.setObjectName(u"widget_3")
-        self.horizontalLayout_6 = QHBoxLayout(self.widget_3)
+        self.AllTopTables = QWidget(self.homePage)
+        self.AllTopTables.setObjectName(u"AllTopTables")
+        self.horizontalLayout_6 = QHBoxLayout(self.AllTopTables)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.widget_5 = QWidget(self.widget_3)
-        self.widget_5.setObjectName(u"widget_5")
-        self.verticalLayout_11 = QVBoxLayout(self.widget_5)
+        self.LeftTopTable = QWidget(self.AllTopTables)
+        self.LeftTopTable.setObjectName(u"LeftTopTable")
+        self.verticalLayout_11 = QVBoxLayout(self.LeftTopTable)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.topTable1 = QFrame(self.widget_5)
+        self.topTable1 = QFrame(self.LeftTopTable)
         self.topTable1.setObjectName(u"topTable1")
         self.topTable1.setFrameShape(QFrame.StyledPanel)
         self.topTable1.setFrameShadow(QFrame.Raised)
@@ -309,12 +309,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addWidget(self.label_8)
 
-        self.lineEdit_6 = QLineEdit(self.topTable1)
-        self.lineEdit_6.setObjectName(u"lineEdit_6")
-        self.lineEdit_6.setMinimumSize(QSize(75, 30))
-        self.lineEdit_6.setMaximumSize(QSize(75, 30))
+        self.TaskNum1 = QLineEdit(self.topTable1)
+        self.TaskNum1.setObjectName(u"TaskNum1")
+        self.TaskNum1.setMinimumSize(QSize(75, 30))
+        self.TaskNum1.setMaximumSize(QSize(75, 30))
 
-        self.horizontalLayout_7.addWidget(self.lineEdit_6)
+        self.horizontalLayout_7.addWidget(self.TaskNum1)
 
         self.frameTable1 = QFrame(self.topTable1)
         self.frameTable1.setObjectName(u"frameTable1")
@@ -328,12 +328,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addWidget(self.label_9)
 
-        self.lineEdit_7 = QLineEdit(self.frameTable1)
-        self.lineEdit_7.setObjectName(u"lineEdit_7")
-        self.lineEdit_7.setMinimumSize(QSize(75, 30))
-        self.lineEdit_7.setMaximumSize(QSize(75, 30))
+        self.MachineNum1 = QLineEdit(self.frameTable1)
+        self.MachineNum1.setObjectName(u"MachineNum1")
+        self.MachineNum1.setMinimumSize(QSize(75, 30))
+        self.MachineNum1.setMaximumSize(QSize(75, 30))
 
-        self.horizontalLayout_15.addWidget(self.lineEdit_7)
+        self.horizontalLayout_15.addWidget(self.MachineNum1)
 
         self.label_16 = QLabel(self.frameTable1)
         self.label_16.setObjectName(u"label_16")
@@ -341,12 +341,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addWidget(self.label_16)
 
-        self.lineEdit_8 = QLineEdit(self.frameTable1)
-        self.lineEdit_8.setObjectName(u"lineEdit_8")
-        self.lineEdit_8.setMinimumSize(QSize(75, 30))
-        self.lineEdit_8.setMaximumSize(QSize(75, 30))
+        self.LengthEnt1 = QLineEdit(self.frameTable1)
+        self.LengthEnt1.setObjectName(u"LengthEnt1")
+        self.LengthEnt1.setMinimumSize(QSize(75, 30))
+        self.LengthEnt1.setMaximumSize(QSize(75, 30))
 
-        self.horizontalLayout_15.addWidget(self.lineEdit_8)
+        self.horizontalLayout_15.addWidget(self.LengthEnt1)
 
         self.label_17 = QLabel(self.frameTable1)
         self.label_17.setObjectName(u"label_17")
@@ -354,12 +354,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addWidget(self.label_17)
 
-        self.lineEdit_9 = QLineEdit(self.frameTable1)
-        self.lineEdit_9.setObjectName(u"lineEdit_9")
-        self.lineEdit_9.setMinimumSize(QSize(75, 30))
-        self.lineEdit_9.setMaximumSize(QSize(75, 30))
+        self.DiametrEnter1 = QLineEdit(self.frameTable1)
+        self.DiametrEnter1.setObjectName(u"DiametrEnter1")
+        self.DiametrEnter1.setMinimumSize(QSize(75, 30))
+        self.DiametrEnter1.setMaximumSize(QSize(75, 30))
 
-        self.horizontalLayout_15.addWidget(self.lineEdit_9)
+        self.horizontalLayout_15.addWidget(self.DiametrEnter1)
 
         self.label_18 = QLabel(self.frameTable1)
         self.label_18.setObjectName(u"label_18")
@@ -367,12 +367,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addWidget(self.label_18)
 
-        self.lineEdit_10 = QLineEdit(self.frameTable1)
-        self.lineEdit_10.setObjectName(u"lineEdit_10")
-        self.lineEdit_10.setMinimumSize(QSize(75, 30))
-        self.lineEdit_10.setMaximumSize(QSize(75, 30))
+        self.TypeEnter1 = QLineEdit(self.frameTable1)
+        self.TypeEnter1.setObjectName(u"TypeEnter1")
+        self.TypeEnter1.setMinimumSize(QSize(75, 30))
+        self.TypeEnter1.setMaximumSize(QSize(75, 30))
 
-        self.horizontalLayout_15.addWidget(self.lineEdit_10)
+        self.horizontalLayout_15.addWidget(self.TypeEnter1)
 
 
         self.horizontalLayout_7.addWidget(self.frameTable1)
@@ -406,7 +406,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.topTable1)
 
-        self.tableWidget = QTableWidget(self.widget_5)
+        self.tableWidget = QTableWidget(self.LeftTopTable)
         if (self.tableWidget.columnCount() < 4):
             self.tableWidget.setColumnCount(4)
         __qtablewidgetitem = QTableWidgetItem()
@@ -421,7 +421,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.tableWidget)
 
-        self.botTable1 = QFrame(self.widget_5)
+        self.botTable1 = QFrame(self.LeftTopTable)
         self.botTable1.setObjectName(u"botTable1")
         self.botTable1.setFrameShape(QFrame.StyledPanel)
         self.botTable1.setFrameShadow(QFrame.Raised)
@@ -441,15 +441,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_8.addWidget(self.addPos1Btn)
 
-        self.lineEdit_4 = QLineEdit(self.botTable1)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
+        self.WeightEnter1 = QLineEdit(self.botTable1)
+        self.WeightEnter1.setObjectName(u"WeightEnter1")
 
-        self.horizontalLayout_8.addWidget(self.lineEdit_4)
+        self.horizontalLayout_8.addWidget(self.WeightEnter1)
 
-        self.lineEdit_5 = QLineEdit(self.botTable1)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
+        self.WorkerEnter1 = QLineEdit(self.botTable1)
+        self.WorkerEnter1.setObjectName(u"WorkerEnter1")
 
-        self.horizontalLayout_8.addWidget(self.lineEdit_5)
+        self.horizontalLayout_8.addWidget(self.WorkerEnter1)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -459,9 +459,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.addWidget(self.botTable1)
 
 
-        self.horizontalLayout_6.addWidget(self.widget_5)
+        self.horizontalLayout_6.addWidget(self.LeftTopTable)
 
-        self.widget_6 = QWidget(self.widget_3)
+        self.widget_6 = QWidget(self.AllTopTables)
         self.widget_6.setObjectName(u"widget_6")
         self.verticalLayout_12 = QVBoxLayout(self.widget_6)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
@@ -504,7 +504,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.addWidget(self.widget_6)
 
 
-        self.verticalLayout_10.addWidget(self.widget_3)
+        self.verticalLayout_10.addWidget(self.AllTopTables)
 
         self.widget_4 = QWidget(self.homePage)
         self.widget_4.setObjectName(u"widget_4")
@@ -748,15 +748,15 @@ class Ui_MainWindow(object):
         self.helpBtn.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.aboutBtn.setText(QCoreApplication.translate("MainWindow", u"About ", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Task", None))
-        self.lineEdit_6.setPlaceholderText(QCoreApplication.translate("MainWindow", u"123456", None))
+        self.TaskNum1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"123456", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Machine", None))
-        self.lineEdit_7.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
+        self.MachineNum1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"L", None))
-        self.lineEdit_8.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
+        self.LengthEnt1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"D", None))
-        self.lineEdit_9.setPlaceholderText(QCoreApplication.translate("MainWindow", u"100", None))
+        self.DiametrEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"100", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Type", None))
-        self.lineEdit_10.setPlaceholderText(QCoreApplication.translate("MainWindow", u"PE", None))
+        self.TypeEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"PE", None))
         self.addTable1Btn.setText("")
         self.closeTable1Btn.setText("")
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
@@ -768,8 +768,8 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"worker", None));
         self.addPos1Btn.setText("")
-        self.lineEdit_4.setPlaceholderText(QCoreApplication.translate("MainWindow", u"weight", None))
-        self.lineEdit_5.setPlaceholderText(QCoreApplication.translate("MainWindow", u"worker", None))
+        self.WeightEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"weight", None))
+        self.WorkerEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"worker", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"TopTable22", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"BottomTable2", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"TopTable3", None))

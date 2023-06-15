@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1330</width>
-    <height>662</height>
+    <height>670</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -485,10 +485,10 @@ QLineEdit{
             <widget class="QWidget" name="homePage">
              <layout class="QVBoxLayout" name="verticalLayout_10">
               <item>
-               <widget class="QWidget" name="widget_3" native="true">
+               <widget class="QWidget" name="AllTopTables" native="true">
                 <layout class="QHBoxLayout" name="horizontalLayout_6">
                  <item>
-                  <widget class="QWidget" name="widget_5" native="true">
+                  <widget class="QWidget" name="LeftTopTable" native="true">
                    <layout class="QVBoxLayout" name="verticalLayout_11">
                     <item>
                      <widget class="QFrame" name="topTable1">
@@ -512,7 +512,7 @@ QLineEdit{
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="lineEdit_6">
+                        <widget class="QLineEdit" name="TaskNum1">
                          <property name="minimumSize">
                           <size>
                            <width>75</width>
@@ -552,7 +552,7 @@ QLineEdit{
                            </widget>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="lineEdit_7">
+                           <widget class="QLineEdit" name="MachineNum1">
                             <property name="minimumSize">
                              <size>
                               <width>75</width>
@@ -583,7 +583,7 @@ QLineEdit{
                            </widget>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="lineEdit_8">
+                           <widget class="QLineEdit" name="LengthEnt1">
                             <property name="minimumSize">
                              <size>
                               <width>75</width>
@@ -614,7 +614,7 @@ QLineEdit{
                            </widget>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="lineEdit_9">
+                           <widget class="QLineEdit" name="DiametrEnter1">
                             <property name="minimumSize">
                              <size>
                               <width>75</width>
@@ -645,7 +645,7 @@ QLineEdit{
                            </widget>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="lineEdit_10">
+                           <widget class="QLineEdit" name="TypeEnter1">
                             <property name="minimumSize">
                              <size>
                               <width>75</width>
@@ -811,14 +811,14 @@ QLineEdit{
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="lineEdit_4">
+                        <widget class="QLineEdit" name="WeightEnter1">
                          <property name="placeholderText">
                           <string>weight</string>
                          </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="lineEdit_5">
+                        <widget class="QLineEdit" name="WorkerEnter1">
                          <property name="placeholderText">
                           <string>worker</string>
                          </property>

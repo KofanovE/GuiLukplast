@@ -59,19 +59,19 @@ class MainWindow(QMainWindow):
         ########################################################################
         # self = QMainWindow class
         
-        QAppSettings.updateAppSettings(self)
+        #QAppSettings.updateAppSettings(self)
 
         # CHANGE THE THEME NAME IN SETTINGS
         # Use one of the app themes from your JSON file
         
-        settings = QSettings() 
-        settings.setValue("THEME", "Default-Dark-Theme")
+        #settings = QSettings() 
+        #settings.setValue("THEME", "Default-Theme")
         
         # RE APPLY THE NEW SETINGS
         # CompileStyleSheet might also work
         # CompileStyleSheet.applyCompiledSass(self)
         
-        QAppSettings.updateAppSettings(self)
+        #QAppSettings.updateAppSettings(self)
 
 
 
