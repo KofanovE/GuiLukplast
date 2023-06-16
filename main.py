@@ -19,6 +19,7 @@ from Custom_Widgets.Widgets import *
 settings = QSettings()
 ########################################################################
 
+from Functions import AppFunctions
 
 
 ########################################################################
@@ -75,7 +76,14 @@ class MainWindow(QMainWindow):
 
 
 
-
+        #Database folder and name
+        dbFolder = os.path.abspath(os.path.join(os.path.dirname(__file__), 'Database/New_DB.db'))
+        #Run main functions to cteate database and table
+        AppFunctions.main(dbFolder)
+        #Display db rows in table
+        AppFunctions.displayUsers(self, AppFunctions.getAllUsers(dbFolder))
+        #Add new user to database
+        self.ui.addUserBtn.clicked.connect(lambda: AppFunctions.addUser(self, dfFolder))
 
 
 ########################################################################
