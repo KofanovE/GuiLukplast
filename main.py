@@ -77,7 +77,7 @@ class MainWindow(QMainWindow):
 
 
         #Database folder and name
-        dbFolder = os.path.abspath(os.path.join(os.path.dirname(__file__), 'Database/New_DB.db'))
+        dbShiftTable = os.path.abspath(os.path.join(os.path.dirname(__file__), 'Database/LukplastDB.db'))
         #Run main functions to cteate database and table
         AppFunctions.main(dbFolder)
         #Display db rows in table

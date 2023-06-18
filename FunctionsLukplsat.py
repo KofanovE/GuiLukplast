@@ -91,7 +91,7 @@ class AppFunctions():
                                     );
                             """
 
-        create_OneTaskPosition = """ CREATE TABLE IF NOT EXISTS OneTaskPosition1(
+        create_OneTaskPosition1 = """ CREATE TABLE IF NOT EXISTS OneTaskPosition1(
                                           ID_TASK INTEGER,
                                           ID_POSITION INTEGER PRIMARY KEY AUTOINCREMENT,
                                           DATE TEXT,
@@ -107,7 +107,11 @@ class AppFunctions():
         # create tables
         if conn is not None:
             # create user table
-            AppFunctions.create_table(conn, create_user_table)
+            AppFunctions.create_table(conn, create_ShiftTable)
+            AppFunctions.create_table(conn, create_TaskTable)
+            AppFunctions.create_table(conn, create_AllPositions)
+            AppFunctions.create_table(conn, create_OneTaskPosition1)
+            
         else:
             print('Error! Cannot create the database connection')
 
