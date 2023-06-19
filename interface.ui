@@ -135,7 +135,7 @@ QLineEdit{
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="QSS/QSS_Resources.qrc">
+             <iconset>
               <normaloff>:/icons/Icons/align-justify.png</normaloff>:/icons/Icons/align-justify.png</iconset>
             </property>
             <property name="iconSize">
@@ -224,7 +224,7 @@ QLineEdit{
              <string>New smene</string>
             </property>
             <property name="icon">
-             <iconset resource="QSS/QSS_Resources.qrc">
+             <iconset>
               <normaloff>:/icons/Icons/users.png</normaloff>:/icons/Icons/users.png</iconset>
             </property>
             <property name="iconSize">
@@ -358,7 +358,7 @@ QLineEdit{
                    <string>Home</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="QSS/QSS_Resources.qrc">
+                   <iconset>
                     <normaloff>:/icons/Icons/home.png</normaloff>:/icons/Icons/home.png</iconset>
                   </property>
                  </widget>
@@ -686,7 +686,7 @@ QLineEdit{
                           <string/>
                          </property>
                          <property name="icon">
-                          <iconset resource="QSS/QSS_Resources.qrc">
+                          <iconset>
                            <normaloff>:/icons/Icons/file-plus.png</normaloff>:/icons/Icons/file-plus.png</iconset>
                          </property>
                          <property name="iconSize">
@@ -717,7 +717,7 @@ QLineEdit{
                           <string/>
                          </property>
                          <property name="icon">
-                          <iconset resource="QSS/QSS_Resources.qrc">
+                          <iconset>
                            <normaloff>:/icons/Icons/download.png</normaloff>:/icons/Icons/download.png</iconset>
                          </property>
                          <property name="iconSize">
@@ -799,7 +799,7 @@ QLineEdit{
                           <string/>
                          </property>
                          <property name="icon">
-                          <iconset resource="QSS/QSS_Resources.qrc">
+                          <iconset>
                            <normaloff>:/icons/Icons/plus-square.png</normaloff>:/icons/Icons/plus-square.png</iconset>
                          </property>
                          <property name="iconSize">
@@ -1185,7 +1185,7 @@ QLineEdit{
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="QSS/QSS_Resources.qrc">:/icons/Icons/edit.png</pixmap>
+                <pixmap>:/icons/Icons/edit.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -1202,23 +1202,37 @@ QLineEdit{
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_9">
                 <item>
-                 <widget class="QLineEdit" name="lineEdit">
+                 <widget class="QLineEdit" name="shiftEnter">
                   <property name="placeholderText">
-                   <string>Username</string>
+                   <string>Shift (day/night)</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="lineEdit_2">
+                 <widget class="QLineEdit" name="masterEnter">
                   <property name="placeholderText">
-                   <string>Email</string>
+                   <string>Master</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="lineEdit_3">
+                 <widget class="QLineEdit" name="lay1Enter">
                   <property name="placeholderText">
-                   <string>Phone Number</string>
+                   <string>Layborer 1</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="lay2Enter">
+                  <property name="placeholderText">
+                   <string>Layborer 2</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="lay3Enter">
+                  <property name="placeholderText">
+                   <string>Layborer 3</string>
                   </property>
                  </widget>
                 </item>
@@ -1240,7 +1254,7 @@ QLineEdit{
                 <string>Add User</string>
                </property>
                <property name="icon">
-                <iconset resource="QSS/QSS_Resources.qrc">
+                <iconset>
                  <normaloff>:/icons/Icons/file-plus.png</normaloff>:/icons/Icons/file-plus.png</iconset>
                </property>
                <property name="iconSize">

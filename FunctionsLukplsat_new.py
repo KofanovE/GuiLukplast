@@ -120,7 +120,41 @@ class AppFunctions():
       
     #1 create new shift
     def addNewShift(self, dbFolder):
-        pass
+
+        # create db connection
+        conn = AppFunctions.create_connection(dbFolder)
+        # get form values
+        shift = self.ui.shift.text()
+        master = self.ui.master.text()
+        lyb_1 = self.ui.lyb_1.text()
+        lyb_2 = self.ui.lyb_2.text()
+        lyb_3 = self.ui.lyb_3.text()
+
+        # create sql statement
+        insert_shift_data_sql = f"""
+        INSERT INTO ShiftTable (DATE, TIME, SHIFT, MASTER, LYB_1, LYB_2, LYB_3) VALUES (CURRENT_DATE, 
+                CURRENT_TIME, '{shift}', '{master}', '{lyb_1}', '{lyb_2}', '{lyb_3}');
+        """
+
+        # execute sql statement
+        if not conn.cursor().execute(insert_shift_data_sql):
+            print("Could not insert shift data")
+        else:
+            conn.commit()
+            # clear form input
+            self.ui.shiftEnter.setText("")
+            self.ui.masterEnter.setText("")
+            self.ui.lay1Enter.setText("")
+            self.ui.lay1Enter.setText("")
+            self.ui.lay1Enter.setText("")
+            # load new user from DB to table view
+            AppFunctions.displayShift(self, AppFunctions.getCurrentShift(dbFolder))
+
+
+
+
+
+    
     #2. get information from last row of ShiftTable
     def getCurrentShift(self, dbFolder):
         pass

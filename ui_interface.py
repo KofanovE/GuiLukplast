@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacenBdvZX.ui'
+## Form generated from reading UI file 'interfaceGPgtPy.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -670,20 +670,30 @@ class Ui_MainWindow(object):
         self.frame_5.setFrameShadow(QFrame.Raised)
         self.verticalLayout_9 = QVBoxLayout(self.frame_5)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.lineEdit = QLineEdit(self.frame_5)
-        self.lineEdit.setObjectName(u"lineEdit")
+        self.shiftEnter = QLineEdit(self.frame_5)
+        self.shiftEnter.setObjectName(u"shiftEnter")
 
-        self.verticalLayout_9.addWidget(self.lineEdit)
+        self.verticalLayout_9.addWidget(self.shiftEnter)
 
-        self.lineEdit_2 = QLineEdit(self.frame_5)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.masterEnter = QLineEdit(self.frame_5)
+        self.masterEnter.setObjectName(u"masterEnter")
 
-        self.verticalLayout_9.addWidget(self.lineEdit_2)
+        self.verticalLayout_9.addWidget(self.masterEnter)
 
-        self.lineEdit_3 = QLineEdit(self.frame_5)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.lay1Enter = QLineEdit(self.frame_5)
+        self.lay1Enter.setObjectName(u"lay1Enter")
 
-        self.verticalLayout_9.addWidget(self.lineEdit_3)
+        self.verticalLayout_9.addWidget(self.lay1Enter)
+
+        self.lay2Enter = QLineEdit(self.frame_5)
+        self.lay2Enter.setObjectName(u"lay2Enter")
+
+        self.verticalLayout_9.addWidget(self.lay2Enter)
+
+        self.lay3Enter = QLineEdit(self.frame_5)
+        self.lay3Enter.setObjectName(u"lay3Enter")
+
+        self.verticalLayout_9.addWidget(self.lay3Enter)
 
 
         self.verticalLayout_8.addWidget(self.frame_5)
@@ -782,9 +792,11 @@ class Ui_MainWindow(object):
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"About", None))
         self.label_2.setText("")
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Username", None))
-        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Email", None))
-        self.lineEdit_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Phone Number", None))
+        self.shiftEnter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Shift (day/night)", None))
+        self.masterEnter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Master", None))
+        self.lay1Enter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Layborer 1", None))
+        self.lay2Enter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Layborer 2", None))
+        self.lay3Enter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Layborer 3", None))
         self.addUserBtn.setText(QCoreApplication.translate("MainWindow", u"Add User", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Lukplast. Copyright 2023", None))
     # retranslateUi
