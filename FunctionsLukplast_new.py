@@ -7,6 +7,7 @@ import sys
 import sqlite3
 from sqlite3 import Error
 
+
 # Import QtableWidgetItem (for creating new table cells)
 from PySide2.QtWidgets import QTableWidgetItem
 
@@ -124,11 +125,11 @@ class AppFunctions():
         # create db connection
         conn = AppFunctions.create_connection(dbFolder)
         # get form values
-        shift = self.ui.shiftEnter.text()
-        master = self.ui.masterEnter.text()
-        lyb_1 = self.ui.lay1Enter.text()
-        lyb_2 = self.ui.lay2Enter.text()
-        lyb_3 = self.ui.lay3Enter.text()
+        shift = self.ui.shift.text()
+        master = self.ui.master.text()
+        lyb_1 = self.ui.lyb_1.text()
+        lyb_2 = self.ui.lyb_2.text()
+        lyb_3 = self.ui.lyb_3.text()
 
         # create sql statement
         insert_shift_data_sql = f"""
@@ -149,7 +150,6 @@ class AppFunctions():
             self.ui.lay1Enter.setText("")
             # load new user from DB to table view
             AppFunctions.displayShift(self, AppFunctions.getCurrentShift(dbFolder))
-            print("Check 1")
 
 
     

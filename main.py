@@ -19,7 +19,7 @@ from Custom_Widgets.Widgets import *
 settings = QSettings()
 ########################################################################
 
-from Functions import AppFunctions
+from FunctionsLukplast_new import AppFunctions
 
 
 ########################################################################
@@ -77,13 +77,15 @@ class MainWindow(QMainWindow):
 
 
         #Database folder and name
-        dbShiftTable = os.path.abspath(os.path.join(os.path.dirname(__file__), 'Database/LukplastDB.db'))
+        dbFolder = os.path.abspath(os.path.join(os.path.dirname(__file__), 'Database/LukplastDB.db'))
         #Run main functions to cteate database and table
         AppFunctions.main(dbFolder)
         #Display db rows in table
-        AppFunctions.displayUsers(self, AppFunctions.getAllUsers(dbFolder))
+        print("Check 2   " + dbFolder )
+        
+        AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
         #Add new user to database
-        self.ui.addUserBtn.clicked.connect(lambda: AppFunctions.addUser(self, dfFolder))
+        self.ui.addShiftBtn.clicked.connect(lambda: AppFunctions.addNewShift(self, dbFolder))
 
 
 ########################################################################

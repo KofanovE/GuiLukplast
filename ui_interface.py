@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceGPgtPy.ui'
+## Form generated from reading UI file 'interfacewoJBjl.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -698,17 +698,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.frame_5)
 
-        self.addUserBtn = QPushButton(self.widget_2)
-        self.addUserBtn.setObjectName(u"addUserBtn")
+        self.addShiftBtn = QPushButton(self.widget_2)
+        self.addShiftBtn.setObjectName(u"addShiftBtn")
         font5 = QFont()
         font5.setBold(True)
         font5.setWeight(75)
-        self.addUserBtn.setFont(font5)
-        self.addUserBtn.setCursor(QCursor(Qt.PointingHandCursor))
-        self.addUserBtn.setIcon(icon3)
-        self.addUserBtn.setIconSize(QSize(24, 24))
+        self.addShiftBtn.setFont(font5)
+        self.addShiftBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.addShiftBtn.setIcon(icon3)
+        self.addShiftBtn.setIconSize(QSize(24, 24))
 
-        self.verticalLayout_8.addWidget(self.addUserBtn, 0, Qt.AlignHCenter)
+        self.verticalLayout_8.addWidget(self.addShiftBtn, 0, Qt.AlignHCenter)
 
 
         self.verticalLayout_7.addWidget(self.widget_2, 0, Qt.AlignHCenter|Qt.AlignTop)
@@ -792,12 +792,12 @@ class Ui_MainWindow(object):
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"About", None))
         self.label_2.setText("")
-        self.shiftEnter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Shift (day/night)", None))
+        self.shiftEnter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Shift ( day/night )", None))
         self.masterEnter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Master", None))
         self.lay1Enter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Layborer 1", None))
         self.lay2Enter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Layborer 2", None))
         self.lay3Enter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Layborer 3", None))
-        self.addUserBtn.setText(QCoreApplication.translate("MainWindow", u"Add User", None))
+        self.addShiftBtn.setText(QCoreApplication.translate("MainWindow", u"Add Shift", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Lukplast. Copyright 2023", None))
     # retranslateUi
 

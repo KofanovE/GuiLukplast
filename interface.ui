@@ -1204,7 +1204,7 @@ QLineEdit{
                 <item>
                  <widget class="QLineEdit" name="shiftEnter">
                   <property name="placeholderText">
-                   <string>Shift (day/night)</string>
+                   <string>Shift ( day/night )</string>
                   </property>
                  </widget>
                 </item>
@@ -1240,7 +1240,7 @@ QLineEdit{
               </widget>
              </item>
              <item alignment="Qt::AlignHCenter">
-              <widget class="QPushButton" name="addUserBtn">
+              <widget class="QPushButton" name="addShiftBtn">
                <property name="font">
                 <font>
                  <weight>75</weight>
@@ -1251,7 +1251,7 @@ QLineEdit{
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="text">
-                <string>Add User</string>
+                <string>Add Shift</string>
                </property>
                <property name="icon">
                 <iconset>
