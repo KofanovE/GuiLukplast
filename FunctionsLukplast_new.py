@@ -146,10 +146,10 @@ class AppFunctions():
             self.ui.shiftEnter.setText("")
             self.ui.masterEnter.setText("")
             self.ui.lay1Enter.setText("")
-            self.ui.lay1Enter.setText("")
-            self.ui.lay1Enter.setText("")
+            self.ui.lay2Enter.setText("")
+            self.ui.lay3Enter.setText("")
             # load new user from DB to table view
-            AppFunctions.displayShift(self, AppFunctions.getCurrentShift(dbFolder))
+            AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
 
 
     
@@ -197,7 +197,7 @@ class AppFunctions():
         itemCount = 0
         # add items to row
         for item in row:
-            print("!!!" + itemCount)
+            print(itemCount)
             print(item)
             itemCount += 1
         
