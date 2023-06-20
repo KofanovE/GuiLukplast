@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacewoJBjl.ui'
+## Form generated from reading UI file 'interfaceLamHYC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -99,9 +99,7 @@ class Ui_MainWindow(object):
         self.header = QWidget(self.centralwidget)
         self.header.setObjectName(u"header")
         self.horizontalLayout = QHBoxLayout(self.header)
-        self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.frame_2 = QFrame(self.header)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setFrameShape(QFrame.StyledPanel)
@@ -129,7 +127,78 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.addWidget(self.label)
 
 
-        self.horizontalLayout.addWidget(self.frame_2, 0, Qt.AlignLeft)
+        self.horizontalLayout.addWidget(self.frame_2)
+
+        self.horizontalSpacer_2 = QSpacerItem(58, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_2)
+
+        self.frameShift = QFrame(self.header)
+        self.frameShift.setObjectName(u"frameShift")
+        self.frameShift.setFrameShape(QFrame.StyledPanel)
+        self.frameShift.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_17 = QHBoxLayout(self.frameShift)
+        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.label_20 = QLabel(self.frameShift)
+        self.label_20.setObjectName(u"label_20")
+        font1 = QFont()
+        font1.setPointSize(12)
+        self.label_20.setFont(font1)
+
+        self.horizontalLayout_17.addWidget(self.label_20)
+
+        self.masterShow = QLineEdit(self.frameShift)
+        self.masterShow.setObjectName(u"masterShow")
+        self.masterShow.setMinimumSize(QSize(75, 30))
+        self.masterShow.setMaximumSize(QSize(75, 30))
+
+        self.horizontalLayout_17.addWidget(self.masterShow)
+
+        self.label_21 = QLabel(self.frameShift)
+        self.label_21.setObjectName(u"label_21")
+        self.label_21.setFont(font1)
+
+        self.horizontalLayout_17.addWidget(self.label_21)
+
+        self.worker1Show = QLineEdit(self.frameShift)
+        self.worker1Show.setObjectName(u"worker1Show")
+        self.worker1Show.setMinimumSize(QSize(75, 30))
+        self.worker1Show.setMaximumSize(QSize(75, 30))
+
+        self.horizontalLayout_17.addWidget(self.worker1Show)
+
+        self.label_22 = QLabel(self.frameShift)
+        self.label_22.setObjectName(u"label_22")
+        self.label_22.setFont(font1)
+
+        self.horizontalLayout_17.addWidget(self.label_22)
+
+        self.worker2Show = QLineEdit(self.frameShift)
+        self.worker2Show.setObjectName(u"worker2Show")
+        self.worker2Show.setMinimumSize(QSize(75, 30))
+        self.worker2Show.setMaximumSize(QSize(75, 30))
+
+        self.horizontalLayout_17.addWidget(self.worker2Show)
+
+        self.label_23 = QLabel(self.frameShift)
+        self.label_23.setObjectName(u"label_23")
+        self.label_23.setFont(font1)
+
+        self.horizontalLayout_17.addWidget(self.label_23)
+
+        self.worker3Show = QLineEdit(self.frameShift)
+        self.worker3Show.setObjectName(u"worker3Show")
+        self.worker3Show.setMinimumSize(QSize(75, 30))
+        self.worker3Show.setMaximumSize(QSize(75, 30))
+
+        self.horizontalLayout_17.addWidget(self.worker3Show)
+
+
+        self.horizontalLayout.addWidget(self.frameShift)
+
+        self.horizontalSpacer_3 = QSpacerItem(57, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_3)
 
         self.frame = QFrame(self.header)
         self.frame.setObjectName(u"frame")
@@ -158,11 +227,11 @@ class Ui_MainWindow(object):
         self.pushButton = QPushButton(self.frame)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setMinimumSize(QSize(0, 0))
-        font1 = QFont()
-        font1.setPointSize(1)
-        font1.setBold(True)
-        font1.setWeight(75)
-        self.pushButton.setFont(font1)
+        font2 = QFont()
+        font2.setPointSize(1)
+        font2.setBold(True)
+        font2.setWeight(75)
+        self.pushButton.setFont(font2)
         self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
         icon1 = QIcon()
         icon1.addFile(u":/icons/Icons/users.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -172,7 +241,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.addWidget(self.pushButton)
 
 
-        self.horizontalLayout.addWidget(self.frame, 0, Qt.AlignRight|Qt.AlignTop)
+        self.horizontalLayout.addWidget(self.frame)
 
 
         self.verticalLayout.addWidget(self.header)
@@ -303,9 +372,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.label_8 = QLabel(self.topTable1)
         self.label_8.setObjectName(u"label_8")
-        font2 = QFont()
-        font2.setPointSize(12)
-        self.label_8.setFont(font2)
+        self.label_8.setFont(font1)
 
         self.horizontalLayout_7.addWidget(self.label_8)
 
@@ -324,7 +391,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
         self.label_9 = QLabel(self.frameTable1)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setFont(font2)
+        self.label_9.setFont(font1)
 
         self.horizontalLayout_15.addWidget(self.label_9)
 
@@ -337,7 +404,7 @@ class Ui_MainWindow(object):
 
         self.label_16 = QLabel(self.frameTable1)
         self.label_16.setObjectName(u"label_16")
-        self.label_16.setFont(font2)
+        self.label_16.setFont(font1)
 
         self.horizontalLayout_15.addWidget(self.label_16)
 
@@ -350,7 +417,7 @@ class Ui_MainWindow(object):
 
         self.label_17 = QLabel(self.frameTable1)
         self.label_17.setObjectName(u"label_17")
-        self.label_17.setFont(font2)
+        self.label_17.setFont(font1)
 
         self.horizontalLayout_15.addWidget(self.label_17)
 
@@ -363,7 +430,7 @@ class Ui_MainWindow(object):
 
         self.label_18 = QLabel(self.frameTable1)
         self.label_18.setObjectName(u"label_18")
-        self.label_18.setFont(font2)
+        self.label_18.setFont(font1)
 
         self.horizontalLayout_15.addWidget(self.label_18)
 
@@ -473,7 +540,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.label_10 = QLabel(self.frame_8)
         self.label_10.setObjectName(u"label_10")
-        self.label_10.setFont(font2)
+        self.label_10.setFont(font1)
 
         self.horizontalLayout_9.addWidget(self.label_10)
 
@@ -493,7 +560,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
         self.label_11 = QLabel(self.frame_9)
         self.label_11.setObjectName(u"label_11")
-        self.label_11.setFont(font2)
+        self.label_11.setFont(font1)
 
         self.horizontalLayout_10.addWidget(self.label_11)
 
@@ -522,7 +589,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
         self.label_12 = QLabel(self.frame_10)
         self.label_12.setObjectName(u"label_12")
-        self.label_12.setFont(font2)
+        self.label_12.setFont(font1)
 
         self.horizontalLayout_11.addWidget(self.label_12)
 
@@ -542,7 +609,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.label_13 = QLabel(self.frame_11)
         self.label_13.setObjectName(u"label_13")
-        self.label_13.setFont(font2)
+        self.label_13.setFont(font1)
 
         self.horizontalLayout_13.addWidget(self.label_13)
 
@@ -564,7 +631,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
         self.label_15 = QLabel(self.frame_12)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setFont(font2)
+        self.label_15.setFont(font1)
 
         self.horizontalLayout_12.addWidget(self.label_15)
 
@@ -584,7 +651,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
         self.label_14 = QLabel(self.frame_13)
         self.label_14.setObjectName(u"label_14")
-        self.label_14.setFont(font2)
+        self.label_14.setFont(font1)
 
         self.horizontalLayout_14.addWidget(self.label_14)
 
@@ -747,6 +814,14 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.menuBtn.setText("")
         self.label.setText(QCoreApplication.translate("MainWindow", u"Lukplast", None))
+        self.label_20.setText(QCoreApplication.translate("MainWindow", u"Master", None))
+        self.masterShow.setPlaceholderText(QCoreApplication.translate("MainWindow", u"name", None))
+        self.label_21.setText(QCoreApplication.translate("MainWindow", u"Worker 1", None))
+        self.worker1Show.setPlaceholderText(QCoreApplication.translate("MainWindow", u"name", None))
+        self.label_22.setText(QCoreApplication.translate("MainWindow", u"Worker 2", None))
+        self.worker2Show.setPlaceholderText(QCoreApplication.translate("MainWindow", u"name", None))
+        self.label_23.setText(QCoreApplication.translate("MainWindow", u"Worker 3", None))
+        self.worker3Show.setPlaceholderText(QCoreApplication.translate("MainWindow", u"name", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))

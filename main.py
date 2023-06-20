@@ -81,7 +81,6 @@ class MainWindow(QMainWindow):
         #Run main functions to cteate database and table
         AppFunctions.main(dbFolder)
         #Display db rows in table
-        print("Check 2   " + dbFolder )
         
         AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
         #Add new user to database

@@ -193,13 +193,19 @@ class AppFunctions():
     
     #9. display shift informations:
     def displayShift(self, row):
-
         itemCount = 0
         # add items to row
-        for item in row:
-            print(itemCount)
-            print(item)
-            itemCount += 1
+        for items in row:
+            for item in items:
+                if itemCount == 4:
+                    self.ui.masterShow.setText(item)
+                elif itemCount == 5:
+                    self.ui.worker1Show.setText(item)
+                elif itemCount == 6:
+                    self.ui.worker2Show.setText(item)
+                elif itemCount == 7:
+                    self.ui.worker3Show.setText(item)                 
+                itemCount += 1
         
 
 
