@@ -84,6 +84,7 @@ class MainWindow(QMainWindow):
         
         AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
         #Add new user to database
+        
         self.ui.addShiftBtn.clicked.connect(lambda: AppFunctions.addNewShift(self, dbFolder))
 
 

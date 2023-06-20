@@ -137,10 +137,13 @@ class AppFunctions():
                 CURRENT_TIME, '{shift}', '{master}', '{lyb_1}', '{lyb_2}', '{lyb_3}');
         """
 
-        # execute sql statement
-        if not conn.cursor().execute(insert_shift_data_sql):
-            print("Could not insert shift data")
-        else:
+        del_last_shift_data = f"""
+        DELETE FROM OneTaskPosition1
+        """
+        if conn is not None:
+            # create user table
+            conn.cursor().execute(insert_shift_data_sql)
+            conn.cursor().execute(del_last_shift_data)
             conn.commit()
             # clear form input
             self.ui.shiftEnter.setText("")
@@ -148,6 +151,19 @@ class AppFunctions():
             self.ui.lay1Enter.setText("")
             self.ui.lay2Enter.setText("")
             self.ui.lay3Enter.setText("")
+            AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
+            
+        else:
+            print("Could not insert shift data")
+
+
+
+
+
+ 
+            
+            
+            
             # load new user from DB to table view
             AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
 
