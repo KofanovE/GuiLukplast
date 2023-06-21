@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceLamHYC.ui'
+## Form generated from reading UI file 'interfaceCzatTb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1330, 670)
+        MainWindow.resize(1330, 688)
         MainWindow.setStyleSheet(u"*{\n"
 "	border: none;\n"
 "	background-color: transparent;\n"
@@ -186,12 +186,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_17.addWidget(self.label_23)
 
-        self.worker3Show = QLineEdit(self.frameShift)
-        self.worker3Show.setObjectName(u"worker3Show")
-        self.worker3Show.setMinimumSize(QSize(75, 30))
-        self.worker3Show.setMaximumSize(QSize(75, 30))
+        self.TypeEnter1_2 = QLineEdit(self.frameShift)
+        self.TypeEnter1_2.setObjectName(u"TypeEnter1_2")
+        self.TypeEnter1_2.setMinimumSize(QSize(75, 30))
+        self.TypeEnter1_2.setMaximumSize(QSize(75, 30))
 
-        self.horizontalLayout_17.addWidget(self.worker3Show)
+        self.horizontalLayout_17.addWidget(self.TypeEnter1_2)
 
 
         self.horizontalLayout.addWidget(self.frameShift)
@@ -440,6 +440,19 @@ class Ui_MainWindow(object):
         self.TypeEnter1.setMaximumSize(QSize(75, 30))
 
         self.horizontalLayout_15.addWidget(self.TypeEnter1)
+
+        self.label_24 = QLabel(self.frameTable1)
+        self.label_24.setObjectName(u"label_24")
+        self.label_24.setFont(font1)
+
+        self.horizontalLayout_15.addWidget(self.label_24)
+
+        self.TypeEnter1_3 = QLineEdit(self.frameTable1)
+        self.TypeEnter1_3.setObjectName(u"TypeEnter1_3")
+        self.TypeEnter1_3.setMinimumSize(QSize(75, 30))
+        self.TypeEnter1_3.setMaximumSize(QSize(75, 30))
+
+        self.horizontalLayout_15.addWidget(self.TypeEnter1_3)
 
 
         self.horizontalLayout_7.addWidget(self.frameTable1)
@@ -821,7 +834,7 @@ class Ui_MainWindow(object):
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Worker 2", None))
         self.worker2Show.setPlaceholderText(QCoreApplication.translate("MainWindow", u"name", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"Worker 3", None))
-        self.worker3Show.setPlaceholderText(QCoreApplication.translate("MainWindow", u"name", None))
+        self.TypeEnter1_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"name", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
@@ -842,6 +855,8 @@ class Ui_MainWindow(object):
         self.DiametrEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"100", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Type", None))
         self.TypeEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"PE", None))
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"Num", None))
+        self.TypeEnter1_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"8", None))
         self.addTable1Btn.setText("")
         self.closeTable1Btn.setText("")
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)

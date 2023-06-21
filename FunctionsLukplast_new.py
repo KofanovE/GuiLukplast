@@ -20,6 +20,7 @@ class AppFunctions():
     def __init__(self, arg):
         super(AppFunctions, self).__init__()
         self.arg = arg
+        self.idShift = 0
 
 
     ## Create database connection
@@ -74,6 +75,7 @@ class AppFunctions():
                                     TYPE TEXT,
                                     SUM_WEIGHT REAL,
                                     SUM_LENGTH REAL,
+                                    CLOSED INTEGER,
                                     CONSTRAINT ID_SHIFT FOREIGN KEY (ID_SHIFT) REFERENCES ShiftTable (ID_SHIFT)
                                     
                                 );
@@ -133,7 +135,7 @@ class AppFunctions():
 
         # create sql statement
         insert_shift_data_sql = f"""
-        INSERT INTO ShiftTable (DATE, TIME, SHIFT, MASTER, LYB_1, LYB_2, LYB_3) VALUES (CURRENT_DATE, 
+        INSERT INTO TaskTable (DATE, TIME, ID_SHIFT, MASTER, LYB_1, LYB_2, LYB_3) VALUES (CURRENT_DATE, 
                 CURRENT_TIME, '{shift}', '{master}', '{lyb_1}', '{lyb_2}', '{lyb_3}');
         """
 
@@ -155,12 +157,6 @@ class AppFunctions():
             
         else:
             print("Could not insert shift data")
-
-
-
-
-
- 
             
             
             
@@ -187,13 +183,62 @@ class AppFunctions():
             print(e)
         
 
-    
+    """
     #3. if there is a OneTaskPosition1 table - all data delete
     def delLastShiftInfo(self, dbFolder):
         pass
+    """
+
+
+    
     #4. add new task of corect shift to OneTaskPosition1
     def addNewTask(self, dbFolder):
-        pass
+
+        # create db connection
+        conn = AppFunctions.create_connection(dbFolder)
+        # get form values
+        
+        machine = self.ui.MachineNum1.text()
+        length = self.ui.LengthEnter1.text()
+        diametr = self.ui.DiametrEnter1.text()
+        num_in_pack = self.ui.NumPackEnter1.text()
+        type_pype = self.ui.TypeEnter1.text()
+        
+
+
+        # create sql statement        
+        insert_task_data_sql = f"""
+        INSERT INTO ShiftTable (DATE, TIME, ID_SHIFT, MACHINE, LENGTH, DIAMETR, NUM_IN_PACK, TYPE, SUM_WEIGHT, SUM_LENGTH, CLOSED)
+        VALUES (CURRENT_DATE, CURRENT_TIME, '{AppFunctions.idShift}', '{machine}', '{length}', '{diametr}', '{num_in_pack}', '{type_pype}', '{0}', '{0}', , '{0}');
+        """
+
+        #!!!!!!!!!!!!!!!!!!
+        # I stopped here. Next step - create showing of ID task
+        #!!!!!!!!!!!!!!!!!!
+
+
+        if conn is not None:
+            # create user table
+            conn.cursor().execute(insert_task_data_sql)
+            conn.commit()
+            # clear form input
+            self.ui.shiftEnter.setText("")
+            self.ui.masterEnter.setText("")
+            self.ui.lay1Enter.setText("")
+            self.ui.lay2Enter.setText("")
+            self.ui.lay3Enter.setText("")
+            AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
+            
+        else:
+            print("Could not insert shift data")
+            
+            
+            
+            # load new user from DB to table view
+            AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
+
+
+    
     #5. add last task to TaskTable
     def addTaskToTaskTable(self, dbFolder):
         pass        
@@ -213,7 +258,9 @@ class AppFunctions():
         # add items to row
         for items in row:
             for item in items:
-                if itemCount == 4:
+                if itemCount == 0:
+                    AppFunctions.idShift = item
+                elif itemCount == 4:
                     self.ui.masterShow.setText(item)
                 elif itemCount == 5:
                     self.ui.worker1Show.setText(item)

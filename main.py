@@ -83,10 +83,12 @@ class MainWindow(QMainWindow):
         #Display db rows in table
         
         AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
-        #Add new user to database
-        
+
+        #Add new user to database 
         self.ui.addShiftBtn.clicked.connect(lambda: AppFunctions.addNewShift(self, dbFolder))
 
+        #Add new task to TaskTable
+        self.ui.addTable1Btn.clicked.connect(lambda: AppFunctions.addNewTask(self, dbFolder))
 
 ########################################################################
 ## EXECUTE APP

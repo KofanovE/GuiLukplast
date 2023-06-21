@@ -810,6 +810,37 @@ QLineEdit{
                             </property>
                            </widget>
                           </item>
+                          <item>
+                           <widget class="QLabel" name="label_24">
+                            <property name="font">
+                             <font>
+                              <pointsize>12</pointsize>
+                             </font>
+                            </property>
+                            <property name="text">
+                             <string>Num</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLineEdit" name="TypeEnter1_3">
+                            <property name="minimumSize">
+                             <size>
+                              <width>75</width>
+                              <height>30</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>75</width>
+                              <height>30</height>
+                             </size>
+                            </property>
+                            <property name="placeholderText">
+                             <string>8</string>
+                            </property>
+                           </widget>
+                          </item>
                          </layout>
                         </widget>
                        </item>
