@@ -90,6 +90,9 @@ class MainWindow(QMainWindow):
         #Add new task to TaskTable
         self.ui.addTable1Btn.clicked.connect(lambda: AppFunctions.addNewTask(self, dbFolder))
 
+        #Close task for TaskTable
+        self.ui.closeTable1Btn.clicked.connect(lambda: AppFunctions.closeTask1(self, dbFolder))
+
 ########################################################################
 ## EXECUTE APP
 ########################################################################

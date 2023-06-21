@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceCzatTb.ui'
+## Form generated from reading UI file 'interfacearudHb.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -186,12 +186,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_17.addWidget(self.label_23)
 
-        self.TypeEnter1_2 = QLineEdit(self.frameShift)
-        self.TypeEnter1_2.setObjectName(u"TypeEnter1_2")
-        self.TypeEnter1_2.setMinimumSize(QSize(75, 30))
-        self.TypeEnter1_2.setMaximumSize(QSize(75, 30))
+        self.worker3Show = QLineEdit(self.frameShift)
+        self.worker3Show.setObjectName(u"worker3Show")
+        self.worker3Show.setMinimumSize(QSize(75, 30))
+        self.worker3Show.setMaximumSize(QSize(75, 30))
 
-        self.horizontalLayout_17.addWidget(self.TypeEnter1_2)
+        self.horizontalLayout_17.addWidget(self.worker3Show)
 
 
         self.horizontalLayout.addWidget(self.frameShift)
@@ -408,12 +408,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addWidget(self.label_16)
 
-        self.LengthEnt1 = QLineEdit(self.frameTable1)
-        self.LengthEnt1.setObjectName(u"LengthEnt1")
-        self.LengthEnt1.setMinimumSize(QSize(75, 30))
-        self.LengthEnt1.setMaximumSize(QSize(75, 30))
+        self.LengthEnter1 = QLineEdit(self.frameTable1)
+        self.LengthEnter1.setObjectName(u"LengthEnter1")
+        self.LengthEnter1.setMinimumSize(QSize(75, 30))
+        self.LengthEnter1.setMaximumSize(QSize(75, 30))
 
-        self.horizontalLayout_15.addWidget(self.LengthEnt1)
+        self.horizontalLayout_15.addWidget(self.LengthEnter1)
 
         self.label_17 = QLabel(self.frameTable1)
         self.label_17.setObjectName(u"label_17")
@@ -447,12 +447,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addWidget(self.label_24)
 
-        self.TypeEnter1_3 = QLineEdit(self.frameTable1)
-        self.TypeEnter1_3.setObjectName(u"TypeEnter1_3")
-        self.TypeEnter1_3.setMinimumSize(QSize(75, 30))
-        self.TypeEnter1_3.setMaximumSize(QSize(75, 30))
+        self.NumPackEnter1 = QLineEdit(self.frameTable1)
+        self.NumPackEnter1.setObjectName(u"NumPackEnter1")
+        self.NumPackEnter1.setMinimumSize(QSize(75, 30))
+        self.NumPackEnter1.setMaximumSize(QSize(75, 30))
 
-        self.horizontalLayout_15.addWidget(self.TypeEnter1_3)
+        self.horizontalLayout_15.addWidget(self.NumPackEnter1)
 
 
         self.horizontalLayout_7.addWidget(self.frameTable1)
@@ -834,7 +834,7 @@ class Ui_MainWindow(object):
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Worker 2", None))
         self.worker2Show.setPlaceholderText(QCoreApplication.translate("MainWindow", u"name", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"Worker 3", None))
-        self.TypeEnter1_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"name", None))
+        self.worker3Show.setPlaceholderText(QCoreApplication.translate("MainWindow", u"name", None))
         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
@@ -850,13 +850,13 @@ class Ui_MainWindow(object):
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Machine", None))
         self.MachineNum1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"L", None))
-        self.LengthEnt1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
+        self.LengthEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"D", None))
         self.DiametrEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"100", None))
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Type", None))
-        self.TypeEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"PE", None))
+        self.TypeEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"type", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Num", None))
-        self.TypeEnter1_3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"8", None))
+        self.NumPackEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"8", None))
         self.addTable1Btn.setText("")
         self.closeTable1Btn.setText("")
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)

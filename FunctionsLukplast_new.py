@@ -15,12 +15,15 @@ from PySide2.QtWidgets import QTableWidgetItem
 # Function class
 class AppFunctions():
 
+   
     """docstring for AppFunctions"""
 
     def __init__(self, arg):
         super(AppFunctions, self).__init__()
         self.arg = arg
         self.idShift = 0
+        self.idTask1 = 0
+        self.taskStatus1 = 0
 
 
     ## Create database connection
@@ -135,7 +138,7 @@ class AppFunctions():
 
         # create sql statement
         insert_shift_data_sql = f"""
-        INSERT INTO TaskTable (DATE, TIME, ID_SHIFT, MASTER, LYB_1, LYB_2, LYB_3) VALUES (CURRENT_DATE, 
+        INSERT INTO ShiftTable (DATE, TIME, ID_SHIFT, MASTER, LYB_1, LYB_2, LYB_3) VALUES (CURRENT_DATE, 
                 CURRENT_TIME, '{shift}', '{master}', '{lyb_1}', '{lyb_2}', '{lyb_3}');
         """
 
@@ -157,9 +160,7 @@ class AppFunctions():
             
         else:
             print("Could not insert shift data")
-            
-            
-            
+                        
             # load new user from DB to table view
             AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
 
@@ -194,6 +195,11 @@ class AppFunctions():
     #4. add new task of corect shift to OneTaskPosition1
     def addNewTask(self, dbFolder):
 
+        AppFunctions.getTaskStatus1(self, AppFunctions.getCurrentTask(self, dbFolder))
+        print(AppFunctions.taskStatus1)
+        if not AppFunctions.taskStatus1:
+            return None
+
         # create db connection
         conn = AppFunctions.create_connection(dbFolder)
         # get form values
@@ -208,13 +214,9 @@ class AppFunctions():
 
         # create sql statement        
         insert_task_data_sql = f"""
-        INSERT INTO ShiftTable (DATE, TIME, ID_SHIFT, MACHINE, LENGTH, DIAMETR, NUM_IN_PACK, TYPE, SUM_WEIGHT, SUM_LENGTH, CLOSED)
-        VALUES (CURRENT_DATE, CURRENT_TIME, '{AppFunctions.idShift}', '{machine}', '{length}', '{diametr}', '{num_in_pack}', '{type_pype}', '{0}', '{0}', , '{0}');
+        INSERT INTO TaskTable (DATE, TIME, ID_SHIFT, MACHINE, LENGTH, DIAMETR, NUM_IN_PACK, TYPE, SUM_WEIGHT, SUM_LENGTH, CLOSED)
+        VALUES (CURRENT_DATE, CURRENT_TIME, '{AppFunctions.idShift}', '{machine}', '{length}', '{diametr}', '{num_in_pack}', '{type_pype}', '{0}', '{0}', '{0}');
         """
-
-        #!!!!!!!!!!!!!!!!!!
-        # I stopped here. Next step - create showing of ID task
-        #!!!!!!!!!!!!!!!!!!
 
 
         if conn is not None:
@@ -222,20 +224,18 @@ class AppFunctions():
             conn.cursor().execute(insert_task_data_sql)
             conn.commit()
             # clear form input
-            self.ui.shiftEnter.setText("")
-            self.ui.masterEnter.setText("")
-            self.ui.lay1Enter.setText("")
-            self.ui.lay2Enter.setText("")
-            self.ui.lay3Enter.setText("")
-            AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
+            self.ui.MachineNum1.setText("")
+            self.ui.LengthEnter1.setText("")
+            self.ui.DiametrEnter1.setText("")
+            self.ui.NumPackEnter1.setText("")
+            self.ui.TypeEnter1.setText("")
+            AppFunctions.displayTask(self, AppFunctions.getCurrentTask(self, dbFolder))
             
         else:
-            print("Could not insert shift data")
-            
-            
+            print("Could not insert shift data")           
             
             # load new user from DB to table view
-            AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
+            AppFunctions.displayTask(self, AppFunctions.getCurrentTask(self, dbFolder))
 
 
     
@@ -273,8 +273,88 @@ class AppFunctions():
 
 
     #10. display current informations of current task:
-    def displayTask(self, rows):
-        pass
+    def displayTask(self, row):
+        itemCount = 0
+        # add items to row
+        for items in row:
+            for item in items:
+                if itemCount == 0:
+                    AppFunctions.idTask1 = item
+                    self.ui.TaskNum1.setText(str(item))
+                    self.ui.TaskNum1.setReadOnly(True)
+                elif itemCount == 4:
+                    self.ui.MachineNum1.setText(str(item))
+                    self.ui.MachineNum1.setReadOnly(True)
+                elif itemCount == 5:
+                    self.ui.LengthEnter1.setText(str(item))
+                    self.ui.LengthEnter1.setReadOnly(True)
+                elif itemCount == 6:
+                    self.ui.DiametrEnter1.setText(str(item))
+                    self.ui.DiametrEnter1.setReadOnly(True)
+                elif itemCount == 8:
+                    self.ui.TypeEnter1.setText(str(item))
+                    self.ui.TypeEnter1.setReadOnly(True)
+                elif itemCount == 7:
+                    self.ui.NumPackEnter1.setText(str(item))
+                    self.ui.NumPackEnter1.setReadOnly(True) 
+                itemCount += 1
+        
+
+    #11. get current task information for current table
+    def getCurrentTask(self, dbFolder):        
+        # create db connection
+        conn = AppFunctions.create_connection(dbFolder)
+        get_last_task = """
+                            SELECT * FROM TaskTable ORDER BY ROWID DESC LIMIT 1;
+                        """
+        try:
+            c = conn.cursor()
+            c.execute(get_last_task)
+            # return all table rows
+            return c
+        except Error as e:
+            print(e)
+
+    #12. close task for table1
+    def closeTask1(self, dbFolder):
+
+        conn = AppFunctions.create_connection(dbFolder)
+
+        self.ui.MachineNum1.setText("")
+        self.ui.MachineNum1.setReadOnly(False)
+        self.ui.LengthEnter1.setText("")
+        self.ui.LengthEnter1.setReadOnly(False)
+        self.ui.DiametrEnter1.setText("")
+        self.ui.DiametrEnter1.setReadOnly(False)
+        self.ui.NumPackEnter1.setText("")
+        self.ui.NumPackEnter1.setReadOnly(False)
+        self.ui.TypeEnter1.setText("")
+        self.ui.TypeEnter1.setReadOnly(False)
+        self.ui.TaskNum1.setText("")
+        self.ui.TaskNum1.setReadOnly(False)
+
+        print(AppFunctions.idTask1)
+
+        insert_task_close_marker = f"""
+        UPDATE TaskTable SET CLOSED = ('{1}') WHERE TASK_ID = ('{AppFunctions.idTask1}') ;
+        """
+
+        if conn is not None:
+            # create user table
+            conn.cursor().execute(insert_task_close_marker)
+            conn.commit()           
+        else:
+            print("Could not insert shift data")           
 
 
+    #13. get closed_status task for table 1
+    def getTaskStatus1(self, row):
+        for items in row:
+            AppFunctions.taskStatus1 = items[11]
+            
+        
+
+        
+        
+        
     

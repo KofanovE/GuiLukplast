@@ -276,7 +276,7 @@ QLineEdit{
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="TypeEnter1_2">
+           <widget class="QLineEdit" name="worker3Show">
             <property name="minimumSize">
              <size>
               <width>75</width>
@@ -730,7 +730,7 @@ QLineEdit{
                            </widget>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="LengthEnt1">
+                           <widget class="QLineEdit" name="LengthEnter1">
                             <property name="minimumSize">
                              <size>
                               <width>75</width>
@@ -806,7 +806,7 @@ QLineEdit{
                              </size>
                             </property>
                             <property name="placeholderText">
-                             <string>PE</string>
+                             <string>type</string>
                             </property>
                            </widget>
                           </item>
@@ -823,7 +823,7 @@ QLineEdit{
                            </widget>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="TypeEnter1_3">
+                           <widget class="QLineEdit" name="NumPackEnter1">
                             <property name="minimumSize">
                              <size>
                               <width>75</width>
