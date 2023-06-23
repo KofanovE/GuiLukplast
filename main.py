@@ -78,13 +78,26 @@ class MainWindow(QMainWindow):
 
         #Database folder and name
         dbFolder = os.path.abspath(os.path.join(os.path.dirname(__file__), 'Database/LukplastDB.db'))
+
+        
         #Run main functions to cteate database and table
         AppFunctions.main(dbFolder)
-        #Display db rows in table
         
+        #Display data from ShiftTable
         AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
 
-        #Add new user to database 
+
+        AppFunctions.getTaskStatus1(self, AppFunctions.getCurrentTask(self, dbFolder))
+        if AppFunctions.taskStatus1:
+            self.ui.closeTable1Btn.setVisible(False)
+            self.ui.addPos1Btn.setVisible(False)
+        else:
+            self.ui.addTable1Btn.setVisible(False)
+            AppFunctions.displayTask(self, AppFunctions.getCurrentTask(self, dbFolder))
+            
+        
+
+        #Add new shift data
         self.ui.addShiftBtn.clicked.connect(lambda: AppFunctions.addNewShift(self, dbFolder))
 
         #Add new task to TaskTable

@@ -122,6 +122,8 @@ class AppFunctions():
             print('Error! Cannot create the database connection')
 
 
+        
+
 
       
     #1 create new shift
@@ -136,12 +138,16 @@ class AppFunctions():
         lyb_2 = self.ui.lay2Enter.text()
         lyb_3 = self.ui.lay3Enter.text()
 
+        print(shift, master, lyb_1, lyb_2, lyb_3)
+        print(type(shift), type(master), type(lyb_1), type(lyb_2), type(lyb_3))
+        
         # create sql statement
         insert_shift_data_sql = f"""
-        INSERT INTO ShiftTable (DATE, TIME, ID_SHIFT, MASTER, LYB_1, LYB_2, LYB_3) VALUES (CURRENT_DATE, 
-                CURRENT_TIME, '{shift}', '{master}', '{lyb_1}', '{lyb_2}', '{lyb_3}');
+        INSERT INTO ShiftTable (DATE, TIME, SHIFT, MASTER, LYB_1, LYB_2, LYB_3) VALUES (CURRENT_DATE, CURRENT_TIME, '{shift}', '{master}', '{lyb_1}', '{lyb_2}', '{lyb_3}');
         """
 
+      
+        
         del_last_shift_data = f"""
         DELETE FROM OneTaskPosition1
         """
@@ -195,11 +201,6 @@ class AppFunctions():
     #4. add new task of corect shift to OneTaskPosition1
     def addNewTask(self, dbFolder):
 
-        AppFunctions.getTaskStatus1(self, AppFunctions.getCurrentTask(self, dbFolder))
-        print(AppFunctions.taskStatus1)
-        if not AppFunctions.taskStatus1:
-            return None
-
         # create db connection
         conn = AppFunctions.create_connection(dbFolder)
         # get form values
@@ -230,6 +231,9 @@ class AppFunctions():
             self.ui.NumPackEnter1.setText("")
             self.ui.TypeEnter1.setText("")
             AppFunctions.displayTask(self, AppFunctions.getCurrentTask(self, dbFolder))
+            self.ui.addTable1Btn.setVisible(False)
+            self.ui.closeTable1Btn.setVisible(True)
+            self.ui.addPos1Btn.setVisible(True)
             
         else:
             print("Could not insert shift data")           
@@ -274,9 +278,11 @@ class AppFunctions():
 
     #10. display current informations of current task:
     def displayTask(self, row):
+        
         itemCount = 0
         # add items to row
         for items in row:
+                
             for item in items:
                 if itemCount == 0:
                     AppFunctions.idTask1 = item
@@ -333,7 +339,11 @@ class AppFunctions():
         self.ui.TaskNum1.setText("")
         self.ui.TaskNum1.setReadOnly(False)
 
-        print(AppFunctions.idTask1)
+        self.ui.addTable1Btn.setVisible(True)
+        self.ui.closeTable1Btn.setVisible(False)
+        self.ui.addPos1Btn.setVisible(False)
+
+
 
         insert_task_close_marker = f"""
         UPDATE TaskTable SET CLOSED = ('{1}') WHERE TASK_ID = ('{AppFunctions.idTask1}') ;
