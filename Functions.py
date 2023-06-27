@@ -111,6 +111,7 @@ class AppFunctions():
     def displayUsers(self, rows):
         # loop through all rows
         for row in rows:
+            
             # get number of rows
             rowPosition = self.ui.tableWidget.rowCount()
 
@@ -119,6 +120,7 @@ class AppFunctions():
                 continue
             
             itemCount = 0
+            
             # create new table row
             self.ui.tableWidget.setRowCount(rowPosition+1)
             qtablewidgetitem = QTableWidgetItem()

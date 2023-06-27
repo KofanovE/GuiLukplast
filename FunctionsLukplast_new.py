@@ -92,19 +92,20 @@ class AppFunctions():
                                           TIME TEXT,
                                           WEIGHT REAL,
                                           WORKER,
-                                          CONSTRAINT ID_TASK FOREIGN KEY (ID_TASK) REFERENCES TaskTable (ID_TASK)                                            
+                                          CONSTRAINT ID_TASK FOREIGN KEY (ID_TASK) REFERENCES TaskTable (TASK_ID)                                            
 
                                     );
                             """
 
         create_OneTaskPosition1 = """ CREATE TABLE IF NOT EXISTS OneTaskPosition1(
-                                          ID_TASK INTEGER,
                                           ID_POSITION INTEGER PRIMARY KEY AUTOINCREMENT,
+                                          ID_TASK INTEGER,
                                           DATE TEXT,
                                           TIME TEXT,
-                                          WEIGHT,
-                                          WORKER,
-                                          CONSTRAINT ID_TASK FOREIGN KEY (ID_TASK) REFERENCES TaskTable (ID_TASK)
+                                          WEIGHT TEXT,
+                                          WORKER TEXT,
+                                          CONSTRAINT ID_TASK FOREIGN KEY (ID_TASK) REFERENCES TaskTable (TASK_ID)
+                                          
                                           
                                     );
                                  """   
@@ -137,9 +138,6 @@ class AppFunctions():
         lyb_1 = self.ui.lay1Enter.text()
         lyb_2 = self.ui.lay2Enter.text()
         lyb_3 = self.ui.lay3Enter.text()
-
-        print(shift, master, lyb_1, lyb_2, lyb_3)
-        print(type(shift), type(master), type(lyb_1), type(lyb_2), type(lyb_3))
         
         # create sql statement
         insert_shift_data_sql = f"""
@@ -231,6 +229,7 @@ class AppFunctions():
             self.ui.NumPackEnter1.setText("")
             self.ui.TypeEnter1.setText("")
             AppFunctions.displayTask(self, AppFunctions.getCurrentTask(self, dbFolder))
+            AppFunctions.getTaskStatus1(self, AppFunctions.getCurrentTask(self, dbFolder))
             self.ui.addTable1Btn.setVisible(False)
             self.ui.closeTable1Btn.setVisible(True)
             self.ui.addPos1Btn.setVisible(True)
@@ -240,15 +239,62 @@ class AppFunctions():
             
             # load new user from DB to table view
             AppFunctions.displayTask(self, AppFunctions.getCurrentTask(self, dbFolder))
+            AppFunctions.getTaskStatus1(self, AppFunctions.getCurrentTask(self, dbFolder))
 
 
-    
+    """
     #5. add last task to TaskTable
     def addTaskToTaskTable(self, dbFolder):
         pass        
+
+    """
+
     #6. add new position to OneTaskPosition1.
     def addNewPosition(self, dbFolder):
-        pass
+        
+        # create db connection
+        conn = AppFunctions.create_connection(dbFolder)
+        # get form values
+        weight = self.ui.WeightEnter1.text()
+        worker = self.ui.WorkerEnter1.text()
+        
+        # create sql statement
+        insert_shift_data_sql = f"""
+        INSERT INTO OneTaskPosition1(ID_TASK, DATE, TIME, WEIGHT, WORKER) VALUES ('{AppFunctions.idTask1}', CURRENT_DATE, CURRENT_TIME, '{weight}', '{worker});
+        """
+
+
+
+      
+      
+        
+        del_last_shift_data = f"""
+        DELETE FROM OneTaskPosition1
+        """
+        if conn is not None:
+            # create user table
+            conn.cursor().execute(insert_shift_data_sql)
+            conn.cursor().execute(del_last_shift_data)
+            conn.commit()
+            # clear form input
+            self.ui.shiftEnter.setText("")
+            self.ui.masterEnter.setText("")
+            self.ui.lay1Enter.setText("")
+            self.ui.lay2Enter.setText("")
+            self.ui.lay3Enter.setText("")
+            AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
+            
+        else:
+            print("Could not insert shift data")
+                        
+            # load new user from DB to table view
+            AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
+
+
+
+
+
+    
     #7. add last new position from OneTaskPosition1 to AllPosition table.
     def addPostionToAllPositionsTable(self, dbFolder):
         pass
@@ -361,6 +407,7 @@ class AppFunctions():
     def getTaskStatus1(self, row):
         for items in row:
             AppFunctions.taskStatus1 = items[11]
+            AppFunctions.idTask1 = items[0]
             
         
 
