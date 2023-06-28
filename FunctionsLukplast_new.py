@@ -259,36 +259,24 @@ class AppFunctions():
         worker = self.ui.WorkerEnter1.text()
         
         # create sql statement
-        insert_shift_data_sql = f"""
-        INSERT INTO OneTaskPosition1(ID_TASK, DATE, TIME, WEIGHT, WORKER) VALUES ('{AppFunctions.idTask1}', CURRENT_DATE, CURRENT_TIME, '{weight}', '{worker});
+        insert_position_data_sql = f"""
+        INSERT INTO OneTaskPosition1(ID_TASK, DATE, TIME, WEIGHT, WORKER) VALUES ('{AppFunctions.idTask1}', CURRENT_DATE, CURRENT_TIME, '{weight}', '{worker}');
         """
-
-
-
-      
-      
         
-        del_last_shift_data = f"""
-        DELETE FROM OneTaskPosition1
-        """
         if conn is not None:
             # create user table
-            conn.cursor().execute(insert_shift_data_sql)
-            conn.cursor().execute(del_last_shift_data)
+            conn.cursor().execute(insert_position_data_sql)
             conn.commit()
             # clear form input
-            self.ui.shiftEnter.setText("")
-            self.ui.masterEnter.setText("")
-            self.ui.lay1Enter.setText("")
-            self.ui.lay2Enter.setText("")
-            self.ui.lay3Enter.setText("")
-            AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
+            self.ui.WeightEnter1.setText("")
+            self.ui.WorkerEnter1.setText("")
+            AppFunctions.displayPositions(self, AppFunctions.getCurrentPosition(self, dbFolder))
             
         else:
-            print("Could not insert shift data")
+            print("Could not insert position data")
                         
             # load new user from DB to table view
-            AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
+            AppFunctions.displayPositions(self, AppFunctions.getCurrentPosition(self, dbFolder))
 
 
 
@@ -298,9 +286,55 @@ class AppFunctions():
     #7. add last new position from OneTaskPosition1 to AllPosition table.
     def addPostionToAllPositionsTable(self, dbFolder):
         pass
+
+    
     #8. display all positons of current task
     def displayPositions(self, rows):
-        pass
+
+        for row in rows:
+            # get number of rows
+            rowPosition = self.ui.tableWidget.rowCount()
+
+            # skip rows that have alreade been loaded to table
+            if rowPosition + 1 > row[0]:
+                continue
+            
+            itemCount = 0
+            # create new table row
+            self.ui.tableWidget.setRowCount(rowPosition+1)
+            qtablewidgetitem = QTableWidgetItem()
+            self.ui.tableWidget.setVerticalHeaderItem(rowPosition, qtablewidgetitem)
+
+            # add items to row
+            for item in row:
+                write_flag = 0
+                
+                if itemCount == 0:
+                    itemPosition = itemCount
+                    write_flag = 1
+                    
+                elif itemCount == 3:
+                    itemPosition = 1
+                    write_flag = 1
+                    
+                elif itemCount == 4:
+                    itemPosition = 2
+                    write_flag = 1
+                    
+                elif itemCount == 5:
+                    itemPosition = 3
+                    write_flag = 1
+                if write_flag:
+                    self.qtablewidgetitem = QTableWidgetItem()
+                    self.ui.tableWidget.setItem(rowPosition, itemPosition, self.qtablewidgetitem)
+                    self.qtablewidgetitem = self.ui.tableWidget.item(rowPosition, itemPosition)
+                    self.qtablewidgetitem.setText(str(item))
+                    print(itemCount, item, itemPosition)
+
+                itemCount = itemCount + 1
+            rowPosition = rowPosition + 1
+
+
     
     #9. display shift informations:
     def displayShift(self, row):
@@ -408,6 +442,22 @@ class AppFunctions():
         for items in row:
             AppFunctions.taskStatus1 = items[11]
             AppFunctions.idTask1 = items[0]
+
+
+    #14. get current postition information for current table
+    def getCurrentPosition(self, dbFolder):        
+        # create db connection
+        conn = AppFunctions.create_connection(dbFolder)
+        get_positions = """
+                            SELECT * FROM OneTaskPosition1;
+                        """
+        try:
+            c = conn.cursor()
+            c.execute(get_positions)
+            # return all table rows
+            return c
+        except Error as e:
+            print(e)
             
         
 
