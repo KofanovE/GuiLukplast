@@ -94,6 +94,7 @@ class MainWindow(QMainWindow):
         else:
             self.ui.addTable1Btn.setVisible(False)
             AppFunctions.displayTask(self, AppFunctions.getCurrentTask(self, dbFolder))
+            AppFunctions.displayPositions(self, AppFunctions.getCurrentPosition(self, dbFolder))
             
         
 

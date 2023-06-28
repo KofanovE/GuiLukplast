@@ -147,12 +147,26 @@ class AppFunctions():
       
         
         del_last_shift_data = f"""
-        DELETE FROM OneTaskPosition1
+        DROP TABLE IF EXISTS OneTaskPosition1;
         """
+
+        create_OneTaskPosition1 = """ CREATE TABLE IF NOT EXISTS OneTaskPosition1(
+                                          ID_POSITION INTEGER PRIMARY KEY AUTOINCREMENT,
+                                          ID_TASK INTEGER,
+                                          DATE TEXT,
+                                          TIME TEXT,
+                                          WEIGHT TEXT,
+                                          WORKER TEXT,
+                                          CONSTRAINT ID_TASK FOREIGN KEY (ID_TASK) REFERENCES TaskTable (TASK_ID)
+                                          
+                                          
+                                    );
+                                 """ 
         if conn is not None:
             # create user table
             conn.cursor().execute(insert_shift_data_sql)
             conn.cursor().execute(del_last_shift_data)
+            conn.cursor().execute(create_OneTaskPosition1)
             conn.commit()
             # clear form input
             self.ui.shiftEnter.setText("")
@@ -217,10 +231,28 @@ class AppFunctions():
         VALUES (CURRENT_DATE, CURRENT_TIME, '{AppFunctions.idShift}', '{machine}', '{length}', '{diametr}', '{num_in_pack}', '{type_pype}', '{0}', '{0}', '{0}');
         """
 
+        del_last_shift_data = f"""
+        DROP TABLE IF EXISTS  OneTaskPosition1;
+        """
+
+        create_OneTaskPosition1 = """ CREATE TABLE IF NOT EXISTS OneTaskPosition1(
+                                          ID_POSITION INTEGER PRIMARY KEY AUTOINCREMENT,
+                                          ID_TASK INTEGER,
+                                          DATE TEXT,
+                                          TIME TEXT,
+                                          WEIGHT TEXT,
+                                          WORKER TEXT,
+                                          CONSTRAINT ID_TASK FOREIGN KEY (ID_TASK) REFERENCES TaskTable (TASK_ID)
+                                          
+                                          
+                                    );
+                                 """ 
 
         if conn is not None:
             # create user table
             conn.cursor().execute(insert_task_data_sql)
+            conn.cursor().execute(del_last_shift_data)
+            conn.cursor().execute(create_OneTaskPosition1)
             conn.commit()
             # clear form input
             self.ui.MachineNum1.setText("")
@@ -233,6 +265,7 @@ class AppFunctions():
             self.ui.addTable1Btn.setVisible(False)
             self.ui.closeTable1Btn.setVisible(True)
             self.ui.addPos1Btn.setVisible(True)
+            self.ui.tableWidget.clearContents()
             
         else:
             print("Could not insert shift data")           
@@ -422,6 +455,8 @@ class AppFunctions():
         self.ui.addTable1Btn.setVisible(True)
         self.ui.closeTable1Btn.setVisible(False)
         self.ui.addPos1Btn.setVisible(False)
+
+        self.ui.tableWidget.clearContents()
 
 
 
