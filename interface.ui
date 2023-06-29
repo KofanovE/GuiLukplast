@@ -713,7 +713,7 @@ QLineEdit{
                              </size>
                             </property>
                             <property name="placeholderText">
-                             <string>2</string>
+                             <string>num</string>
                             </property>
                            </widget>
                           </item>

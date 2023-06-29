@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacearudHb.ui'
+## Form generated from reading UI file 'interfacetlJIIh.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1330, 688)
+        MainWindow.resize(1209, 688)
         MainWindow.setStyleSheet(u"*{\n"
 "	border: none;\n"
 "	background-color: transparent;\n"
@@ -848,7 +848,7 @@ class Ui_MainWindow(object):
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Task", None))
         self.TaskNum1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"123456", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Machine", None))
-        self.MachineNum1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
+        self.MachineNum1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"num", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"L", None))
         self.LengthEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"D", None))

@@ -12,18 +12,28 @@ from sqlite3 import Error
 from PySide2.QtWidgets import QTableWidgetItem
 
 
+sumLength = sumWeight = 0
+
+
 # Function class
 class AppFunctions():
-
    
     """docstring for AppFunctions"""
 
+    
+
     def __init__(self, arg):
-        super(AppFunctions, self).__init__()
+        super().__init__()
+
+        
         self.arg = arg
         self.idShift = 0
         self.idTask1 = 0
         self.taskStatus1 = 0
+        
+        self.numInPack = 0
+        self.lengthTask = 0
+        print("self.Weight = ", self.sumWeight)
 
 
     ## Create database connection
@@ -50,6 +60,9 @@ class AppFunctions():
 
     ## Main function
     def main(dbFolder):
+
+        
+        
         # Create table if it does not exist
         create_ShiftTable = """ CREATE TABLE IF NOT EXISTS ShiftTable (
                                      ID_SHIFT INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -213,6 +226,13 @@ class AppFunctions():
     #4. add new task of corect shift to OneTaskPosition1
     def addNewTask(self, dbFolder):
 
+        global sumWeight, sumLength
+        
+
+        sumWeight = sumLength = 0
+        
+ 
+
         # create db connection
         conn = AppFunctions.create_connection(dbFolder)
         # get form values
@@ -228,7 +248,7 @@ class AppFunctions():
         # create sql statement        
         insert_task_data_sql = f"""
         INSERT INTO TaskTable (DATE, TIME, ID_SHIFT, MACHINE, LENGTH, DIAMETR, NUM_IN_PACK, TYPE, SUM_WEIGHT, SUM_LENGTH, CLOSED)
-        VALUES (CURRENT_DATE, CURRENT_TIME, '{AppFunctions.idShift}', '{machine}', '{length}', '{diametr}', '{num_in_pack}', '{type_pype}', '{0}', '{0}', '{0}');
+        VALUES (CURRENT_DATE, CURRENT_TIME, '{AppFunctions.idShift}', '{machine}', '{length}', '{diametr}', '{num_in_pack}', '{type_pype}', '{sumWeight}', '{sumLength}', '{0}');
         """
 
         del_last_shift_data = f"""
@@ -284,21 +304,31 @@ class AppFunctions():
 
     #6. add new position to OneTaskPosition1.
     def addNewPosition(self, dbFolder):
-        
+
+        global sumWeight, sumLength
         # create db connection
         conn = AppFunctions.create_connection(dbFolder)
         # get form values
         weight = self.ui.WeightEnter1.text()
         worker = self.ui.WorkerEnter1.text()
+        sumWeight += float(weight)
+        sumL = AppFunctions.numInPack * AppFunctions.lengthTask
+        sumLength += sumL
+        
         
         # create sql statement
         insert_position_data_sql = f"""
         INSERT INTO OneTaskPosition1(ID_TASK, DATE, TIME, WEIGHT, WORKER) VALUES ('{AppFunctions.idTask1}', CURRENT_DATE, CURRENT_TIME, '{weight}', '{worker}');
         """
+
+        insert_sum_to_task = f"""
+        UPDATE TaskTable SET SUM_WEIGHT = ('{sumWeight}'), SUM_LENGTH = ('{sumLength}') WHERE TASK_ID = ('{AppFunctions.idTask1}') ;
+        """
         
         if conn is not None:
             # create user table
             conn.cursor().execute(insert_position_data_sql)
+            conn.cursor().execute(insert_sum_to_task)
             conn.commit()
             # clear form input
             self.ui.WeightEnter1.setText("")
@@ -477,6 +507,8 @@ class AppFunctions():
         for items in row:
             AppFunctions.taskStatus1 = items[11]
             AppFunctions.idTask1 = items[0]
+            AppFunctions.numInPack = items[7]
+            AppFunctions.lengthTask = items[5]
 
 
     #14. get current postition information for current table
