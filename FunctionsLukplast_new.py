@@ -104,8 +104,9 @@ class AppFunctions():
                                           DATE TEXT,
                                           TIME TEXT,
                                           WEIGHT REAL,
-                                          WORKER,
-                                          CONSTRAINT ID_TASK FOREIGN KEY (ID_TASK) REFERENCES TaskTable (TASK_ID)                                            
+                                          WORKER TEXT,
+                                          CONSTRAINT ID_TASK FOREIGN KEY (ID_TASK) REFERENCES TaskTable (TASK_ID),
+                                          CONSTRAINT ID_POSITION FOREIGN KEY (ID_POSITION) REFERENCES OneTaskPosition1 (ID_POSITION)
 
                                     );
                             """
@@ -321,6 +322,10 @@ class AppFunctions():
         INSERT INTO OneTaskPosition1(ID_TASK, DATE, TIME, WEIGHT, WORKER) VALUES ('{AppFunctions.idTask1}', CURRENT_DATE, CURRENT_TIME, '{weight}', '{worker}');
         """
 
+        insert_last_position_to_global = f"""
+        INSERT INTO AllPositions (ID_TASK, ID_POSITION, DATE, TIME, WEIGHT, WORKER) SELECT ID_TASK, ID_POSITION, DATE, TIME, WEIGHT, WORKER FROM OneTaskPosition1 ORDER BY ROWID DESC LIMIT 1;
+        """
+        
         insert_sum_to_task = f"""
         UPDATE TaskTable SET SUM_WEIGHT = ('{sumWeight}'), SUM_LENGTH = ('{sumLength}') WHERE TASK_ID = ('{AppFunctions.idTask1}') ;
         """
@@ -328,6 +333,7 @@ class AppFunctions():
         if conn is not None:
             # create user table
             conn.cursor().execute(insert_position_data_sql)
+            conn.cursor().execute(insert_last_position_to_global)        
             conn.cursor().execute(insert_sum_to_task)
             conn.commit()
             # clear form input
@@ -453,7 +459,7 @@ class AppFunctions():
     def getCurrentTask(self, dbFolder):        
         # create db connection
         conn = AppFunctions.create_connection(dbFolder)
-        get_last_task = """
+        get_last_task = f"""
                             SELECT * FROM TaskTable ORDER BY ROWID DESC LIMIT 1;
                         """
         try:
