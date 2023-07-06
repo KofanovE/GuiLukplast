@@ -237,8 +237,13 @@ class AppFunctions():
         # create db connection
         conn = AppFunctions.create_connection(dbFolder)
         # get form values
-        
-        machine = self.ui.MachineNum1.text()
+
+        if self.ui.comboBox.currentIndex() == 0:
+            machine = 1
+        elif self.ui.comboBox.currentIndex() == 1:
+            machine = 2
+        else:
+            machine = "Not choised"
         length = self.ui.LengthEnter1.text()
         diametr = self.ui.DiametrEnter1.text()
         num_in_pack = self.ui.NumPackEnter1.text()
@@ -276,7 +281,6 @@ class AppFunctions():
             conn.cursor().execute(create_OneTaskPosition1)
             conn.commit()
             # clear form input
-            self.ui.MachineNum1.setText("")
             self.ui.LengthEnter1.setText("")
             self.ui.DiametrEnter1.setText("")
             self.ui.NumPackEnter1.setText("")
@@ -438,8 +442,12 @@ class AppFunctions():
                     self.ui.TaskNum1.setText(str(item))
                     self.ui.TaskNum1.setReadOnly(True)
                 elif itemCount == 4:
-                    self.ui.MachineNum1.setText(str(item))
-                    self.ui.MachineNum1.setReadOnly(True)
+                    if str(item) == "1":
+                        index_to_select = 0
+                    else:
+                        index_to_select = 1                
+                    self.ui.comboBox.setCurrentIndex(index_to_select)
+                    self.ui.comboBox.setEnabled(False)
                 elif itemCount == 5:
                     self.ui.LengthEnter1.setText(str(item))
                     self.ui.LengthEnter1.setReadOnly(True)
@@ -475,8 +483,8 @@ class AppFunctions():
 
         conn = AppFunctions.create_connection(dbFolder)
 
-        self.ui.MachineNum1.setText("")
-        self.ui.MachineNum1.setReadOnly(False)
+        #self.ui.MachineNum1.setText("")
+        self.ui.comboBox.setEnabled(True)
         self.ui.LengthEnter1.setText("")
         self.ui.LengthEnter1.setReadOnly(False)
         self.ui.DiametrEnter1.setText("")

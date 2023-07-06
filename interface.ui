@@ -22,7 +22,7 @@
 	margin: 0;
 	color: #fff;
 }
-#centralwidget, #homeBtn, #mainBodyContent, QLineEdit{
+#centralwidget, #homeBtn, #mainBodyContent, QLineEdit, QComboBox{
 	background-color: #1b1b27;
 }
 
@@ -699,7 +699,7 @@ QLineEdit{
                            </widget>
                           </item>
                           <item>
-                           <widget class="QLineEdit" name="MachineNum1">
+                           <widget class="QComboBox" name="comboBox">
                             <property name="minimumSize">
                              <size>
                               <width>75</width>
@@ -711,9 +711,6 @@ QLineEdit{
                               <width>75</width>
                               <height>30</height>
                              </size>
-                            </property>
-                            <property name="placeholderText">
-                             <string>num</string>
                             </property>
                            </widget>
                           </item>
