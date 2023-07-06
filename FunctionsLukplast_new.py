@@ -188,6 +188,7 @@ class AppFunctions():
             self.ui.lay1Enter.setText("")
             self.ui.lay2Enter.setText("")
             self.ui.lay3Enter.setText("")
+            self.ui.comboBox_workerEnter.clear()
             AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
             
         else:
@@ -315,7 +316,10 @@ class AppFunctions():
         conn = AppFunctions.create_connection(dbFolder)
         # get form values
         weight = self.ui.WeightEnter1.text()
+        
         worker = self.ui.WorkerEnter1.text()
+        
+        
         sumWeight += float(weight)
         sumL = AppFunctions.numInPack * AppFunctions.lengthTask
         sumLength += sumL
@@ -419,12 +423,24 @@ class AppFunctions():
                     AppFunctions.idShift = item
                 elif itemCount == 4:
                     self.ui.masterShow.setText(item)
+                    if item:
+                        self.ui.num_workers = 0
+                        self.ui.comboBox_workerEnter.addItem(item)                     
                 elif itemCount == 5:
                     self.ui.worker1Show.setText(item)
+                    if item:
+                        self.ui.num_workers = 1
+                        self.ui.comboBox_workerEnter.addItem(item)
                 elif itemCount == 6:
                     self.ui.worker2Show.setText(item)
+                    if item:
+                        self.ui.num_workers = 2
+                        self.ui.comboBox_workerEnter.addItem(item)
                 elif itemCount == 7:
-                    self.ui.worker3Show.setText(item)                 
+                    self.ui.worker3Show.setText(item)
+                    if item:
+                        self.ui.num_workers = 3
+                        self.ui.comboBox_workerEnter.addItem(item)   
                 itemCount += 1
         
 

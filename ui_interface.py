@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacetlJIIh.ui'
+## Form generated from reading UI file 'interfacekbqKkw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -30,7 +30,7 @@ class Ui_MainWindow(object):
 "	margin: 0;\n"
 "	color: #fff;\n"
 "}\n"
-"#centralwidget, #homeBtn, #mainBodyContent, QLineEdit{\n"
+"#centralwidget, #homeBtn, #mainBodyContent, QLineEdit, QComboBox{\n"
 "	background-color: #1b1b27;\n"
 "}\n"
 "\n"
@@ -73,9 +73,9 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "#homeBtn{\n"
-"	border-left: 3px solid #00bfff;\n"
-""
-                        "	font-weight: bold;\n"
+"	border-left: 3px solid"
+                        " #00bfff;\n"
+"	font-weight: bold;\n"
 "}\n"
 "\n"
 "QLineEdit{\n"
@@ -395,12 +395,20 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_15.addWidget(self.label_9)
 
-        self.MachineNum1 = QLineEdit(self.frameTable1)
-        self.MachineNum1.setObjectName(u"MachineNum1")
-        self.MachineNum1.setMinimumSize(QSize(75, 30))
-        self.MachineNum1.setMaximumSize(QSize(75, 30))
+        self.comboBox = QComboBox(self.frameTable1)
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setMinimumSize(QSize(75, 30))
+        self.comboBox.setMaximumSize(QSize(75, 30))
+        self.comboBox.setCursor(QCursor(Qt.PointingHandCursor))
+        self.comboBox.setEditable(False)
+        self.comboBox.addItem("   1")
+        self.comboBox.addItem("   2")
+        self.comboBox.setStyleSheet("QComboBox { text-align: center; }"
+                                    "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
+                                    "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
 
-        self.horizontalLayout_15.addWidget(self.MachineNum1)
+
+        self.horizontalLayout_15.addWidget(self.comboBox)
 
         self.label_16 = QLabel(self.frameTable1)
         self.label_16.setObjectName(u"label_16")
@@ -506,9 +514,7 @@ class Ui_MainWindow(object):
         self.botTable1.setFrameShape(QFrame.StyledPanel)
         self.botTable1.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_8 = QHBoxLayout(self.botTable1)
-        self.horizontalLayout_8.setSpacing(10)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.horizontalLayout_8.setContentsMargins(10, 5, 10, 5)
         self.addPos1Btn = QPushButton(self.botTable1)
         self.addPos1Btn.setObjectName(u"addPos1Btn")
         self.addPos1Btn.setMinimumSize(QSize(0, 0))
@@ -528,8 +534,30 @@ class Ui_MainWindow(object):
 
         self.WorkerEnter1 = QLineEdit(self.botTable1)
         self.WorkerEnter1.setObjectName(u"WorkerEnter1")
+        self.WorkerEnter1.setMinimumSize(QSize(0, 0))
 
         self.horizontalLayout_8.addWidget(self.WorkerEnter1)
+
+        self.comboBox_workerEnter = QComboBox(self.botTable1)
+        self.comboBox_workerEnter.setObjectName(u"comboBox_workerEnter")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(30)
+        sizePolicy1.setHeightForWidth(self.comboBox_workerEnter.sizePolicy().hasHeightForWidth())
+        self.comboBox_workerEnter.setSizePolicy(sizePolicy1)
+        self.comboBox_workerEnter.setMinimumSize(QSize(0, 30))
+
+        self.comboBox_workerEnter.setCursor(QCursor(Qt.PointingHandCursor))
+        self.comboBox_workerEnter.setEditable(False)
+        self.comboBox_workerEnter.setStyleSheet("QComboBox { text-align: center; }"
+                                    "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
+                                    "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
+        
+        
+        
+
+
+        self.horizontalLayout_8.addWidget(self.comboBox_workerEnter)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -820,8 +848,12 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
+        
+
+
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
+    
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
@@ -848,7 +880,6 @@ class Ui_MainWindow(object):
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Task", None))
         self.TaskNum1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"123456", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Machine", None))
-        self.MachineNum1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"num", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"L", None))
         self.LengthEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"D", None))
@@ -889,5 +920,7 @@ class Ui_MainWindow(object):
         self.lay3Enter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Layborer 3", None))
         self.addShiftBtn.setText(QCoreApplication.translate("MainWindow", u"Add Shift", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Lukplast. Copyright 2023", None))
+
+        
     # retranslateUi
 

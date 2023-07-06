@@ -109,6 +109,8 @@ class MainWindow(QMainWindow):
 
         
         self.ui.addPos1Btn.clicked.connect(lambda: AppFunctions.addNewPosition(self, dbFolder))
+
+    
         
 ########################################################################
 ## EXECUTE APP
