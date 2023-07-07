@@ -315,9 +315,8 @@ class AppFunctions():
         # create db connection
         conn = AppFunctions.create_connection(dbFolder)
         # get form values
-        weight = self.ui.WeightEnter1.text()
-        
-        worker = self.ui.WorkerEnter1.text()
+        weight = self.ui.WeightEnter1.text()        
+        worker = self.ui.comboBox_workerEnter.currentText()
         
         
         sumWeight += float(weight)
