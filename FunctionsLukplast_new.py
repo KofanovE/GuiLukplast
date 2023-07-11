@@ -290,7 +290,7 @@ class AppFunctions():
             AppFunctions.getTaskStatus1(self, AppFunctions.getCurrentTask(self, dbFolder))
             self.ui.addTable1Btn.setVisible(False)
             self.ui.closeTable1Btn.setVisible(True)
-            self.ui.addPos1Btn.setVisible(True)
+            self.ui.addPos1Btn.setVisible(True)           
             self.ui.tableWidget.clearContents()
             
         else:
@@ -344,8 +344,6 @@ class AppFunctions():
             conn.cursor().execute(insert_sum_to_task)
             conn.commit()
             # clear form input
-            self.ui.WeightEnter1.setText("")
-            self.ui.WorkerEnter1.setText("")
             AppFunctions.displayPositions(self, AppFunctions.getCurrentPosition(self, dbFolder))
             
         else:
@@ -448,6 +446,7 @@ class AppFunctions():
     def displayTask(self, row):
         
         itemCount = 0
+        self.ui.comboBox_workerEnter.setEnabled(True)
         # add items to row
         for items in row:
                 
@@ -499,7 +498,11 @@ class AppFunctions():
         conn = AppFunctions.create_connection(dbFolder)
 
         #self.ui.MachineNum1.setText("")
+        self.ui.comboBox.setCurrentIndex(-1)
         self.ui.comboBox.setEnabled(True)
+        self.ui.comboBox_workerEnter.setCurrentIndex(-1)
+        self.ui.comboBox_workerEnter.setEnabled(False)
+        self.ui.WeightEnter1.setText("")
         self.ui.LengthEnter1.setText("")
         self.ui.LengthEnter1.setReadOnly(False)
         self.ui.DiametrEnter1.setText("")

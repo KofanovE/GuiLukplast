@@ -1,8 +1,4 @@
 # comdoBox for choise of machine number (for table 1) on line400
-        self.comboBox = QComboBox(self.frameTable1)
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setMinimumSize(QSize(75, 30))
-        self.comboBox.setMaximumSize(QSize(75, 30))
         self.comboBox.setCursor(QCursor(Qt.PointingHandCursor))
         self.comboBox.setEditable(False)
         self.comboBox.addItem("   1")

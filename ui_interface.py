@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacekbqKkw.ui'
+## Form generated from reading UI file 'interfaceWxqDDv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1209, 688)
+        MainWindow.resize(1245, 688)
         MainWindow.setStyleSheet(u"*{\n"
 "	border: none;\n"
 "	background-color: transparent;\n"
@@ -407,7 +407,6 @@ class Ui_MainWindow(object):
                                     "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
                                     "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
 
-
         self.horizontalLayout_15.addWidget(self.comboBox)
 
         self.label_16 = QLabel(self.frameTable1)
@@ -532,12 +531,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_8.addWidget(self.WeightEnter1)
 
-        self.WorkerEnter1 = QLineEdit(self.botTable1)
-        self.WorkerEnter1.setObjectName(u"WorkerEnter1")
-        self.WorkerEnter1.setMinimumSize(QSize(0, 0))
-
-        self.horizontalLayout_8.addWidget(self.WorkerEnter1)
-
         self.comboBox_workerEnter = QComboBox(self.botTable1)
         self.comboBox_workerEnter.setObjectName(u"comboBox_workerEnter")
         sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
@@ -546,16 +539,11 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.comboBox_workerEnter.sizePolicy().hasHeightForWidth())
         self.comboBox_workerEnter.setSizePolicy(sizePolicy1)
         self.comboBox_workerEnter.setMinimumSize(QSize(0, 30))
-
         self.comboBox_workerEnter.setCursor(QCursor(Qt.PointingHandCursor))
         self.comboBox_workerEnter.setEditable(False)
         self.comboBox_workerEnter.setStyleSheet("QComboBox { text-align: center; }"
                                     "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
                                     "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
-        
-        
-        
-
 
         self.horizontalLayout_8.addWidget(self.comboBox_workerEnter)
 
@@ -848,12 +836,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        
-
-
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
-    
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
@@ -900,7 +884,6 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"worker", None));
         self.addPos1Btn.setText("")
         self.WeightEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"weight", None))
-        self.WorkerEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"worker", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"TopTable22", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"BottomTable2", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"TopTable3", None))
@@ -920,7 +903,5 @@ class Ui_MainWindow(object):
         self.lay3Enter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Layborer 3", None))
         self.addShiftBtn.setText(QCoreApplication.translate("MainWindow", u"Add Shift", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"Lukplast. Copyright 2023", None))
-
-        
     # retranslateUi
 

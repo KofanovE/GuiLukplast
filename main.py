@@ -91,8 +91,12 @@ class MainWindow(QMainWindow):
         if AppFunctions.taskStatus1:
             self.ui.closeTable1Btn.setVisible(False)
             self.ui.addPos1Btn.setVisible(False)
+            self.ui.comboBox_workerEnter.setCurrentIndex(-1)
+            self.ui.comboBox.setCurrentIndex(-1)
+            self.ui.comboBox_workerEnter.setEnabled(False)
         else:
             self.ui.addTable1Btn.setVisible(False)
+            self.ui.comboBox_workerEnter.setEnabled(True)
             AppFunctions.displayTask(self, AppFunctions.getCurrentTask(self, dbFolder))
             AppFunctions.displayPositions(self, AppFunctions.getCurrentPosition(self, dbFolder))
             

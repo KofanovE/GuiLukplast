@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1209</width>
+    <width>1245</width>
     <height>688</height>
    </rect>
   </property>
@@ -974,19 +974,6 @@ QLineEdit{
                         <widget class="QLineEdit" name="WeightEnter1">
                          <property name="placeholderText">
                           <string>weight</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLineEdit" name="WorkerEnter1">
-                         <property name="minimumSize">
-                          <size>
-                           <width>0</width>
-                           <height>0</height>
-                          </size>
-                         </property>
-                         <property name="placeholderText">
-                          <string>worker</string>
                          </property>
                         </widget>
                        </item>
