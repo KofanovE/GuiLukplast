@@ -175,6 +175,9 @@ QLineEdit{
             <property name="font">
              <font>
               <pointsize>12</pointsize>
+              <weight>75</weight>
+              <italic>true</italic>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -206,6 +209,9 @@ QLineEdit{
             <property name="font">
              <font>
               <pointsize>12</pointsize>
+              <weight>75</weight>
+              <italic>true</italic>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -237,6 +243,9 @@ QLineEdit{
             <property name="font">
              <font>
               <pointsize>12</pointsize>
+              <weight>75</weight>
+              <italic>true</italic>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -268,6 +277,9 @@ QLineEdit{
             <property name="font">
              <font>
               <pointsize>12</pointsize>
+              <weight>75</weight>
+              <italic>true</italic>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">

@@ -295,6 +295,7 @@ class AppFunctions():
             self.ui.TypeEnter1.setText("")
             AppFunctions.displayTask(self, AppFunctions.getCurrentTask(self, dbFolder))
             AppFunctions.getTaskStatus1(self, AppFunctions.getCurrentTask(self, dbFolder))
+            self.ui.WeightEnter1.setReadOnly(False)
             self.ui.addTable1Btn.setVisible(False)
             self.ui.closeTable1Btn.setVisible(True)
             self.ui.addPos1Btn.setVisible(True)           
@@ -359,7 +360,7 @@ class AppFunctions():
             # load new user from DB to table view
             AppFunctions.displayPositions(self, AppFunctions.getCurrentPosition(self, dbFolder))
 
-
+        self.ui.WeightEnter1.setText("")
 
 
 
@@ -505,6 +506,7 @@ class AppFunctions():
         conn = AppFunctions.create_connection(dbFolder)
 
         #self.ui.MachineNum1.setText("")
+        self.ui.WeightEnter1.setReadOnly(True)
         self.ui.comboBox.setCurrentIndex(-1)
         self.ui.comboBox.setEnabled(True)
         self.ui.comboBox_workerEnter.setCurrentIndex(-1)

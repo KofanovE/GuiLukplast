@@ -95,8 +95,10 @@ class MainWindow(QMainWindow):
             self.ui.comboBox_workerEnter.setCurrentIndex(-1)
             self.ui.comboBox.setCurrentIndex(-1)
             self.ui.comboBox_workerEnter.setEnabled(False)
+            self.ui.WeightEnter1.setReadOnly(True)
         else:
             self.ui.addTable1Btn.setVisible(False)
+            self.ui.WeightEnter1.setReadOnly(False)
             self.ui.comboBox_workerEnter.setEnabled(True)
             AppFunctions.displayTask(self, AppFunctions.getCurrentTask(self, dbFolder))
             AppFunctions.displayPositions(self, AppFunctions.getCurrentPosition(self, dbFolder))
