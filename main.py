@@ -88,6 +88,7 @@ class MainWindow(QMainWindow):
 
 
         AppFunctions.getTaskStatus1(self, AppFunctions.getCurrentTask(self, dbFolder))
+        self.ui.comboBox_shiftEnter.setCurrentIndex(-1)
         if AppFunctions.taskStatus1:
             self.ui.closeTable1Btn.setVisible(False)
             self.ui.addPos1Btn.setVisible(False)

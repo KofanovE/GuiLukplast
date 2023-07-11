@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceWxqDDv.ui'
+## Form generated from reading UI file 'interfaceJjapoS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -399,6 +399,7 @@ class Ui_MainWindow(object):
         self.comboBox.setObjectName(u"comboBox")
         self.comboBox.setMinimumSize(QSize(75, 30))
         self.comboBox.setMaximumSize(QSize(75, 30))
+        self.comboBox.setPlaceholderText(u"Num")
         self.comboBox.setCursor(QCursor(Qt.PointingHandCursor))
         self.comboBox.setEditable(False)
         self.comboBox.addItem("   1")
@@ -766,10 +767,20 @@ class Ui_MainWindow(object):
         self.frame_5.setFrameShadow(QFrame.Raised)
         self.verticalLayout_9 = QVBoxLayout(self.frame_5)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.shiftEnter = QLineEdit(self.frame_5)
-        self.shiftEnter.setObjectName(u"shiftEnter")
+        self.comboBox_shiftEnter = QComboBox(self.frame_5)
+        self.comboBox_shiftEnter.setObjectName(u"comboBox_shiftEnter")
+        sizePolicy1.setHeightForWidth(self.comboBox_shiftEnter.sizePolicy().hasHeightForWidth())
+        self.comboBox_shiftEnter.setSizePolicy(sizePolicy1)
+        self.comboBox_shiftEnter.setMinimumSize(QSize(0, 30))
+        self.comboBox_shiftEnter.setCursor(QCursor(Qt.PointingHandCursor))
+        self.comboBox_shiftEnter.setEditable(False)
+        self.comboBox_shiftEnter.addItem("   day")
+        self.comboBox_shiftEnter.addItem("   night")
+        self.comboBox_shiftEnter.setStyleSheet("QComboBox { text-align: center; }"
+                                    "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
+                                    "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
 
-        self.verticalLayout_9.addWidget(self.shiftEnter)
+        self.verticalLayout_9.addWidget(self.comboBox_shiftEnter)
 
         self.masterEnter = QLineEdit(self.frame_5)
         self.masterEnter.setObjectName(u"masterEnter")
@@ -884,6 +895,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"worker", None));
         self.addPos1Btn.setText("")
         self.WeightEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"weight", None))
+        self.comboBox_workerEnter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Worker name", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"TopTable22", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"BottomTable2", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"TopTable3", None))
@@ -896,7 +908,7 @@ class Ui_MainWindow(object):
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"About", None))
         self.label_2.setText("")
-        self.shiftEnter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Shift ( day/night )", None))
+        self.comboBox_shiftEnter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"shift", None))
         self.masterEnter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Master", None))
         self.lay1Enter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Layborer 1", None))
         self.lay2Enter.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Layborer 2", None))

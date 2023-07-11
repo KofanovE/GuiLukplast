@@ -712,6 +712,9 @@ QLineEdit{
                               <height>30</height>
                              </size>
                             </property>
+                            <property name="placeholderText">
+                             <string notr="true">Num</string>
+                            </property>
                            </widget>
                           </item>
                           <item>
@@ -990,6 +993,9 @@ QLineEdit{
                            <width>0</width>
                            <height>30</height>
                           </size>
+                         </property>
+                         <property name="placeholderText">
+                          <string>Worker name</string>
                          </property>
                         </widget>
                        </item>
@@ -1371,9 +1377,21 @@ QLineEdit{
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_9">
                 <item>
-                 <widget class="QLineEdit" name="shiftEnter">
+                 <widget class="QComboBox" name="comboBox_shiftEnter">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>30</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>30</height>
+                   </size>
+                  </property>
                   <property name="placeholderText">
-                   <string>Shift ( day/night )</string>
+                   <string>shift</string>
                   </property>
                  </widget>
                 </item>

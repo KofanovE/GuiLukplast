@@ -147,7 +147,14 @@ class AppFunctions():
         # create db connection
         conn = AppFunctions.create_connection(dbFolder)
         # get form values
-        shift = self.ui.shiftEnter.text()
+        
+        if self.ui.comboBox_shiftEnter.currentIndex() == 0:
+            shift = "day"
+        elif self.ui.comboBox_shiftEnter.currentIndex() == 1:
+            shift = "night"
+        else:
+            shift = "Not choised"
+        
         master = self.ui.masterEnter.text()
         lyb_1 = self.ui.lay1Enter.text()
         lyb_2 = self.ui.lay2Enter.text()
@@ -183,7 +190,7 @@ class AppFunctions():
             conn.cursor().execute(create_OneTaskPosition1)
             conn.commit()
             # clear form input
-            self.ui.shiftEnter.setText("")
+            self.ui.comboBox_shiftEnter.setCurrentIndex(-1)
             self.ui.masterEnter.setText("")
             self.ui.lay1Enter.setText("")
             self.ui.lay2Enter.setText("")
@@ -403,7 +410,7 @@ class AppFunctions():
                     self.ui.tableWidget.setItem(rowPosition, itemPosition, self.qtablewidgetitem)
                     self.qtablewidgetitem = self.ui.tableWidget.item(rowPosition, itemPosition)
                     self.qtablewidgetitem.setText(str(item))
-                    print(itemCount, item, itemPosition)
+            
 
                 itemCount = itemCount + 1
             rowPosition = rowPosition + 1
