@@ -364,14 +364,19 @@ class AppFunctions():
 
 
 
-    
+    """
     #7. add last new position from OneTaskPosition1 to AllPosition table.
     def addPostionToAllPositionsTable(self, dbFolder):
         pass
-
+    """
     
     #8. display all positons of current task
     def displayPositions(self, rows):
+
+        global sumWeight, sumLength
+        
+        self.ui.SumLength_Show_1.setText(str(sumLength))
+        self.ui.SumWeight_Show_1.setText(str(sumWeight))
 
         for row in rows:
             # get number of rows
@@ -393,6 +398,8 @@ class AppFunctions():
                 
                 if itemCount == 0:
                     itemPosition = itemCount
+                    self.ui.CountPack_Show_1.setText(str(item))
+                    self.ui.Count_Show_1.setText(str(item * AppFunctions.numInPack))
                     write_flag = 1
                     
                 elif itemCount == 3:
@@ -522,6 +529,11 @@ class AppFunctions():
         self.ui.TypeEnter1.setReadOnly(False)
         self.ui.TaskNum1.setText("")
         self.ui.TaskNum1.setReadOnly(False)
+
+        self.ui.SumWeight_Show_1.setText("")
+        self.ui.SumLength_Show_1.setText("")
+        self.ui.Count_Show_1.setText("")
+        self.ui.CountPack_Show_1.setText("")
 
         self.ui.addTable1Btn.setVisible(True)
         self.ui.closeTable1Btn.setVisible(False)

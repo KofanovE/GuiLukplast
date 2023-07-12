@@ -89,6 +89,10 @@ class MainWindow(QMainWindow):
 
         AppFunctions.getTaskStatus1(self, AppFunctions.getCurrentTask(self, dbFolder))
         self.ui.comboBox_shiftEnter.setCurrentIndex(-1)
+        self.ui.SumWeight_Show_1.setReadOnly(True)
+        self.ui.SumLength_Show_1.setReadOnly(True)
+        self.ui.Count_Show_1.setReadOnly(True)
+        self.ui.CountPack_Show_1.setReadOnly(True)
         if AppFunctions.taskStatus1:
             self.ui.closeTable1Btn.setVisible(False)
             self.ui.addPos1Btn.setVisible(False)
