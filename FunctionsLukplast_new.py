@@ -37,6 +37,7 @@ class AppFunctions():
         self.lengthTask = 0
 
         self.master_list = []
+        self.layborer_list = []
 
 
         
@@ -638,9 +639,26 @@ class AppFunctions():
             c.execute(get_masters)
             result = c.fetchall()
             values_list = [row[0] for row in result]
-            print(values_list)
-            print(dir(AppFunctions))
             AppFunctions.master_list = values_list
+            
+        except Error as e:
+            print(e)
+
+
+    #16. get layborerList from Team table
+    def getLaborerList(self, dbFolder):
+        # create db connection
+        laborer = 'laborer'
+        conn = AppFunctions.create_connection(dbFolder)
+        get_laborers = """
+                                SELECT SECOND_NAME FROM Team WHERE FUNCTION_1 = 'laborer' OR FUNCTION_2 = 'laborer';
+                      """
+        try:
+            c = conn.cursor()
+            c.execute(get_laborers)
+            result = c.fetchall()
+            values_list = [row[0] for row in result]
+            AppFunctions.laborer_list = values_list
             
         except Error as e:
             print(e)

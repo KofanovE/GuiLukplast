@@ -89,6 +89,7 @@ class MainWindow(QMainWindow):
         
 
         AppFunctions.getMasterList(self, dbFolder)
+        AppFunctions.getLaborerList(self, dbFolder)
 
 
         AppFunctions.getTaskStatus1(self, AppFunctions.getCurrentTask(self, dbFolder))
@@ -112,11 +113,18 @@ class MainWindow(QMainWindow):
             AppFunctions.displayPositions(self, AppFunctions.getCurrentPosition(self, dbFolder))
             
         
-        self.ui.model_master = QStringListModel()
-       
+        self.ui.model_master = QStringListModel()       
         self.ui.model_master.setStringList(AppFunctions.master_list )
         self.ui.completer_master = QCompleter(self.ui.model_master)
-        self.ui.masterEnter.setCompleter(self.ui.completer_master)   
+        self.ui.masterEnter.setCompleter(self.ui.completer_master)
+
+        self.ui.model_laborer = QStringListModel()       
+        self.ui.model_laborer.setStringList(AppFunctions.laborer_list )
+        self.ui.completer_laborer = QCompleter(self.ui.model_laborer)
+        self.ui.lay1Enter.setCompleter(self.ui.completer_laborer)
+        self.ui.lay2Enter.setCompleter(self.ui.completer_laborer)
+        self.ui.lay3Enter.setCompleter(self.ui.completer_laborer)  
+                                                
 
         
         #Add new shift data
