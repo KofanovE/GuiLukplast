@@ -42,3 +42,18 @@
         self.comboBox_shiftEnter.setStyleSheet("QComboBox { text-align: center; }"
                                     "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
                                     "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
+
+
+
+
+
+# comdoBox for choise of machine number (for table 1) on line930
+        model_master = QStringListModel()
+        model_master.setStringList(AppFunctions.master_list)
+
+
+        completer_master = QCompleter(model_master)
+        lineEdit.setCompleter(completer_master)
+
+
+

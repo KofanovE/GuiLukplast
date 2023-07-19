@@ -17,6 +17,8 @@ from Custom_Widgets.Widgets import QCustomStackedWidget
 
 import QSS_Resources_rc
 
+from FunctionsLukplast_new import AppFunctions
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -927,6 +929,10 @@ class Ui_MainWindow(object):
 
         self.masterEnter = QLineEdit(self.frame_5)
         self.masterEnter.setObjectName(u"masterEnter")
+        
+        
+
+        
 
         self.verticalLayout_9.addWidget(self.masterEnter)
 

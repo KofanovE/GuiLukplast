@@ -23,6 +23,8 @@ class AppFunctions():
     
 
     def __init__(self, arg):
+
+        
         super().__init__()
 
         
@@ -33,7 +35,12 @@ class AppFunctions():
         
         self.numInPack = 0
         self.lengthTask = 0
-        print("self.Weight = ", self.sumWeight)
+
+        self.master_list = []
+
+
+        
+
 
 
     ## Create database connection
@@ -122,7 +129,41 @@ class AppFunctions():
                                           
                                           
                                     );
-                                 """   
+                                 """
+        
+        create_Team = """ CREATE TABLE IF NOT EXISTS Team(
+                                          ID_PERSON INTEGER PRIMARY KEY AUTOINCREMENT,
+                                          FIRST_NAME TEXT,
+                                          SECOND_NAME TEXT,                                         
+                                          FUNCTION_1 TEXT,
+                                          FUNCTION_2 TEXT,
+                                          BIRTH_DATE TEXT,
+                                          PHONE_1 TEXT,
+                                          T_1 TEXT,
+                                          V_1 TEXT,
+                                          W_1 TEXT,
+                                          PHONE_2 TEXT,
+                                          T_2 TEXT,
+                                          V_2 TEXT,
+                                          W_2 TEXT,
+                                          PHONE_RELAT TEXT,
+                                          REGIST_ADDR TEXT,
+                                          RESID_ADDR TEXT,
+                                          PASPORT_CODE TEXT,
+                                          CHARACTERISTIC TEXT,
+                                          REGISTR_DATE TEXT,
+                                          DISMIS_DATE TEXT
+                                          
+                                          
+                                    );
+                                 """
+
+
+        
+        
+
+       
+        
         conn = AppFunctions.create_connection(dbFolder)
 
         # create tables
@@ -132,13 +173,16 @@ class AppFunctions():
             AppFunctions.create_table(conn, create_TaskTable)
             AppFunctions.create_table(conn, create_AllPositions)
             AppFunctions.create_table(conn, create_OneTaskPosition1)
+            AppFunctions.create_table(conn, create_Team)
+
+                     
+
             
         else:
             print('Error! Cannot create the database connection')
 
 
         
-
 
       
     #1 create new shift
@@ -147,6 +191,8 @@ class AppFunctions():
         # create db connection
         conn = AppFunctions.create_connection(dbFolder)
         # get form values
+
+        
         
         if self.ui.comboBox_shiftEnter.currentIndex() == 0:
             shift = "day"
@@ -579,7 +625,29 @@ class AppFunctions():
         except Error as e:
             print(e)
             
-        
+    #15. get masterList from Team table
+    def getMasterList(self, dbFolder):
+        # create db connection
+        master = 'master'
+        conn = AppFunctions.create_connection(dbFolder)
+        get_masters = """
+                                SELECT SECOND_NAME FROM Team WHERE FUNCTION_1 = 'master';
+                      """
+        try:
+            c = conn.cursor()
+            c.execute(get_masters)
+            result = c.fetchall()
+            values_list = [row[0] for row in result]
+            print(values_list)
+            print(dir(AppFunctions))
+            AppFunctions.master_list = values_list
+            
+        except Error as e:
+            print(e)
+
+
+
+
 
         
         

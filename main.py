@@ -86,6 +86,10 @@ class MainWindow(QMainWindow):
         #Display data from ShiftTable
         AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
 
+        
+
+        AppFunctions.getMasterList(self, dbFolder)
+
 
         AppFunctions.getTaskStatus1(self, AppFunctions.getCurrentTask(self, dbFolder))
         self.ui.comboBox_shiftEnter.setCurrentIndex(-1)
@@ -108,7 +112,13 @@ class MainWindow(QMainWindow):
             AppFunctions.displayPositions(self, AppFunctions.getCurrentPosition(self, dbFolder))
             
         
+        self.ui.model_master = QStringListModel()
+       
+        self.ui.model_master.setStringList(AppFunctions.master_list )
+        self.ui.completer_master = QCompleter(self.ui.model_master)
+        self.ui.masterEnter.setCompleter(self.ui.completer_master)   
 
+        
         #Add new shift data
         self.ui.addShiftBtn.clicked.connect(lambda: AppFunctions.addNewShift(self, dbFolder))
 
