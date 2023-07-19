@@ -421,8 +421,8 @@ class AppFunctions():
 
         global sumWeight, sumLength
         
-        self.ui.SumLength_Show_1.setText(str(sumLength))
-        self.ui.SumWeight_Show_1.setText(str(sumWeight))
+        self.ui.SumLength_Show_1.setText(str(round(sumLength, 2)))
+        self.ui.SumWeight_Show_1.setText(str(round(sumWeight, 2)))
 
         for row in rows:
             # get number of rows
