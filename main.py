@@ -98,6 +98,11 @@ class MainWindow(QMainWindow):
         self.ui.SumLength_Show_1.setReadOnly(True)
         self.ui.Count_Show_1.setReadOnly(True)
         self.ui.CountPack_Show_1.setReadOnly(True)
+        self.ui.TaskNum1.setReadOnly(True)
+        self.ui.masterShow.setReadOnly(True)
+        self.ui.worker1Show.setReadOnly(True)
+        self.ui.worker2Show.setReadOnly(True)
+        self.ui.worker3Show.setReadOnly(True)
         if AppFunctions.taskStatus1:
             self.ui.closeTable1Btn.setVisible(False)
             self.ui.addPos1Btn.setVisible(False)
