@@ -867,7 +867,7 @@ QLineEdit{
                              </size>
                             </property>
                             <property name="placeholderText">
-                             <string>8</string>
+                             <string>10</string>
                             </property>
                            </widget>
                           </item>
@@ -1669,7 +1669,7 @@ QLineEdit{
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="rigthMenu" native="true">
+        <widget class="QCustomSlideMenu" name="rightMenu" native="true">
          <property name="minimumSize">
           <size>
            <width>200</width>

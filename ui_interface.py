@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceNKmCRJ.ui'
+## Form generated from reading UI file 'interfacekKyGfw.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -16,8 +16,6 @@ from Custom_Widgets.Widgets import QCustomSlideMenu
 from Custom_Widgets.Widgets import QCustomStackedWidget
 
 import QSS_Resources_rc
-
-from FunctionsLukplast_new import AppFunctions
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -888,12 +886,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.mainBodyContent)
 
-        self.rigthMenu = QWidget(self.mainBody)
-        self.rigthMenu.setObjectName(u"rigthMenu")
-        self.rigthMenu.setMinimumSize(QSize(200, 0))
-        self.verticalLayout_7 = QVBoxLayout(self.rigthMenu)
+        self.rightMenu = QCustomSlideMenu(self.mainBody)
+        self.rightMenu.setObjectName(u"rightMenu")
+        self.rightMenu.setMinimumSize(QSize(200, 0))
+        self.verticalLayout_7 = QVBoxLayout(self.rightMenu)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.widget_2 = QWidget(self.rigthMenu)
+        self.widget_2 = QWidget(self.rightMenu)
         self.widget_2.setObjectName(u"widget_2")
         self.verticalLayout_8 = QVBoxLayout(self.widget_2)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
@@ -929,10 +927,6 @@ class Ui_MainWindow(object):
 
         self.masterEnter = QLineEdit(self.frame_5)
         self.masterEnter.setObjectName(u"masterEnter")
-        
-        
-
-        
 
         self.verticalLayout_9.addWidget(self.masterEnter)
 
@@ -970,7 +964,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.addWidget(self.widget_2, 0, Qt.AlignHCenter|Qt.AlignTop)
 
 
-        self.horizontalLayout_2.addWidget(self.rigthMenu)
+        self.horizontalLayout_2.addWidget(self.rightMenu)
 
 
         self.verticalLayout.addWidget(self.mainBody)
@@ -1031,7 +1025,7 @@ class Ui_MainWindow(object):
         self.label_18.setText(QCoreApplication.translate("MainWindow", u"Type", None))
         self.TypeEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"type", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Num", None))
-        self.NumPackEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"8", None))
+        self.NumPackEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"10", None))
         self.addTable1Btn.setText("")
         self.closeTable1Btn.setText("")
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)

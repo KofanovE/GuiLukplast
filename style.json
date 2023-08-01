@@ -46,7 +46,8 @@
 		}]
 	}
     ],
-    "QCustomSlideMenu": [{
+    "QCustomSlideMenu": [
+        {
 		"name": "leftMenu",
 		"defaultSize": [{
 			"width": 0,
@@ -66,6 +67,32 @@
 				"whenMenuIsCollapsed": ":/icons/Icons/align-justify.png",
 				"whenMenuIsExpanded": ":/icons/Icons/chevron-left.png"
 			}]
+		}],
+		"menuTransitionAnimation": [{
+			"animationDuration": 500,
+			"animationEasingCurve": "Linear"
+		
+		}]
+		
+		
+	},
+        {
+		"name": "rightMenu",
+		"defaultSize": [{
+			"width": 0,
+			"height": "parent"
+		}],
+		"collapsedSize": [{
+			"width": 0,
+			"height": "parent"
+		}],
+		"expandedSize": [{
+			"width": 200,
+			"height": "parent"
+		}],
+		"toggleButton": [{
+			"buttonName": "pushButton"
+			
 		}],
 		"menuTransitionAnimation": [{
 			"animationDuration": 500,
