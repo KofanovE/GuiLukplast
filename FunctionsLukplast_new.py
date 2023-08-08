@@ -29,15 +29,18 @@ class AppFunctions():
 
         
         self.arg = arg
+        self.master_list = []
+        self.layborer_list = []
         self.idShift = 0
+
+        # first table
         self.idTask1 = 0
-        self.taskStatus1 = 0
-        
+        self.taskStatus1 = 0        
         self.numInPack = 0
         self.lengthTask = 0
 
-        self.master_list = []
-        self.layborer_list = []
+
+        
 
 
         
@@ -100,6 +103,7 @@ class AppFunctions():
                                     SUM_WEIGHT REAL,
                                     SUM_LENGTH REAL,
                                     CLOSED INTEGER,
+                                    NUM_TABLE INTEGER,
                                     CONSTRAINT ID_SHIFT FOREIGN KEY (ID_SHIFT) REFERENCES ShiftTable (ID_SHIFT)
                                     
                                 );
@@ -120,6 +124,32 @@ class AppFunctions():
                             """
 
         create_OneTaskPosition1 = """ CREATE TABLE IF NOT EXISTS OneTaskPosition1(
+                                          ID_POSITION INTEGER PRIMARY KEY AUTOINCREMENT,
+                                          ID_TASK INTEGER,
+                                          DATE TEXT,
+                                          TIME TEXT,
+                                          WEIGHT TEXT,
+                                          WORKER TEXT,
+                                          CONSTRAINT ID_TASK FOREIGN KEY (ID_TASK) REFERENCES TaskTable (TASK_ID)
+                                          
+                                          
+                                    );
+                                 """
+
+        create_OneTaskPosition3 = """ CREATE TABLE IF NOT EXISTS OneTaskPosition3(
+                                          ID_POSITION INTEGER PRIMARY KEY AUTOINCREMENT,
+                                          ID_TASK INTEGER,
+                                          DATE TEXT,
+                                          TIME TEXT,
+                                          WEIGHT TEXT,
+                                          WORKER TEXT,
+                                          CONSTRAINT ID_TASK FOREIGN KEY (ID_TASK) REFERENCES TaskTable (TASK_ID)
+                                          
+                                          
+                                    );
+                                 """
+
+        create_OneTaskPosition4 = """ CREATE TABLE IF NOT EXISTS OneTaskPosition4(
                                           ID_POSITION INTEGER PRIMARY KEY AUTOINCREMENT,
                                           ID_TASK INTEGER,
                                           DATE TEXT,
@@ -174,6 +204,8 @@ class AppFunctions():
             AppFunctions.create_table(conn, create_TaskTable)
             AppFunctions.create_table(conn, create_AllPositions)
             AppFunctions.create_table(conn, create_OneTaskPosition1)
+            AppFunctions.create_table(conn, create_OneTaskPosition3)
+            AppFunctions.create_table(conn, create_OneTaskPosition4)
             AppFunctions.create_table(conn, create_Team)
 
                      
@@ -229,12 +261,39 @@ class AppFunctions():
                                           
                                           
                                     );
-                                 """ 
+                                 """
+        create_OneTaskPosition3 = """ CREATE TABLE IF NOT EXISTS OneTaskPosition3(
+                                          ID_POSITION INTEGER PRIMARY KEY AUTOINCREMENT,
+                                          ID_TASK INTEGER,
+                                          DATE TEXT,
+                                          TIME TEXT,
+                                          WEIGHT TEXT,
+                                          WORKER TEXT,
+                                          CONSTRAINT ID_TASK FOREIGN KEY (ID_TASK) REFERENCES TaskTable (TASK_ID)
+                                          
+                                          
+                                    );
+                                 """
+
+        create_OneTaskPosition4 = """ CREATE TABLE IF NOT EXISTS OneTaskPosition4(
+                                          ID_POSITION INTEGER PRIMARY KEY AUTOINCREMENT,
+                                          ID_TASK INTEGER,
+                                          DATE TEXT,
+                                          TIME TEXT,
+                                          WEIGHT TEXT,
+                                          WORKER TEXT,
+                                          CONSTRAINT ID_TASK FOREIGN KEY (ID_TASK) REFERENCES TaskTable (TASK_ID)
+                                          
+                                          
+                                    );
+                                 """
         if conn is not None:
             # create user table
             conn.cursor().execute(insert_shift_data_sql)
             conn.cursor().execute(del_last_shift_data)
             conn.cursor().execute(create_OneTaskPosition1)
+            conn.cursor().execute(create_OneTaskPosition3)
+            conn.cursor().execute(create_OneTaskPosition4)
             conn.commit()
             # clear form input
             self.ui.comboBox_shiftEnter.setCurrentIndex(-1)
@@ -291,8 +350,8 @@ class AppFunctions():
 
         # create db connection
         conn = AppFunctions.create_connection(dbFolder)
+        
         # get form values
-
         if self.ui.comboBox.currentIndex() == 0:
             machine = 1
         elif self.ui.comboBox.currentIndex() == 1:
@@ -308,8 +367,8 @@ class AppFunctions():
 
         # create sql statement        
         insert_task_data_sql = f"""
-        INSERT INTO TaskTable (DATE, TIME, ID_SHIFT, MACHINE, LENGTH, DIAMETR, NUM_IN_PACK, TYPE, SUM_WEIGHT, SUM_LENGTH, CLOSED)
-        VALUES (CURRENT_DATE, CURRENT_TIME, '{AppFunctions.idShift}', '{machine}', '{length}', '{diametr}', '{num_in_pack}', '{type_pype}', '{sumWeight}', '{sumLength}', '{0}');
+        INSERT INTO TaskTable (DATE, TIME, ID_SHIFT, MACHINE, LENGTH, DIAMETR, NUM_IN_PACK, TYPE, SUM_WEIGHT, SUM_LENGTH, CLOSED, NUM_TABLE) 
+        VALUES (CURRENT_DATE, CURRENT_TIME, '{AppFunctions.idShift}', '{machine}', '{length}', '{diametr}', '{num_in_pack}', '{type_pype}', '{sumWeight}', '{sumLength}', '{0}', '{1}');
         """
 
         del_last_shift_data = f"""
@@ -335,11 +394,13 @@ class AppFunctions():
             conn.cursor().execute(del_last_shift_data)
             conn.cursor().execute(create_OneTaskPosition1)
             conn.commit()
+            
             # clear form input
             self.ui.LengthEnter1.setText("")
             self.ui.DiametrEnter1.setText("")
             self.ui.NumPackEnter1.setText("")
             self.ui.TypeEnter1.setText("")
+            
             AppFunctions.displayTask(self, AppFunctions.getCurrentTask(self, dbFolder))
             AppFunctions.getTaskStatus1(self, AppFunctions.getCurrentTask(self, dbFolder))
             self.ui.WeightEnter1.setReadOnly(False)
@@ -355,6 +416,8 @@ class AppFunctions():
             AppFunctions.displayTask(self, AppFunctions.getCurrentTask(self, dbFolder))
             AppFunctions.getTaskStatus1(self, AppFunctions.getCurrentTask(self, dbFolder))
 
+
+    
 
     """
     #5. add last task to TaskTable
@@ -428,9 +491,13 @@ class AppFunctions():
         for row in rows:
             # get number of rows
             rowPosition = self.ui.tableWidget.rowCount()
+            print("1.")
+            print("rowPosition = ", rowPosition)
+            print("row", row)
 
             # skip rows that have alreade been loaded to table
             if rowPosition + 1 > row[0]:
+                print('ahtung')
                 continue
             
             itemCount = 0
@@ -442,12 +509,14 @@ class AppFunctions():
             # add items to row
             for item in row:
                 write_flag = 0
+                print(itemCount, item)
                 
                 if itemCount == 0:
                     itemPosition = itemCount
                     self.ui.CountPack_Show_1.setText(str(item))
                     self.ui.Count_Show_1.setText(str(item * AppFunctions.numInPack))
                     write_flag = 1
+                    print('sos', item, item*AppFunctions.numInPack)
                     
                 elif itemCount == 3:
                     itemPosition = 1
@@ -465,9 +534,8 @@ class AppFunctions():
                     self.ui.tableWidget.setItem(rowPosition, itemPosition, self.qtablewidgetitem)
                     self.qtablewidgetitem = self.ui.tableWidget.item(rowPosition, itemPosition)
                     self.qtablewidgetitem.setText(str(item))
-            
-
                 itemCount = itemCount + 1
+                
             rowPosition = rowPosition + 1
 
 
@@ -544,8 +612,8 @@ class AppFunctions():
         # create db connection
         conn = AppFunctions.create_connection(dbFolder)
         get_last_task = f"""
-                            SELECT * FROM TaskTable ORDER BY ROWID DESC LIMIT 1;
-                        """
+                            SELECT * FROM TaskTable WHERE NUM_TABLE = 1 ORDER BY ROWID DESC LIMIT 1;
+                         """
         try:
             c = conn.cursor()
             c.execute(get_last_task)
@@ -587,6 +655,7 @@ class AppFunctions():
         self.ui.addPos1Btn.setVisible(False)
 
         self.ui.tableWidget.clearContents()
+        self.ui.tableWidget.setRowCount(0)
 
 
 
@@ -667,7 +736,10 @@ class AppFunctions():
 
 
 
-        
-        
-        
-    
+
+
+
+
+
+
+
