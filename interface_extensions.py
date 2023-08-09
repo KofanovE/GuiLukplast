@@ -34,7 +34,7 @@
                                     "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
 
 
-# comdoBox for choise of machine number (for table 1) on line1182
+# comdoBox for choise of machine number (for table 1) on line1198
         self.comboBox_shiftEnter.setCursor(QCursor(Qt.PointingHandCursor))
         self.comboBox_shiftEnter.setEditable(False)
         self.comboBox_shiftEnter.addItem("   day")
@@ -43,6 +43,42 @@
                                     "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
                                     "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
 
+
+
+
+
+
+
+
+# comdoBox for choise of machine number (for table 1) on line795
+        self.comboBox3.setCursor(QCursor(Qt.PointingHandCursor))
+        self.comboBox3.setEditable(False)
+        self.comboBox3.addItem("   1")
+        self.comboBox3.addItem("   2")
+        self.comboBox3.setStyleSheet("QComboBox { text-align: center; }"
+                                    "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
+                                    "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
+
+# comdoBox for choise of machine number (for table 1) on line815
+        self.LengthEnter3.setValidator(self.validator_Double)
+
+
+# comdoBox for choise of machine number (for table 1) on line829
+        self.DiametrEnter3.setValidator(self.validator_Int)
+        
+
+# comdoBox for choise of machine number (for table 1) on line856
+        self.NumPackEnter3.setValidator(self.validator_Int)
+
+# comdoBox for choise of machine number (for table 1) on line1038
+        self.WeightEnter3.setValidator(self.validator_Double)
+
+# comdoBox for choise of machine number (for table 1) on line1047
+        self.comboBox_workerEnter3.setCursor(QCursor(Qt.PointingHandCursor))
+        self.comboBox_workerEnter3.setEditable(False)
+        self.comboBox_workerEnter3.setStyleSheet("QComboBox { text-align: center; }"
+                                    "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
+                                    "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
 
 
 

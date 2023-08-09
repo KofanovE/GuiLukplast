@@ -12,13 +12,19 @@ from sqlite3 import Error
 from PySide2.QtWidgets import QTableWidgetItem
 
 
-sumLength = sumWeight = 0
+sumLength = sumWeight =  0
+sumLength3 = sumWeight3 =  0
 
 
 # Function class
 class AppFunctions():
    
     """docstring for AppFunctions"""
+    taskStatus3 = 0
+    idTask3 = 0
+    taskStatus3 = 0        
+    numInPack3 = 0
+    lengthTask3 = 0
 
     
 
@@ -33,11 +39,16 @@ class AppFunctions():
         self.layborer_list = []
         self.idShift = 0
 
+        # third table
+        
+
         # first table
         self.idTask1 = 0
         self.taskStatus1 = 0        
         self.numInPack = 0
         self.lengthTask = 0
+
+        
 
 
         
@@ -302,6 +313,7 @@ class AppFunctions():
             self.ui.lay2Enter.setText("")
             self.ui.lay3Enter.setText("")
             self.ui.comboBox_workerEnter.clear()
+            self.ui.comboBox_workerEnter3.clear()
             AppFunctions.displayShift(self, AppFunctions.getCurrentShift(self, dbFolder))
             
         else:
@@ -552,22 +564,26 @@ class AppFunctions():
                     self.ui.masterShow.setText(item)
                     if item:
                         self.ui.num_workers = 0
-                        self.ui.comboBox_workerEnter.addItem(item)                     
+                        self.ui.comboBox_workerEnter.addItem(item)
+                        self.ui.comboBox_workerEnter3.addItem(item)   
                 elif itemCount == 5:
                     self.ui.worker1Show.setText(item)
                     if item:
                         self.ui.num_workers = 1
                         self.ui.comboBox_workerEnter.addItem(item)
+                        self.ui.comboBox_workerEnter3.addItem(item)
                 elif itemCount == 6:
                     self.ui.worker2Show.setText(item)
                     if item:
                         self.ui.num_workers = 2
                         self.ui.comboBox_workerEnter.addItem(item)
+                        self.ui.comboBox_workerEnter3.addItem(item)
                 elif itemCount == 7:
                     self.ui.worker3Show.setText(item)
                     if item:
                         self.ui.num_workers = 3
-                        self.ui.comboBox_workerEnter.addItem(item)   
+                        self.ui.comboBox_workerEnter.addItem(item)
+                        self.ui.comboBox_workerEnter3.addItem(item)
                 itemCount += 1
         
 
@@ -673,11 +689,17 @@ class AppFunctions():
 
     #13. get closed_status task for table 1
     def getTaskStatus1(self, row):
+        global sumWeight, sumLength
         for items in row:
             AppFunctions.taskStatus1 = items[11]
             AppFunctions.idTask1 = items[0]
             AppFunctions.numInPack = items[7]
             AppFunctions.lengthTask = items[5]
+            sumWeight = items[9]
+            sumLength = items[10]
+
+        
+            
 
 
     #14. get current postition information for current table
@@ -735,6 +757,347 @@ class AppFunctions():
 
 
 
+    """
+    Methods of driving the third table
+    """
+
+
+
+
+
+    #4. add new task of corect shift to OneTaskPosition1
+    def addNewTask3(self, dbFolder):
+
+        global sumWeight3, sumLength3
+        
+
+        sumWeight3 = sumLength3 = 0
+        
+ 
+
+        # create db connection
+        conn = AppFunctions.create_connection(dbFolder)
+        
+        # get form values
+        if self.ui.comboBox3.currentIndex() == 0:
+            machine = 1
+        elif self.ui.comboBox3.currentIndex() == 1:
+            machine = 2
+        else:
+            machine = "Not choised"
+        length = self.ui.LengthEnter3.text()
+        diametr = self.ui.DiametrEnter3.text()
+        num_in_pack = self.ui.NumPackEnter3.text()
+        type_pype = self.ui.TypeEnter3.text()
+        
+
+
+        # create sql statement        
+        insert_task_data_sql = f"""
+        INSERT INTO TaskTable (DATE, TIME, ID_SHIFT, MACHINE, LENGTH, DIAMETR, NUM_IN_PACK, TYPE, SUM_WEIGHT, SUM_LENGTH, CLOSED, NUM_TABLE) 
+        VALUES (CURRENT_DATE, CURRENT_TIME, '{AppFunctions.idShift}', '{machine}', '{length}', '{diametr}', '{num_in_pack}', '{type_pype}', '{sumWeight3}', '{sumLength3}', '{0}', '{3}');
+        """
+
+        del_last_shift_data = f"""
+        DROP TABLE IF EXISTS  OneTaskPosition3;
+        """
+
+        create_OneTaskPosition3 = """ CREATE TABLE IF NOT EXISTS OneTaskPosition3(
+                                          ID_POSITION INTEGER PRIMARY KEY AUTOINCREMENT,
+                                          ID_TASK INTEGER,
+                                          DATE TEXT,
+                                          TIME TEXT,
+                                          WEIGHT TEXT,
+                                          WORKER TEXT,
+                                          CONSTRAINT ID_TASK FOREIGN KEY (ID_TASK) REFERENCES TaskTable (TASK_ID)
+                                          
+                                          
+                                    );
+                                 """ 
+
+        if conn is not None:
+            # create user table
+            conn.cursor().execute(insert_task_data_sql)
+            conn.cursor().execute(del_last_shift_data)
+            conn.cursor().execute(create_OneTaskPosition3)
+            conn.commit()
+            
+            # clear form input
+            self.ui.LengthEnter3.setText("")
+            self.ui.DiametrEnter3.setText("")
+            self.ui.NumPackEnter3.setText("")
+            self.ui.TypeEnter3.setText("")
+            
+            AppFunctions.displayTask3(self, AppFunctions.getCurrentTask3(self, dbFolder))
+            AppFunctions.getTaskStatus3(self, AppFunctions.getCurrentTask3(self, dbFolder))
+            self.ui.WeightEnter3.setReadOnly(False)
+            self.ui.addTable3Btn.setVisible(False)
+            self.ui.closeTable3Btn.setVisible(True)
+            self.ui.addPos3Btn.setVisible(True)           
+            self.ui.tableWidget3.clearContents()
+            
+        else:
+            print("Could not insert shift data")           
+            
+            # load new user from DB to table view
+            AppFunctions.displayTask3(self, AppFunctions.getCurrentTask3(self, dbFolder))
+            AppFunctions.getTaskStatus3(self, AppFunctions.getCurrentTask3(self, dbFolder))
+
+
+    
+
+    """
+    #5. add last task to TaskTable
+    def addTaskToTaskTable(self, dbFolder):
+        pass        
+
+    """
+
+    #6. add new position to OneTaskPosition1.
+    def addNewPosition3(self, dbFolder):
+
+        global sumWeight3, sumLength3
+        # create db connection
+        conn = AppFunctions.create_connection(dbFolder)
+        # get form values
+        weight = self.ui.WeightEnter3.text()        
+        worker = self.ui.comboBox_workerEnter3.currentText()
+        
+        
+        sumWeight3 += float(weight)
+        sumL3 = AppFunctions.numInPack3 * AppFunctions.lengthTask3
+        sumLength3 += sumL3
+    
+        
+        
+        # create sql statement
+        insert_position_data_sql = f"""
+        INSERT INTO OneTaskPosition3(ID_TASK, DATE, TIME, WEIGHT, WORKER) VALUES ('{AppFunctions.idTask3}', CURRENT_DATE, CURRENT_TIME, '{weight}', '{worker}');
+        """
+
+        insert_last_position_to_global = f"""
+        INSERT INTO AllPositions (ID_TASK, ID_POSITION, DATE, TIME, WEIGHT, WORKER) SELECT ID_TASK, ID_POSITION, DATE, TIME, WEIGHT, WORKER FROM OneTaskPosition3 ORDER BY ROWID DESC LIMIT 1;
+        """
+        
+        insert_sum_to_task = f"""
+        UPDATE TaskTable SET SUM_WEIGHT = ('{sumWeight3}'), SUM_LENGTH = ('{sumLength3}') WHERE TASK_ID = ('{AppFunctions.idTask3}') ;
+        """
+        
+        if conn is not None:
+            # create user table
+            conn.cursor().execute(insert_position_data_sql)
+            conn.cursor().execute(insert_last_position_to_global)        
+            conn.cursor().execute(insert_sum_to_task)
+            conn.commit()
+            # clear form input
+            AppFunctions.displayPositions3(self, AppFunctions.getCurrentPosition3(self, dbFolder))
+            
+        else:
+            print("Could not insert position data")
+                        
+            # load new user from DB to table view
+            AppFunctions.displayPositions3(self, AppFunctions.getCurrentPosition3(self, dbFolder))
+
+        self.ui.WeightEnter3.setText("")
+
+
+
+    """
+    #7. add last new position from OneTaskPosition1 to AllPosition table.
+    def addPostionToAllPositionsTable(self, dbFolder):
+        pass
+    """
+    
+    #8. display all positons of current task
+    def displayPositions3(self, rows):
+
+        global sumWeight3, sumLength3
+        
+        self.ui.SumLength_Show3.setText(str(round(sumLength3, 2)))
+        self.ui.SumWeight_Show3.setText(str(round(sumWeight3, 2)))
+
+        for row in rows:
+            # get number of rows
+            rowPosition = self.ui.tableWidget3.rowCount()
+            print("3.")
+            print("rowPosition = ", rowPosition)
+            print("row", row)
+
+            # skip rows that have alreade been loaded to table
+            if rowPosition + 1 > row[0]:
+                print('ahtung')
+                continue
+            
+            itemCount = 0
+            # create new table row
+            self.ui.tableWidget3.setRowCount(rowPosition+1)
+            qtablewidgetitem = QTableWidgetItem()
+            self.ui.tableWidget3.setVerticalHeaderItem(rowPosition, qtablewidgetitem)
+
+            # add items to row
+            for item in row:
+                write_flag = 0
+                print(itemCount, item)
+                
+                if itemCount == 0:
+                    itemPosition = itemCount
+                    self.ui.CountPack_Show3.setText(str(item))
+                    self.ui.Count_Show3.setText(str(item * AppFunctions.numInPack3))
+                    write_flag = 1
+                    print('sos', item, item*AppFunctions.numInPack3)
+                    
+                elif itemCount == 3:
+                    itemPosition = 1
+                    write_flag = 1
+                    
+                elif itemCount == 4:
+                    itemPosition = 2
+                    write_flag = 1
+                    
+                elif itemCount == 5:
+                    itemPosition = 3
+                    write_flag = 1
+                if write_flag:
+                    self.qtablewidgetitem = QTableWidgetItem()
+                    self.ui.tableWidget3.setItem(rowPosition, itemPosition, self.qtablewidgetitem)
+                    self.qtablewidgetitem = self.ui.tableWidget3.item(rowPosition, itemPosition)
+                    self.qtablewidgetitem.setText(str(item))
+                itemCount = itemCount + 1
+                
+            rowPosition = rowPosition + 1
+
+
+    
+
+        
+
+
+    #10. display current informations of current task:
+    def displayTask3(self, row):
+        
+        itemCount = 0
+        self.ui.comboBox_workerEnter3.setEnabled(True)
+        # add items to row
+        for items in row:
+                
+            for item in items:
+                if itemCount == 0:
+                    AppFunctions.idTask3 = item
+                    self.ui.TaskNum3.setText(str(item))
+                    self.ui.TaskNum3.setReadOnly(True)
+                elif itemCount == 4:
+                    if str(item) == "1":
+                        index_to_select = 0
+                    else:
+                        index_to_select = 1                
+                    self.ui.comboBox3.setCurrentIndex(index_to_select)
+                    self.ui.comboBox3.setEnabled(False)
+                elif itemCount == 5:
+                    self.ui.LengthEnter3.setText(str(item))
+                    self.ui.LengthEnter3.setReadOnly(True)
+                elif itemCount == 6:
+                    self.ui.DiametrEnter3.setText(str(item))
+                    self.ui.DiametrEnter3.setReadOnly(True)
+                elif itemCount == 8:
+                    self.ui.TypeEnter3.setText(str(item))
+                    self.ui.TypeEnter3.setReadOnly(True)
+                elif itemCount == 7:
+                    self.ui.NumPackEnter3.setText(str(item))
+                    self.ui.NumPackEnter3.setReadOnly(True) 
+                itemCount += 1
+        
+
+    #11. get current task information for current table
+    def getCurrentTask3(self, dbFolder):        
+        # create db connection
+        conn = AppFunctions.create_connection(dbFolder)
+        get_last_task = f"""
+                            SELECT * FROM TaskTable WHERE NUM_TABLE = 3 ORDER BY ROWID DESC LIMIT 1;
+                         """
+        try:
+            c = conn.cursor()
+            c.execute(get_last_task)
+            # return all table rows
+            return c
+        except Error as e:
+            print(e)
+
+    #12. close task for table1
+    def closeTask3(self, dbFolder):
+
+        conn = AppFunctions.create_connection(dbFolder)
+
+        #self.ui.MachineNum1.setText("")
+        self.ui.WeightEnter3.setReadOnly(True)
+        self.ui.comboBox3.setCurrentIndex(-1)
+        self.ui.comboBox3.setEnabled(True)
+        self.ui.comboBox_workerEnter3.setCurrentIndex(-1)
+        self.ui.comboBox_workerEnter3.setEnabled(False)
+        self.ui.WeightEnter3.setText("")
+        self.ui.LengthEnter3.setText("")
+        self.ui.LengthEnter3.setReadOnly(False)
+        self.ui.DiametrEnter3.setText("")
+        self.ui.DiametrEnter3.setReadOnly(False)
+        self.ui.NumPackEnter3.setText("")
+        self.ui.NumPackEnter3.setReadOnly(False)
+        self.ui.TypeEnter3.setText("")
+        self.ui.TypeEnter3.setReadOnly(False)
+        self.ui.TaskNum3.setText("")
+        self.ui.TaskNum3.setReadOnly(False)
+
+        self.ui.SumWeight_Show3.setText("")
+        self.ui.SumLength_Show3.setText("")
+        self.ui.Count_Show3.setText("")
+        self.ui.CountPack_Show3.setText("")
+
+        self.ui.addTable3Btn.setVisible(True)
+        self.ui.closeTable3Btn.setVisible(False)
+        self.ui.addPos3Btn.setVisible(False)
+
+        self.ui.tableWidget3.clearContents()
+        self.ui.tableWidget3.setRowCount(0)
+
+
+
+        insert_task_close_marker = f"""
+        UPDATE TaskTable SET CLOSED = ('{1}') WHERE TASK_ID = ('{AppFunctions.idTask3}') ;
+        """
+
+        if conn is not None:
+            # create user table
+            conn.cursor().execute(insert_task_close_marker)
+            conn.commit()           
+        else:
+            print("Could not insert shift data")           
+
+
+    #13. get closed_status task for table 1
+    def getTaskStatus3(self, row):
+        global sumWeight3, sumLength3
+        for items in row:
+            AppFunctions.taskStatus3 = items[11]
+            AppFunctions.idTask3 = items[0]
+            AppFunctions.numInPack3 = items[7]
+            AppFunctions.lengthTask3 = items[5]
+            sumWeight3 = items[9]
+            sumLength3 = items[10]
+
+
+    #14. get current postition information for current table
+    def getCurrentPosition3(self, dbFolder):        
+        # create db connection
+        conn = AppFunctions.create_connection(dbFolder)
+        get_positions = """
+                            SELECT * FROM OneTaskPosition3;
+                        """
+        try:
+            c = conn.cursor()
+            c.execute(get_positions)
+            # return all table rows
+            return c
+        except Error as e:
+            print(e)
+            
 
 
 

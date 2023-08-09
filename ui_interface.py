@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceyJZyVq.ui'
+## Form generated from reading UI file 'interfacePJxCsC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -792,6 +792,13 @@ class Ui_MainWindow(object):
         self.comboBox3.setMinimumSize(QSize(75, 30))
         self.comboBox3.setMaximumSize(QSize(75, 30))
         self.comboBox3.setPlaceholderText(u"Num")
+        self.comboBox3.setCursor(QCursor(Qt.PointingHandCursor))
+        self.comboBox3.setEditable(False)
+        self.comboBox3.addItem("   1")
+        self.comboBox3.addItem("   2")
+        self.comboBox3.setStyleSheet("QComboBox { text-align: center; }"
+                                    "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
+                                    "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
 
         self.horizontalLayout_18.addWidget(self.comboBox3)
 
@@ -805,6 +812,7 @@ class Ui_MainWindow(object):
         self.LengthEnter3.setObjectName(u"LengthEnter3")
         self.LengthEnter3.setMinimumSize(QSize(75, 30))
         self.LengthEnter3.setMaximumSize(QSize(75, 30))
+        self.LengthEnter3.setValidator(self.validator_Double)
 
         self.horizontalLayout_18.addWidget(self.LengthEnter3)
 
@@ -818,6 +826,7 @@ class Ui_MainWindow(object):
         self.DiametrEnter3.setObjectName(u"DiametrEnter3")
         self.DiametrEnter3.setMinimumSize(QSize(75, 30))
         self.DiametrEnter3.setMaximumSize(QSize(75, 30))
+        self.DiametrEnter3.setValidator(self.validator_Int)
 
         self.horizontalLayout_18.addWidget(self.DiametrEnter3)
 
@@ -844,6 +853,7 @@ class Ui_MainWindow(object):
         self.NumPackEnter3.setObjectName(u"NumPackEnter3")
         self.NumPackEnter3.setMinimumSize(QSize(75, 30))
         self.NumPackEnter3.setMaximumSize(QSize(75, 30))
+        self.NumPackEnter3.setValidator(self.validator_Int)
 
         self.horizontalLayout_18.addWidget(self.NumPackEnter3)
 
@@ -1025,14 +1035,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
         self.WeightEnter3 = QLineEdit(self.botTable3)
         self.WeightEnter3.setObjectName(u"WeightEnter3")
+        self.WeightEnter3.setValidator(self.validator_Double)
 
         self.horizontalLayout_13.addWidget(self.WeightEnter3)
+
 
         self.comboBox_workerEnter3 = QComboBox(self.botTable3)
         self.comboBox_workerEnter3.setObjectName(u"comboBox_workerEnter3")
         sizePolicy1.setHeightForWidth(self.comboBox_workerEnter3.sizePolicy().hasHeightForWidth())
         self.comboBox_workerEnter3.setSizePolicy(sizePolicy1)
         self.comboBox_workerEnter3.setMinimumSize(QSize(0, 30))
+        self.comboBox_workerEnter3.setCursor(QCursor(Qt.PointingHandCursor))
+        self.comboBox_workerEnter3.setEditable(False)
+        self.comboBox_workerEnter3.setStyleSheet("QComboBox { text-align: center; }"
+                                    "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
+                                    "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
 
         self.horizontalLayout_13.addWidget(self.comboBox_workerEnter3)
 
