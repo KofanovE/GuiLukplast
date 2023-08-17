@@ -26,7 +26,7 @@
 	background-color: #1b1b27;
 }
 
-#header, #mainBody, #topTable1, #botTable1, #topTable3, #botTable3,  #footer, #frame_7, #frame_14, #frame_15, #frame_16{
+#header, #mainBody, #topTable1, #botTable1, #topTable3, #botTable3,  #footer, #frame_7, #frame_14, #frame_15, #frame_16, #frame_11, #frame_17, #frame_18, #frame_19{
 	background-color: #27263c;
 }
 
@@ -643,6 +643,9 @@ QLineEdit{
           </property>
           <item>
            <widget class="QCustomStackedWidget" name="mainPages">
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
             <widget class="QWidget" name="homePage">
              <layout class="QVBoxLayout" name="verticalLayout_10">
               <item>
@@ -660,40 +663,6 @@ QLineEdit{
                        <enum>QFrame::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_7">
-                       <item>
-                        <widget class="QLabel" name="label_8">
-                         <property name="font">
-                          <font>
-                           <pointsize>12</pointsize>
-                           <weight>75</weight>
-                           <italic>true</italic>
-                           <bold>true</bold>
-                          </font>
-                         </property>
-                         <property name="text">
-                          <string>Task</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLineEdit" name="TaskNum1">
-                         <property name="minimumSize">
-                          <size>
-                           <width>75</width>
-                           <height>30</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>75</width>
-                           <height>30</height>
-                          </size>
-                         </property>
-                         <property name="placeholderText">
-                          <string>12345</string>
-                         </property>
-                        </widget>
-                       </item>
                        <item>
                         <widget class="QFrame" name="frameTable1">
                          <property name="frameShape">
@@ -1433,40 +1402,6 @@ QLineEdit{
                        <enum>QFrame::Raised</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_11">
-                       <item>
-                        <widget class="QLabel" name="label_12">
-                         <property name="font">
-                          <font>
-                           <pointsize>12</pointsize>
-                           <weight>75</weight>
-                           <italic>true</italic>
-                           <bold>true</bold>
-                          </font>
-                         </property>
-                         <property name="text">
-                          <string>Task</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLineEdit" name="TaskNum3">
-                         <property name="minimumSize">
-                          <size>
-                           <width>75</width>
-                           <height>30</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>75</width>
-                           <height>30</height>
-                          </size>
-                         </property>
-                         <property name="placeholderText">
-                          <string>12345</string>
-                         </property>
-                        </widget>
-                       </item>
                        <item>
                         <widget class="QFrame" name="frameTable3">
                          <property name="frameShape">

@@ -102,12 +102,11 @@ class MainWindow(QMainWindow):
         self.ui.SumLength_Show_1.setReadOnly(True)
         self.ui.Count_Show_1.setReadOnly(True)
         self.ui.CountPack_Show_1.setReadOnly(True)
-        self.ui.TaskNum1.setReadOnly(True)
         self.ui.SumWeight_Show3.setReadOnly(True)
         self.ui.SumLength_Show3.setReadOnly(True)
         self.ui.Count_Show3.setReadOnly(True)
         self.ui.CountPack_Show3.setReadOnly(True)
-        self.ui.TaskNum3.setReadOnly(True)
+        
 
         
         self.ui.masterShow.setReadOnly(True)

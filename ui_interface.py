@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacePJxCsC.ui'
+## Form generated from reading UI file 'interfaceegxMtW.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -34,7 +34,7 @@ class Ui_MainWindow(object):
 "	background-color: #1b1b27;\n"
 "}\n"
 "\n"
-"#header, #mainBody, #topTable1, #botTable1, #topTable3, #botTable3,  #footer, #frame_7, #frame_14, #frame_15, #frame_16{\n"
+"#header, #mainBody, #topTable1, #botTable1, #topTable3, #botTable3,  #footer, #frame_7, #frame_14, #frame_15, #frame_16, #frame_11, #frame_17, #frame_18, #frame_19{\n"
 "	background-color: #27263c;\n"
 "}\n"
 "\n"
@@ -65,10 +65,10 @@ class Ui_MainWindow(object):
 "QPushButton{\n"
 "	text-align: left;\n"
 "	padding:5px 10px;\n"
-"	border-top-left-radius: 10px;\n"
+"	border-top-left-radius: "
+                        "10px;\n"
 "	border-bottom-left-radius: 10px;\n"
-""
-                        "}\n"
+"}\n"
 "\n"
 "#homeBtn{\n"
 "	border-left: 3px solid #00bfff;\n"
@@ -375,19 +375,6 @@ class Ui_MainWindow(object):
         self.topTable1.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.topTable1)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.label_8 = QLabel(self.topTable1)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setFont(font1)
-
-        self.horizontalLayout_7.addWidget(self.label_8)
-
-        self.TaskNum1 = QLineEdit(self.topTable1)
-        self.TaskNum1.setObjectName(u"TaskNum1")
-        self.TaskNum1.setMinimumSize(QSize(75, 30))
-        self.TaskNum1.setMaximumSize(QSize(75, 30))
-
-        self.horizontalLayout_7.addWidget(self.TaskNum1)
-
         self.frameTable1 = QFrame(self.topTable1)
         self.frameTable1.setObjectName(u"frameTable1")
         self.frameTable1.setFrameShape(QFrame.StyledPanel)
@@ -412,6 +399,7 @@ class Ui_MainWindow(object):
         self.comboBox.setStyleSheet("QComboBox { text-align: center; }"
                                     "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
                                     "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
+
 
         self.horizontalLayout_15.addWidget(self.comboBox)
 
@@ -677,6 +665,7 @@ class Ui_MainWindow(object):
                                     "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
                                     "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
 
+
         self.horizontalLayout_8.addWidget(self.comboBox_workerEnter)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
@@ -762,19 +751,6 @@ class Ui_MainWindow(object):
         self.topTable3.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_11 = QHBoxLayout(self.topTable3)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.label_12 = QLabel(self.topTable3)
-        self.label_12.setObjectName(u"label_12")
-        self.label_12.setFont(font1)
-
-        self.horizontalLayout_11.addWidget(self.label_12)
-
-        self.TaskNum3 = QLineEdit(self.topTable3)
-        self.TaskNum3.setObjectName(u"TaskNum3")
-        self.TaskNum3.setMinimumSize(QSize(75, 30))
-        self.TaskNum3.setMaximumSize(QSize(75, 30))
-
-        self.horizontalLayout_11.addWidget(self.TaskNum3)
-
         self.frameTable3 = QFrame(self.topTable3)
         self.frameTable3.setObjectName(u"frameTable3")
         self.frameTable3.setFrameShape(QFrame.StyledPanel)
@@ -1039,7 +1015,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_13.addWidget(self.WeightEnter3)
 
-
         self.comboBox_workerEnter3 = QComboBox(self.botTable3)
         self.comboBox_workerEnter3.setObjectName(u"comboBox_workerEnter3")
         sizePolicy1.setHeightForWidth(self.comboBox_workerEnter3.sizePolicy().hasHeightForWidth())
@@ -1050,6 +1025,7 @@ class Ui_MainWindow(object):
         self.comboBox_workerEnter3.setStyleSheet("QComboBox { text-align: center; }"
                                     "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
                                     "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
+
 
         self.horizontalLayout_13.addWidget(self.comboBox_workerEnter3)
 
@@ -1204,6 +1180,7 @@ class Ui_MainWindow(object):
                                     "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
                                     "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
 
+
         self.verticalLayout_9.addWidget(self.comboBox_shiftEnter)
 
         self.masterEnter = QLineEdit(self.frame_5)
@@ -1271,6 +1248,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
+        self.mainPages.setCurrentIndex(0)
+
+
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
@@ -1296,8 +1276,6 @@ class Ui_MainWindow(object):
         self.settingsBtn.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.helpBtn.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.aboutBtn.setText(QCoreApplication.translate("MainWindow", u"About ", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Task", None))
-        self.TaskNum1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"12345", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Machine", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"L", None))
         self.LengthEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
@@ -1330,8 +1308,6 @@ class Ui_MainWindow(object):
         self.addPos1Btn.setText("")
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"TopTable22", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"BottomTable2", None))
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Task", None))
-        self.TaskNum3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"12345", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"Machine", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"L", None))
         self.LengthEnter3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
