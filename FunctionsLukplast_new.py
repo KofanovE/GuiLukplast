@@ -364,12 +364,7 @@ class AppFunctions():
         conn = AppFunctions.create_connection(dbFolder)
         
         # get form values
-        if self.ui.comboBox.currentIndex() == 0:
-            machine = 1
-        elif self.ui.comboBox.currentIndex() == 1:
-            machine = 2
-        else:
-            machine = "Not choised"
+        machine = 1
         length = self.ui.LengthEnter1.text()
         diametr = self.ui.DiametrEnter1.text()
         num_in_pack = self.ui.NumPackEnter1.text()
@@ -779,12 +774,7 @@ class AppFunctions():
         conn = AppFunctions.create_connection(dbFolder)
         
         # get form values
-        if self.ui.comboBox3.currentIndex() == 0:
-            machine = 1
-        elif self.ui.comboBox3.currentIndex() == 1:
-            machine = 2
-        else:
-            machine = "Not choised"
+        machine = 2
         length = self.ui.LengthEnter3.text()
         diametr = self.ui.DiametrEnter3.text()
         num_in_pack = self.ui.NumPackEnter3.text()

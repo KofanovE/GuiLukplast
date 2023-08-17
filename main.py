@@ -119,7 +119,6 @@ class MainWindow(QMainWindow):
             self.ui.closeTable3Btn.setVisible(False)
             self.ui.addPos3Btn.setVisible(False)
             self.ui.comboBox_workerEnter3.setCurrentIndex(-1)
-            self.ui.comboBox3.setCurrentIndex(-1)
             self.ui.comboBox_workerEnter3.setEnabled(False)
             self.ui.WeightEnter3.setReadOnly(True)
         else:
@@ -133,7 +132,6 @@ class MainWindow(QMainWindow):
             self.ui.closeTable1Btn.setVisible(False)
             self.ui.addPos1Btn.setVisible(False)
             self.ui.comboBox_workerEnter.setCurrentIndex(-1)
-            self.ui.comboBox.setCurrentIndex(-1)
             self.ui.comboBox_workerEnter.setEnabled(False)
             self.ui.WeightEnter1.setReadOnly(True)
         else:
