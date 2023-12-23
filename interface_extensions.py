@@ -45,12 +45,6 @@
                                     "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
 
 
-
-
-
-
-
-
 # comdoBox for choise of machine number (for table 1) on line795
         self.comboBox3.setCursor(QCursor(Qt.PointingHandCursor))
         self.comboBox3.setEditable(False)

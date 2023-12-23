@@ -26,7 +26,7 @@
 	background-color: #1b1b27;
 }
 
-#header, #mainBody, #topTable1, #botTable1, #topTable3, #botTable3,  #footer, #frame_7, #frame_14, #frame_15, #frame_16{
+#header, #mainBody, #topTable1, #botTable1, #topTable3, #botTable3,  #footer, #frame_7, #frame_14, #frame_15, #frame_16, #frame_11, #frame_17, #frame_18, #frame_19{
 	background-color: #27263c;
 }
 
@@ -643,6 +643,9 @@ QLineEdit{
           </property>
           <item>
            <widget class="QCustomStackedWidget" name="mainPages">
+            <property name="currentIndex">
+             <number>0</number>
+            </property>
             <widget class="QWidget" name="homePage">
              <layout class="QVBoxLayout" name="verticalLayout_10">
               <item>
@@ -661,36 +664,18 @@ QLineEdit{
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_7">
                        <item>
-                        <widget class="QLabel" name="label_8">
+                        <widget class="QLabel" name="label_9">
                          <property name="font">
                           <font>
-                           <pointsize>12</pointsize>
+                           <pointsize>14</pointsize>
                            <weight>75</weight>
                            <italic>true</italic>
                            <bold>true</bold>
+                           <underline>false</underline>
                           </font>
                          </property>
                          <property name="text">
-                          <string>Task</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLineEdit" name="TaskNum1">
-                         <property name="minimumSize">
-                          <size>
-                           <width>75</width>
-                           <height>30</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>75</width>
-                           <height>30</height>
-                          </size>
-                         </property>
-                         <property name="placeholderText">
-                          <string>12345</string>
+                          <string>Линия полиэтилена</string>
                          </property>
                         </widget>
                        </item>
@@ -703,40 +688,6 @@ QLineEdit{
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_15">
-                          <item>
-                           <widget class="QLabel" name="label_9">
-                            <property name="font">
-                             <font>
-                              <pointsize>12</pointsize>
-                              <weight>75</weight>
-                              <italic>true</italic>
-                              <bold>true</bold>
-                             </font>
-                            </property>
-                            <property name="text">
-                             <string>Machine</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QComboBox" name="comboBox">
-                            <property name="minimumSize">
-                             <size>
-                              <width>75</width>
-                              <height>30</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>75</width>
-                              <height>30</height>
-                             </size>
-                            </property>
-                            <property name="placeholderText">
-                             <string notr="true">Num</string>
-                            </property>
-                           </widget>
-                          </item>
                           <item>
                            <widget class="QLabel" name="label_16">
                             <property name="font">
@@ -1434,36 +1385,18 @@ QLineEdit{
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_11">
                        <item>
-                        <widget class="QLabel" name="label_12">
+                        <widget class="QLabel" name="label_25">
                          <property name="font">
                           <font>
-                           <pointsize>12</pointsize>
+                           <pointsize>14</pointsize>
                            <weight>75</weight>
                            <italic>true</italic>
                            <bold>true</bold>
+                           <underline>false</underline>
                           </font>
                          </property>
                          <property name="text">
-                          <string>Task</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLineEdit" name="TaskNum3">
-                         <property name="minimumSize">
-                          <size>
-                           <width>75</width>
-                           <height>30</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize">
-                          <size>
-                           <width>75</width>
-                           <height>30</height>
-                          </size>
-                         </property>
-                         <property name="placeholderText">
-                          <string>12345</string>
+                          <string>Линия канализации</string>
                          </property>
                         </widget>
                        </item>
@@ -1476,40 +1409,6 @@ QLineEdit{
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_18">
-                          <item>
-                           <widget class="QLabel" name="label_25">
-                            <property name="font">
-                             <font>
-                              <pointsize>12</pointsize>
-                              <weight>75</weight>
-                              <italic>true</italic>
-                              <bold>true</bold>
-                             </font>
-                            </property>
-                            <property name="text">
-                             <string>Machine</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QComboBox" name="comboBox3">
-                            <property name="minimumSize">
-                             <size>
-                              <width>75</width>
-                              <height>30</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>75</width>
-                              <height>30</height>
-                             </size>
-                            </property>
-                            <property name="placeholderText">
-                             <string notr="true">Num</string>
-                            </property>
-                           </widget>
-                          </item>
                           <item>
                            <widget class="QLabel" name="label_26">
                             <property name="font">

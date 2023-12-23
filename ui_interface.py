@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfacePJxCsC.ui'
+## Form generated from reading UI file 'interfaceKpFmyX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -34,7 +34,7 @@ class Ui_MainWindow(object):
 "	background-color: #1b1b27;\n"
 "}\n"
 "\n"
-"#header, #mainBody, #topTable1, #botTable1, #topTable3, #botTable3,  #footer, #frame_7, #frame_14, #frame_15, #frame_16{\n"
+"#header, #mainBody, #topTable1, #botTable1, #topTable3, #botTable3,  #footer, #frame_7, #frame_14, #frame_15, #frame_16, #frame_11, #frame_17, #frame_18, #frame_19{\n"
 "	background-color: #27263c;\n"
 "}\n"
 "\n"
@@ -65,10 +65,10 @@ class Ui_MainWindow(object):
 "QPushButton{\n"
 "	text-align: left;\n"
 "	padding:5px 10px;\n"
-"	border-top-left-radius: 10px;\n"
+"	border-top-left-radius: "
+                        "10px;\n"
 "	border-bottom-left-radius: 10px;\n"
-""
-                        "}\n"
+"}\n"
 "\n"
 "#homeBtn{\n"
 "	border-left: 3px solid #00bfff;\n"
@@ -375,18 +375,17 @@ class Ui_MainWindow(object):
         self.topTable1.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.topTable1)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.label_8 = QLabel(self.topTable1)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setFont(font1)
+        self.label_9 = QLabel(self.topTable1)
+        self.label_9.setObjectName(u"label_9")
+        font3 = QFont()
+        font3.setPointSize(14)
+        font3.setBold(True)
+        font3.setItalic(True)
+        font3.setUnderline(False)
+        font3.setWeight(75)
+        self.label_9.setFont(font3)
 
-        self.horizontalLayout_7.addWidget(self.label_8)
-
-        self.TaskNum1 = QLineEdit(self.topTable1)
-        self.TaskNum1.setObjectName(u"TaskNum1")
-        self.TaskNum1.setMinimumSize(QSize(75, 30))
-        self.TaskNum1.setMaximumSize(QSize(75, 30))
-
-        self.horizontalLayout_7.addWidget(self.TaskNum1)
+        self.horizontalLayout_7.addWidget(self.label_9)
 
         self.frameTable1 = QFrame(self.topTable1)
         self.frameTable1.setObjectName(u"frameTable1")
@@ -394,27 +393,6 @@ class Ui_MainWindow(object):
         self.frameTable1.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_15 = QHBoxLayout(self.frameTable1)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
-        self.label_9 = QLabel(self.frameTable1)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setFont(font1)
-
-        self.horizontalLayout_15.addWidget(self.label_9)
-
-        self.comboBox = QComboBox(self.frameTable1)
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setMinimumSize(QSize(75, 30))
-        self.comboBox.setMaximumSize(QSize(75, 30))
-        self.comboBox.setPlaceholderText(u"Num")
-        self.comboBox.setCursor(QCursor(Qt.PointingHandCursor))
-        self.comboBox.setEditable(False)
-        self.comboBox.addItem("   1")
-        self.comboBox.addItem("   2")
-        self.comboBox.setStyleSheet("QComboBox { text-align: center; }"
-                                    "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
-                                    "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
-
-        self.horizontalLayout_15.addWidget(self.comboBox)
-
         self.label_16 = QLabel(self.frameTable1)
         self.label_16.setObjectName(u"label_16")
         self.label_16.setFont(font1)
@@ -481,9 +459,9 @@ class Ui_MainWindow(object):
         self.addTable1Btn = QPushButton(self.topTable1)
         self.addTable1Btn.setObjectName(u"addTable1Btn")
         self.addTable1Btn.setMinimumSize(QSize(0, 0))
-        font3 = QFont()
-        font3.setPointSize(14)
-        self.addTable1Btn.setFont(font3)
+        font4 = QFont()
+        font4.setPointSize(14)
+        self.addTable1Btn.setFont(font4)
         self.addTable1Btn.setCursor(QCursor(Qt.PointingHandCursor))
         icon3 = QIcon()
         icon3.addFile(u":/icons/Icons/file-plus.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -495,7 +473,7 @@ class Ui_MainWindow(object):
         self.closeTable1Btn = QPushButton(self.topTable1)
         self.closeTable1Btn.setObjectName(u"closeTable1Btn")
         self.closeTable1Btn.setMinimumSize(QSize(0, 0))
-        self.closeTable1Btn.setFont(font3)
+        self.closeTable1Btn.setFont(font4)
         self.closeTable1Btn.setCursor(QCursor(Qt.PointingHandCursor))
         icon4 = QIcon()
         icon4.addFile(u":/icons/Icons/download.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -686,7 +664,7 @@ class Ui_MainWindow(object):
         self.addPos1Btn = QPushButton(self.botTable1)
         self.addPos1Btn.setObjectName(u"addPos1Btn")
         self.addPos1Btn.setMinimumSize(QSize(0, 0))
-        self.addPos1Btn.setFont(font3)
+        self.addPos1Btn.setFont(font4)
         self.addPos1Btn.setCursor(QCursor(Qt.PointingHandCursor))
         icon5 = QIcon()
         icon5.addFile(u":/icons/Icons/plus-square.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -713,9 +691,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.label_10 = QLabel(self.frame_8)
         self.label_10.setObjectName(u"label_10")
-        font4 = QFont()
-        font4.setPointSize(12)
-        self.label_10.setFont(font4)
+        font5 = QFont()
+        font5.setPointSize(12)
+        self.label_10.setFont(font5)
 
         self.horizontalLayout_9.addWidget(self.label_10)
 
@@ -735,7 +713,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
         self.label_11 = QLabel(self.frame_9)
         self.label_11.setObjectName(u"label_11")
-        self.label_11.setFont(font4)
+        self.label_11.setFont(font5)
 
         self.horizontalLayout_10.addWidget(self.label_11)
 
@@ -762,18 +740,11 @@ class Ui_MainWindow(object):
         self.topTable3.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_11 = QHBoxLayout(self.topTable3)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.label_12 = QLabel(self.topTable3)
-        self.label_12.setObjectName(u"label_12")
-        self.label_12.setFont(font1)
+        self.label_25 = QLabel(self.topTable3)
+        self.label_25.setObjectName(u"label_25")
+        self.label_25.setFont(font3)
 
-        self.horizontalLayout_11.addWidget(self.label_12)
-
-        self.TaskNum3 = QLineEdit(self.topTable3)
-        self.TaskNum3.setObjectName(u"TaskNum3")
-        self.TaskNum3.setMinimumSize(QSize(75, 30))
-        self.TaskNum3.setMaximumSize(QSize(75, 30))
-
-        self.horizontalLayout_11.addWidget(self.TaskNum3)
+        self.horizontalLayout_11.addWidget(self.label_25)
 
         self.frameTable3 = QFrame(self.topTable3)
         self.frameTable3.setObjectName(u"frameTable3")
@@ -781,27 +752,6 @@ class Ui_MainWindow(object):
         self.frameTable3.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_18 = QHBoxLayout(self.frameTable3)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
-        self.label_25 = QLabel(self.frameTable3)
-        self.label_25.setObjectName(u"label_25")
-        self.label_25.setFont(font1)
-
-        self.horizontalLayout_18.addWidget(self.label_25)
-
-        self.comboBox3 = QComboBox(self.frameTable3)
-        self.comboBox3.setObjectName(u"comboBox3")
-        self.comboBox3.setMinimumSize(QSize(75, 30))
-        self.comboBox3.setMaximumSize(QSize(75, 30))
-        self.comboBox3.setPlaceholderText(u"Num")
-        self.comboBox3.setCursor(QCursor(Qt.PointingHandCursor))
-        self.comboBox3.setEditable(False)
-        self.comboBox3.addItem("   1")
-        self.comboBox3.addItem("   2")
-        self.comboBox3.setStyleSheet("QComboBox { text-align: center; }"
-                                    "QComboBox::item:selected { background-color: #1b1b27; color: white; }"
-                                    "QComboBox::item:!selected { background-color: #1b1b27; color: grey; }")
-
-        self.horizontalLayout_18.addWidget(self.comboBox3)
-
         self.label_26 = QLabel(self.frameTable3)
         self.label_26.setObjectName(u"label_26")
         self.label_26.setFont(font1)
@@ -863,7 +813,7 @@ class Ui_MainWindow(object):
         self.addTable3Btn = QPushButton(self.topTable3)
         self.addTable3Btn.setObjectName(u"addTable3Btn")
         self.addTable3Btn.setMinimumSize(QSize(0, 0))
-        self.addTable3Btn.setFont(font3)
+        self.addTable3Btn.setFont(font4)
         self.addTable3Btn.setCursor(QCursor(Qt.PointingHandCursor))
         self.addTable3Btn.setIcon(icon3)
         self.addTable3Btn.setIconSize(QSize(24, 24))
@@ -873,7 +823,7 @@ class Ui_MainWindow(object):
         self.closeTable3Btn = QPushButton(self.topTable3)
         self.closeTable3Btn.setObjectName(u"closeTable3Btn")
         self.closeTable3Btn.setMinimumSize(QSize(0, 0))
-        self.closeTable3Btn.setFont(font3)
+        self.closeTable3Btn.setFont(font4)
         self.closeTable3Btn.setCursor(QCursor(Qt.PointingHandCursor))
         self.closeTable3Btn.setIcon(icon4)
         self.closeTable3Btn.setIconSize(QSize(24, 24))
@@ -1039,7 +989,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_13.addWidget(self.WeightEnter3)
 
-
         self.comboBox_workerEnter3 = QComboBox(self.botTable3)
         self.comboBox_workerEnter3.setObjectName(u"comboBox_workerEnter3")
         sizePolicy1.setHeightForWidth(self.comboBox_workerEnter3.sizePolicy().hasHeightForWidth())
@@ -1060,7 +1009,7 @@ class Ui_MainWindow(object):
         self.addPos3Btn = QPushButton(self.botTable3)
         self.addPos3Btn.setObjectName(u"addPos3Btn")
         self.addPos3Btn.setMinimumSize(QSize(0, 0))
-        self.addPos3Btn.setFont(font3)
+        self.addPos3Btn.setFont(font4)
         self.addPos3Btn.setCursor(QCursor(Qt.PointingHandCursor))
         self.addPos3Btn.setIcon(icon5)
         self.addPos3Btn.setIconSize(QSize(24, 24))
@@ -1085,7 +1034,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
         self.label_15 = QLabel(self.frame_12)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setFont(font4)
+        self.label_15.setFont(font5)
 
         self.horizontalLayout_12.addWidget(self.label_15)
 
@@ -1105,7 +1054,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
         self.label_14 = QLabel(self.frame_13)
         self.label_14.setObjectName(u"label_14")
-        self.label_14.setFont(font4)
+        self.label_14.setFont(font5)
 
         self.horizontalLayout_14.addWidget(self.label_14)
 
@@ -1124,42 +1073,42 @@ class Ui_MainWindow(object):
         self.label_3 = QLabel(self.reportsPage)
         self.label_3.setObjectName(u"label_3")
         self.label_3.setGeometry(QRect(320, 20, 111, 61))
-        font5 = QFont()
-        font5.setPointSize(16)
-        font5.setBold(True)
-        font5.setItalic(False)
-        font5.setUnderline(False)
-        font5.setWeight(75)
-        font5.setStrikeOut(False)
-        self.label_3.setFont(font5)
+        font6 = QFont()
+        font6.setPointSize(16)
+        font6.setBold(True)
+        font6.setItalic(False)
+        font6.setUnderline(False)
+        font6.setWeight(75)
+        font6.setStrikeOut(False)
+        self.label_3.setFont(font6)
         self.mainPages.addWidget(self.reportsPage)
         self.accountsPage = QWidget()
         self.accountsPage.setObjectName(u"accountsPage")
         self.label_4 = QLabel(self.accountsPage)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(300, 10, 111, 61))
-        self.label_4.setFont(font5)
+        self.label_4.setFont(font6)
         self.mainPages.addWidget(self.accountsPage)
         self.settingsPage = QWidget()
         self.settingsPage.setObjectName(u"settingsPage")
         self.label_5 = QLabel(self.settingsPage)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setGeometry(QRect(280, 0, 111, 61))
-        self.label_5.setFont(font5)
+        self.label_5.setFont(font6)
         self.mainPages.addWidget(self.settingsPage)
         self.helpPage = QWidget()
         self.helpPage.setObjectName(u"helpPage")
         self.label_6 = QLabel(self.helpPage)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(260, 10, 111, 61))
-        self.label_6.setFont(font5)
+        self.label_6.setFont(font6)
         self.mainPages.addWidget(self.helpPage)
         self.aboutPage = QWidget()
         self.aboutPage.setObjectName(u"aboutPage")
         self.label_7 = QLabel(self.aboutPage)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setGeometry(QRect(260, 20, 111, 61))
-        self.label_7.setFont(font5)
+        self.label_7.setFont(font6)
         self.mainPages.addWidget(self.aboutPage)
 
         self.verticalLayout_2.addWidget(self.mainPages)
@@ -1231,10 +1180,10 @@ class Ui_MainWindow(object):
 
         self.addShiftBtn = QPushButton(self.widget_2)
         self.addShiftBtn.setObjectName(u"addShiftBtn")
-        font6 = QFont()
-        font6.setBold(True)
-        font6.setWeight(75)
-        self.addShiftBtn.setFont(font6)
+        font7 = QFont()
+        font7.setBold(True)
+        font7.setWeight(75)
+        self.addShiftBtn.setFont(font7)
         self.addShiftBtn.setCursor(QCursor(Qt.PointingHandCursor))
         self.addShiftBtn.setIcon(icon3)
         self.addShiftBtn.setIconSize(QSize(24, 24))
@@ -1256,11 +1205,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.label_19 = QLabel(self.footer)
         self.label_19.setObjectName(u"label_19")
-        font7 = QFont()
-        font7.setBold(True)
-        font7.setItalic(False)
-        font7.setWeight(75)
-        self.label_19.setFont(font7)
+        font8 = QFont()
+        font8.setBold(True)
+        font8.setItalic(False)
+        font8.setWeight(75)
+        self.label_19.setFont(font8)
 
         self.horizontalLayout_16.addWidget(self.label_19, 0, Qt.AlignHCenter)
 
@@ -1270,6 +1219,9 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
+
+        self.mainPages.setCurrentIndex(0)
+
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -1296,9 +1248,7 @@ class Ui_MainWindow(object):
         self.settingsBtn.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.helpBtn.setText(QCoreApplication.translate("MainWindow", u"Help", None))
         self.aboutBtn.setText(QCoreApplication.translate("MainWindow", u"About ", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"Task", None))
-        self.TaskNum1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"12345", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Machine", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"\u041b\u0438\u043d\u0438\u044f \u043f\u043e\u043b\u0438\u044d\u0442\u0438\u043b\u0435\u043d\u0430", None))
         self.label_16.setText(QCoreApplication.translate("MainWindow", u"L", None))
         self.LengthEnter1.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
         self.label_17.setText(QCoreApplication.translate("MainWindow", u"D", None))
@@ -1330,9 +1280,7 @@ class Ui_MainWindow(object):
         self.addPos1Btn.setText("")
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"TopTable22", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"BottomTable2", None))
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Task", None))
-        self.TaskNum3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"12345", None))
-        self.label_25.setText(QCoreApplication.translate("MainWindow", u"Machine", None))
+        self.label_25.setText(QCoreApplication.translate("MainWindow", u"\u041b\u0438\u043d\u0438\u044f \u043a\u0430\u043d\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u0438", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"L", None))
         self.LengthEnter3.setPlaceholderText(QCoreApplication.translate("MainWindow", u"2", None))
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"D", None))
