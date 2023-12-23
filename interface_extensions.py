@@ -1,3 +1,4 @@
+# test coment
 # comdoBox for choise of machine number (for table 1) on line408
         self.comboBox.setCursor(QCursor(Qt.PointingHandCursor))
         self.comboBox.setEditable(False)
